@@ -5,9 +5,22 @@ import cart from '../../assets/icons/cart.png';
 import ListItem from '../ListItem/ListItem';
 import { navLinks } from '../../static';
 import Hamburger from '../Hamburger/Hamburger';
-import { getheight } from '../../static';
+import { useState, useEffect } from 'react';
 
 const Navbar = ({ active, setActive }) => {
+
+  const getheight = () => {
+    const [ height, setHeight ] = useState(0);
+    const handleScroll = () => {
+        setHeight(window.scrollY);
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+    });
+    return height
+}
+
   const h = getheight();
   return (
     <div className={ h >= 200 ? 'navbar shrunk' : 'navbar'}>
