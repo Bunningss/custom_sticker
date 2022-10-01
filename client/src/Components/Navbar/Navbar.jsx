@@ -4,10 +4,13 @@ import logo from '../../assets/custom-sticker.png';
 import cart from '../../assets/icons/cart.png';
 import ListItem from '../ListItem/ListItem';
 import { navLinks } from '../../static';
+import Hamburger from '../Hamburger/Hamburger';
+import { getheight } from '../../static';
 
-const Navbar = () => {
+const Navbar = ({ active, setActive }) => {
+  const h = getheight();
   return (
-    <div className='navbar'>
+    <div className={ h >= 200 ? 'navbar shrunk' : 'navbar'}>
       <div className="wrapper">
         <div className="col col-1">
           <Link to=''>
@@ -26,10 +29,12 @@ const Navbar = () => {
         <div className="col col-3">
           <Link to='/cart'>
             <img className='icon-small' src={cart} alt="" />
-            <p className='widget'>0</p>
+            <p className='widget text-small'>6</p>
           </Link>
         </div>
-        {/* <div className="col">contact</div> */}
+        <div className="col col-4">
+          <Hamburger active={active} setActive={setActive}/>
+        </div>
       </div>
     </div>
   )

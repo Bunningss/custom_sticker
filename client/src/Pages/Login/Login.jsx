@@ -2,6 +2,7 @@ import './Login.css';
 import FormInput from '../../Components/FormInput/FormInput';
 import Header_Primary from '../../Components/Header_Primary/Header_Primary';
 import Primary_Button from '../../Components/Primary_Button/Primary_Button';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
@@ -34,7 +35,7 @@ const Login = () => {
   }
 
   return (
-    <div className='login account'>
+    <div className='login account default'>
       <div className="wrapper">
         <Header_Primary headers={headers}/>
         <form action="#" onSubmit={handleSubmit} className='form'>
@@ -45,6 +46,12 @@ const Login = () => {
           }
           <Primary_Button text={"Sign In"} onClick={handleSubmit}/>
         </form>
+        <div className="account-additional">
+          <Link to=''>
+            forgot password?
+          </Link>
+          <Link to='/register'>create an account</Link>
+        </div>
       </div>
     </div>
   )

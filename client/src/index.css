@@ -19,6 +19,10 @@ body {
     color: var(--font-primary);
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 ul {
     list-style: none;
 }
@@ -29,7 +33,7 @@ a {
 }
 
 .default {
-    animation: fadeIn .6s ease;
+    animation: fadeIn 1s linear;
 }
 
 .main-wrapper {
@@ -41,6 +45,7 @@ a {
     font-size: 40px;
     color: var(--color-secondary);
     text-transform: capitalize;
+    text-align: center;
 }
 
 .header-medium {
@@ -50,6 +55,7 @@ a {
 .header-small {
     font-size: 18px;
     text-transform: capitalize;
+    text-align: center;
 }
 
 .title {
@@ -125,5 +131,14 @@ a {
     }
     100% {
         width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

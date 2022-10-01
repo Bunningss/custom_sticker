@@ -1,0 +1,28 @@
+.error {
+    height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error .content {
+    display: flex;
+    gap: 30px;
+}
+
+.error .content h4, .error .content h6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.error .content h4 {
+    font-size: 24px;
+    padding: 0 20px 0 0;
+    border-right: 1px solid var(--color-secondary);
+}
+
+.error .content h6 {
+    font-size: 16px;
+}

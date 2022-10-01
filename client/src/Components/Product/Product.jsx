@@ -7,7 +7,7 @@ const Product = () => {
     <div className='product'>
         <Link to=''>
             <div className="product-image-wrapper">
-                <img src="https://static.customstickersnow.com/fit-in/324x324/product_20210716-cdbcb900-e680-11eb-8b08-d7f6203b752f.png.webp" alt="" className="product-image" />
+                <img src="https://static.customstickersnow.com/fit-in/400x400/option_20210715-5825fc00-e52f-11eb-8e5c-67c378e35993.png.webp" alt="" className="product-image" />
             </div>
             <div className="product-info">
                 <h6 className="title">Transfer Stickers</h6>

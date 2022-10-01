@@ -49,7 +49,7 @@ const inputs = [
 ];
 
   return (
-    <div className='register account'>
+    <div className='register account default'>
         <div className="wrapper">
             <Header_Primary headers={headers}/>
             <form className='form' action="">
