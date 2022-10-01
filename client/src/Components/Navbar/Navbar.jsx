@@ -8,22 +8,17 @@ import Hamburger from '../Hamburger/Hamburger';
 import { useState, useEffect } from 'react';
 
 const Navbar = ({ active, setActive }) => {
-
-  const getheight = () => {
     const [ height, setHeight ] = useState(0);
     const handleScroll = () => {
         setHeight(window.scrollY);
     }
-
+    
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
     });
-    return height
-}
 
-  const h = getheight();
   return (
-    <div className={ h >= 200 ? 'navbar shrunk' : 'navbar'}>
+    <div className={ height >= 200 ? 'navbar shrunk' : 'navbar'}>
       <div className="wrapper">
         <div className="col col-1">
           <Link to=''>
