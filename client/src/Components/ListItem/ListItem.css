@@ -1,0 +1,36 @@
+.listitem {
+    width: fit-content;
+    height: 100%;
+    flex: 1;
+    position: relative;
+    transition: all .6s ease;
+}
+
+.listitem a {
+    color: inherit;
+    text-transform: capitalize;
+}
+
+.listitem::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: red;
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+    transition: opacity .6s, transform .6s;
+}
+
+.listitem:hover {
+    color: var(--color-secondary);
+}
+
+.listitem:hover::after, .listitem:focus::after {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    width: 100%;
+    animation: slideIn .3s linear;
+}

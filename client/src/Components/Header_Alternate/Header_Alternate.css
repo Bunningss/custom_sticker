@@ -1,0 +1,28 @@
+.header-alternate {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+}
+
+.header-alternate .header-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-wrapper::before, .header-wrapper::after {
+    content: '';
+    flex: 1;
+    border-top: 2px solid var(--color-secondary);
+}
+
+.header-alternate .header-wrapper .header-content {
+    padding: 0 20px;
+    text-align: center;
+}
