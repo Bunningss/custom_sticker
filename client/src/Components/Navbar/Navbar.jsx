@@ -5,20 +5,11 @@ import cart from '../../assets/icons/cart.png';
 import ListItem from '../ListItem/ListItem';
 import { navLinks } from '../../static';
 import Hamburger from '../Hamburger/Hamburger';
-import { useState, useEffect } from 'react';
 
 const Navbar = ({ active, setActive }) => {
-    const [ height, setHeight ] = useState(0);
-    const handleScroll = () => {
-        setHeight(window.scrollY);
-    }
-    
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-    });
 
   return (
-    <div className={ height >= 200 ? 'navbar shrunk' : 'navbar'}>
+    <div className='navbar'>
       <div className="wrapper">
         <div className="col col-1">
           <Link to=''>

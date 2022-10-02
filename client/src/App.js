@@ -4,6 +4,7 @@ import Footer from './Components/Footer/Footer';
 
 // Components
 import Navbar from './Components/Navbar/Navbar';
+import Sidebar from './Components/Sidebar/Sidebar';
 
 // Banner
 import Error from './Pages/Error/Error';
@@ -16,6 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar active={active} setActive={setActive}/>
+      <Sidebar active={active} setActive={setActive}/>
       <Routes>
         <Route exact path='*' element={<Error/>}/>
         <Route exact path='' element={<Home/>}/>

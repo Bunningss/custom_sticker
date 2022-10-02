@@ -12,10 +12,6 @@
     z-index: 10;
 }
 
-.navbar.shrunk {
-    height: 60px;
-}
-
 .navbar .wrapper {
     max-width: 1024px;
     width: 100%;

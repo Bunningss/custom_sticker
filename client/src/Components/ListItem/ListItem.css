@@ -1,8 +1,6 @@
 .listitem {
     width: fit-content;
-    /* height: 100%; */
     line-height: 2;
-    flex: 1;
     display: flex;
     align-items: center;
     gap: 0 10px;

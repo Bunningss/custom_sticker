@@ -1,6 +1,6 @@
 import './Product.css';
 import { Link } from 'react-router-dom';
-import demo_icon from '../../assets/icons/cart.png';
+import delivery from '../../assets/icons/delivery.png';
 
 const Product = () => {
   return (
@@ -17,7 +17,7 @@ const Product = () => {
                         <p className="text-small">Multiple sizes available</p>
                     </div>
                     <div className="col col-2">
-                        <img className='icon-small' src={demo_icon} alt="" />
+                        <img className='icon-small' src={delivery} alt="" />
                     </div>
                 </div>
                 <div className="product-details">
