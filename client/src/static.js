@@ -16,7 +16,7 @@ export const navLinks = [
     },
     {
         title: 'FAQS',
-        href: '/faq'
+        href: '/faqs'
     },
     {
         title: 'contact us',
@@ -174,5 +174,52 @@ export const footerData = [
                 href: ''
             },
         ]
+    },
+];
+
+export const faqs = [
+    {
+        ques: 'can i place my order online?',
+        ans: 'Of course, you can. Following are the ways you can place your order: 1. Online 2. On the phone 3. On chat 4. Via email'
+    },
+    {
+        ques: 'Is someone available to help me with my order?',
+        ans: 'Of course! You can Live Chat with one of our employees or call Customer Service at (855) 856-4070 or phone us at (281) 533-8932 to obtain help with your order.'
+    },
+    {
+        ques: 'I want a custom sticker, is your price the lowest of all?',
+        ans: 'Our prices are always the lowest in the market for custom. We can assure you that there will be no company in the market that will be able to provide a lower price and faster turnaround than our company.'
+    },
+    {
+        ques: 'What does production time mean?',
+        ans: 'Production time refers to the period it takes to make your table cover order in our production facility. The time is based on business days, Monday through Friday, excluding holidays.'
+    },
+    {
+        ques: 'What happens if there is a mistake with my order?',
+        ans: 'If there is a production error we will redo the cover without any questions asked.'
+    },
+    {
+        ques: 'Will I see a proof before my order goes into production?',
+        ans: 'Yes! Unless it is an exact reorder, you always see an e-proof of your item which must be approved by you before we proceed!'
+    },
+    {
+        ques: 'Do you keep my art on file?',
+        ans: 'Yes! We keep your artwork on file to make reordering and using your art on other products simple and easy!'
+    },
+    {
+        ques: 'Where do I send my artwork?',
+        ans: "Simply upload it on our website and attach it to your order and we'll take it from there. You can also send it to sales@customstickersnow.com or e-mail directly to your Customer Care Representative."
+    },
+    {
+        ques: 'What image file types can I upload?',
+        ans: 'We highly recommend you send a vector-based file in EPS, AI or PDF format. If you have a raster-based image such as PSD, PNG or JPG, please send it in the actual size it will be imprinted on your table cover. We suggest you send the highest resolution file you have available. The highest resolution files work best.'
+    },
+    {
+        ques: 'Is it OK to use copyrighted or licensed material for my sticker?',
+        ans: 'We do not knowingly reproduce copyrighted material and will not accept liability for such infringement when reproducing orders. You are solely responsible for ensuring the artwork you submit does not infringe on property rights by obtaining proper permission for the reproduction of logos, trademarks and copyrighted material.'
+    },
+    {
+        ques: 'Can I use multiple artwork designs for my sticker order?',
+        ans: 'Only one design can be provided per transaction. If there is more than one piece of artwork, several orders must be placed.Only one design can be provided per transaction. If there is more than one piece of artwork, several orders must be placed.'
     },
 ];

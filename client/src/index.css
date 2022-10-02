@@ -71,6 +71,10 @@ a {
     font-size: 18px;
 }
 
+.text-medium {
+    font-size: 16px;
+}
+
 .text-small {
     font-size: 12px;
 }

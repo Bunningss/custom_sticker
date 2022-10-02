@@ -5,14 +5,15 @@ import Footer from './Components/Footer/Footer';
 // Components
 import Navbar from './Components/Navbar/Navbar';
 import Sidebar from './Components/Sidebar/Sidebar';
+import Scroll from './Components/Scoll/Scoll';
 
-// Banner
+// Pages
 import Error from './Pages/Error/Error';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
-import Scroll from './Components/Scoll/Scoll';
 import About from './Pages/About/About';
+import Faqs from './Pages/Faqs/Faqs';
 
 function App() {
   const [ active, setActive ] = useState(false)
@@ -27,6 +28,7 @@ function App() {
         <Route exact path='/login' element={<Login/>}/>
         <Route exact path='/register' element={<Register/>}/>
         <Route exact path='/about' element={<About/>}/>
+        <Route exact path='/faqs' element={<Faqs/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
