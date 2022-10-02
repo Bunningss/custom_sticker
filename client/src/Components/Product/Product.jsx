@@ -1,6 +1,7 @@
 import './Product.css';
 import { Link } from 'react-router-dom';
 import delivery from '../../assets/icons/delivery.png';
+import Primary_Button from '../Primary_Button/Primary_Button';
 
 const Product = () => {
   return (
@@ -26,7 +27,7 @@ const Product = () => {
                         <h6 className="title color-accent">$0.08+</h6>
                     </div>
                     <div className="col">
-                        <img src="" alt="" className="icon-small" />
+                        <Primary_Button text={"customize"}/>
                     </div>
                 </div>
             </div>

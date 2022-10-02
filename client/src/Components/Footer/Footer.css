@@ -14,6 +14,7 @@
 
 .footer .payment {
     height: 40px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,13 +23,16 @@
 
 .footer .payment .verified-payment {
     height: 100%;
-    width: fit-content;
+    width: 100%;
+    object-fit: contain;
 }
 
 @media screen and (max-width: 1024px) {
-    .footer .wrapper {
+    .footer {
         padding-left: 5%;
         padding-right: 5%;
     }
 }
+
+@media screen and (max-width: 500px) {}
 
