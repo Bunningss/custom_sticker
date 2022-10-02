@@ -76,6 +76,7 @@ a {
 }
 
 .button {
+    font-size: 18px;
     width: 100%;
     padding: 12px 15px;
     border-radius: 5px;
@@ -106,7 +107,7 @@ a {
 }
 
 .account {
-    height: calc(100vh - 120px);
+    height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,6 +127,13 @@ a {
 
 .account .wrapper .form {
     width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .main-wrapper {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 }
 
 /* Animations */

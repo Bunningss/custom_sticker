@@ -11,16 +11,16 @@ export const navLinks = [
         href: '/login'
     },
     {
-        title: 'contact us',
-        href: '/contact'
+        title: 'about us',
+        href: '/about'
     },
     {
         title: 'FAQS',
         href: '/faq'
     },
     {
-        title: 'about us',
-        href: '/about'
+        title: 'contact us',
+        href: '/contact'
     },
 ];
 

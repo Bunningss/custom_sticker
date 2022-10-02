@@ -2,7 +2,7 @@
     background-color: var(--white);
     border: 1px solid var(--font-primary);
     min-width: 300px;
-    width: 22%;
+    /* width: 25%; */
     height: 460px;
     min-height: 150px;
     border-radius: 21px;

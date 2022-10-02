@@ -1,17 +1,8 @@
 import './Sidebar.css';
 import ListItem from '../ListItem/ListItem';
 import { navLinks } from '../../static';
-import { useState, useEffect } from 'react';
 
 const Sidebar = ({ active, setActive}) => {
-    const [ height, setHeight ] = useState(0);
-    const handleScroll = () => {
-        setHeight(window.scrollY);
-    }
-    
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-    });
   return (
     <div className={active ? 'sidebar active' : 'sidebar' } onClick={() => setActive(!active)}>
         <div className="wrapper">

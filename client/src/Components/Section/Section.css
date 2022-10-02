@@ -1,11 +1,12 @@
 .section {
     width: 100%;
+    margin: 50px 0;
 }
 
 .section .section-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px 20px;
+    gap: 10px 10px;
 }

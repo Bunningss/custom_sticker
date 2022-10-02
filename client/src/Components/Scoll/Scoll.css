@@ -1,0 +1,17 @@
+.scroll {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    cursor: pointer;
+    display: none;
+    animation: fadeIn .6s linear;
+}
+
+.scroll.visible {
+    display: block;
+}
+
+.scroll .icon-small {
+    width: 60px;
+    transform: rotate(-90deg);
+}

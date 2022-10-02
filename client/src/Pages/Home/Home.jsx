@@ -7,11 +7,16 @@ const Home = () => {
     small: "Customize in 5 easy ways",
     large: "custom stickers"
   }
+  const headers_2 = {
+    small: "top products",
+    large: "best selling stickers"
+  }
   return (
     <div className='home default'>
       <Banner/>
       <div className="main-wrapper">
         <Section headers={headers}/>
+        <Section headers={headers_2}/>
       </div>
     </div>
   )
