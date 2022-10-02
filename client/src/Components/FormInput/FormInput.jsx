@@ -10,7 +10,7 @@ const FormInput = ( props ) => {
   return (
     <>
       <label className='inputLabel' htmlFor=""></label>
-      <input className='formInput' {...others} onBlur={handleFocus} focused={focused.toString()} />
+      <input className='formInput text-regular' {...others} onBlur={handleFocus} focused={focused.toString()} />
       <span className='warning text-small'>{errorMsg}</span>
     </>
   )

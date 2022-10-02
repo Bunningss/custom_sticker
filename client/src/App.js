@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Footer from './Components/Footer/Footer';
 
 // Components
 import Navbar from './Components/Navbar/Navbar';
@@ -21,6 +22,7 @@ function App() {
         <Route exact path='/login' element={<Login/>}/>
         <Route exact path='/register' element={<Register/>}/>
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }

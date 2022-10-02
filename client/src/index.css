@@ -4,6 +4,7 @@
     --white: #ffffff;
     --font-primary: #07627b;
     --color-secondary: #fd6239;
+    --color-dark: #212121;
 }
 
 * {
@@ -11,7 +12,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Balsamiq Sans', cursive;
-    font-size: 18px;
+    /* font-size: 18px; */
 }
 
 body {
@@ -64,6 +65,10 @@ a {
 
 .title.color-accent {
     color: var(--color-secondary);
+}
+
+.text-regular {
+    font-size: 18px;
 }
 
 .text-small {
