@@ -5,11 +5,14 @@
 
 .section .section-content {
     width: 100%;
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px 10px;
+    gap: 10px 10px; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
 }
 
 @media screen and (max-width: 500px) {

@@ -6,7 +6,7 @@ import Primary_Button from '../Primary_Button/Primary_Button';
 const Product = () => {
   return (
     <div className='product'>
-        <Link to=''>
+        <Link to='/product/id'>
             <div className="product-image-wrapper">
                 <img src="https://static.customstickersnow.com/fit-in/400x400/option_20210715-5825fc00-e52f-11eb-8e5c-67c378e35993.png.webp" alt="" className="product-image" />
             </div>
@@ -27,7 +27,7 @@ const Product = () => {
                         <h6 className="title color-accent">$0.08+</h6>
                     </div>
                     <div className="col">
-                        <Primary_Button text={"customize"}/>
+                        <Primary_Button text={"details"}/>
                     </div>
                 </div>
             </div>

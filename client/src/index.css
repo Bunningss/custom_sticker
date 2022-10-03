@@ -5,6 +5,7 @@
     --font-primary: #07627b;
     --color-secondary: #fd6239;
     --color-dark: #212121;
+    --color-accent: #f5fbfd;
 }
 
 * {
@@ -148,7 +149,6 @@ a {
 
     .button {
         font-size: 14px;
-        padding: 5px;
     }
 
     /* Font Sizes */
@@ -160,8 +160,16 @@ a {
         font-size: 30px;
     }
 
+    .header-medium {
+        font-size: 20px;
+    }
+
     .header-small {
         font-size: 16px;
+    }
+
+    .text-medium {
+        font-size: 12px;
     }
 
     .text-regular {
@@ -187,4 +195,29 @@ a {
     100% {
         opacity: 1;
     }
+}
+
+@-webkit-keyframes focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
 }

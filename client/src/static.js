@@ -1,5 +1,6 @@
 import mail from './assets/icons/mail.png';
 import phone from './assets/icons/phone.png';
+import demo from './assets/prod.webp';
 
 export const navLinks = [
     {
@@ -223,3 +224,5 @@ export const faqs = [
         ans: 'Only one design can be provided per transaction. If there is more than one piece of artwork, several orders must be placed.Only one design can be provided per transaction. If there is more than one piece of artwork, several orders must be placed.'
     },
 ];
+
+export const images = [demo, demo, demo, demo, demo, demo];

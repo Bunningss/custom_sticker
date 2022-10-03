@@ -1,0 +1,27 @@
+.slideshow {
+    width: 100%;
+    height: 150px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.slideshow::-webkit-scrollbar {
+    display: block;
+    height: 10px;
+    background-color: var(--color-accent);
+}
+
+.slideshow::-webkit-scrollbar-thumb {
+    background-color: var(--color-dark);
+}
+
+.slideshow .slideshow-img {
+    height: 100%;
+    width: 200px;
+    object-fit: contain;
+    background-color: rgba(0 0 0 / .1);
+    margin: 0 5px 0 0;
+    cursor: pointer;
+}

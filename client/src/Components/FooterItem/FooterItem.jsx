@@ -7,7 +7,7 @@ const FooterItem = ({ data }) => {
       <h4 className="title">{data.title}</h4>
       {
         data.links.map((item, indx) => (
-          <ListItem item={item}/>
+          <ListItem item={item} key={indx}/>
         ))
       }
     </ul>
