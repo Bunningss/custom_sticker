@@ -38,3 +38,11 @@
     width: 100%;
     object-fit: contain;
 }
+
+@media screen and (max-width: 500px) {
+    .modal .wrapper .icon-small {
+        width: 40px;
+        top: 30px;
+        right: 30px;
+    }
+}

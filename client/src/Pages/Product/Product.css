@@ -24,3 +24,28 @@
 .product-si .wrapper .col .product-si-info {
     width: 100%;
 }
+
+.product-si .wrapper .col .product-si-info .header-medium {
+    margin: 15px 0; 
+}
+
+.product-si .wrapper .col .product-si-info .product-si-form {}
+
+@media screen and (max-width: 500px) {
+    .product-si {
+        padding: 0 5px;
+    }
+
+    .product-si .wrapper {
+        flex-direction: column;
+    }
+
+    .product-si .wrapper .col {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .product-si .wrapper .col .product-si-info .header-medium {
+        text-align: center;
+    }
+}

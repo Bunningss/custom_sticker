@@ -16,7 +16,7 @@ export const navLinks = [
         href: '/about'
     },
     {
-        title: 'FAQS',
+        title: 'FAQs',
         href: '/faqs'
     },
     {
@@ -226,3 +226,82 @@ export const faqs = [
 ];
 
 export const images = [demo, demo, demo, demo, demo, demo];
+
+export const custom = [
+    {
+        label: "Sticker Type",
+        opts: [
+            {
+                name: 'Select Sticker Type',
+                value: ''
+            },
+            {
+                name: 'Random Cut',
+                value: 'RC'
+            },
+            {
+                name: 'Separate',
+                value: 'S'
+            },
+        ]
+    },
+    {
+        label: "Select Size",
+        opts: [
+            {
+                name: "Select Sticker Size",
+                value: ''
+            },
+            {
+                name: "2 in x 2 in",
+                value: '2x2'
+            },
+            {
+                name: "3 in x 3 in",
+                value: '3x3'
+            },
+            {
+                name: "4 in x 4 in",
+                value: '4x4'
+            },
+            {
+                name: "5 in x 5 in",
+                value: '5x5'
+            },
+        ]
+    },
+    {
+        label: "Number of Imprint Colors",
+        opts: [
+            {
+                name : "Full Color Imprint",
+                value: 'FC'
+            },
+            {
+                name : "1 Color",
+                value: '1C'
+            },
+            {
+                name : "2 Colors",
+                value: '2C'
+            },
+            {
+                name : "3 Colors",
+                value: '3C'
+            },
+        ]
+    },
+    {
+        label: "Artwork Type",
+        opts: [
+            {
+                name: 'Upload Artwork',
+                value: ''
+            },
+            {
+                name: 'Help With Artwork',
+                value: ''
+            },
+        ]
+    },
+];
