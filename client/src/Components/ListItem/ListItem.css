@@ -30,7 +30,7 @@
     transition: opacity .6s, transform .6s;
 }
 
-.listitem:hover {
+.listitem:hover, .listitem:focus {
     color: var(--color-secondary);
 }
 

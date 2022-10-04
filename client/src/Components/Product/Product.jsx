@@ -6,7 +6,7 @@ import Primary_Button from '../Primary_Button/Primary_Button';
 const Product = () => {
   return (
     <div className='product'>
-        <Link to='/product/id'>
+        <Link to='product/:id'>
             <div className="product-image-wrapper">
                 <img src="https://static.customstickersnow.com/fit-in/400x400/option_20210715-5825fc00-e52f-11eb-8e5c-67c378e35993.png.webp" alt="" className="product-image" />
             </div>

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-    --white: #ffffff;
+    --white: #f5fbfd;
     --font-primary: #07627b;
     --color-secondary: #fd6239;
     --color-dark: #212121;
@@ -135,10 +135,21 @@ a {
     width: 100%;
 }
 
+@media screen and (max-width: 1440px) {
+    .main-wrapper {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .main-wrapper {
         padding-left: 5%;
         padding-right: 5%;
+    }
+
+    .header {
+        font-size: 35px;
     }
 }
 

@@ -13,4 +13,5 @@
     margin-top: 5px;
 
     color: var(--font-primary);
+    cursor: pointer;
 }
