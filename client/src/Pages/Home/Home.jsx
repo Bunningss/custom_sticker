@@ -3,6 +3,7 @@ import Banner from '../../Components/Banner/Banner';
 import Section from '../../Components/Section/Section';
 import Header_Primary from '../../Components/Header_Primary/Header_Primary';
 import Card from '../../Components/Card/Card';
+import { bestProducts, customs, products } from '../../static';
 
 const Home = () => {
   const headers = {
@@ -21,15 +22,16 @@ const Home = () => {
     <div className='home default'>
       <Banner/>
       <div className="main-wrapper">
-        <Section headers={headers}/>
-        <Section headers={headers_2}/>
+        <Section headers={headers} prods={bestProducts}/>
+        <Section headers={headers_2} prods={products}/>
         <div className="customize">
           <Header_Primary headers={header_3}/>
           <div className="wrapper">
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+            {
+              customs.map((custom, indx) => (
+                <Card custom={custom} key={indx}/>
+              ))
+            }
           </div>
         </div>
       </div>

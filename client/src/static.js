@@ -1,6 +1,95 @@
 import mail from './assets/icons/mail.png';
 import phone from './assets/icons/phone.png';
-import demo from './assets/prod.webp';
+
+import dieCut from './assets/stickers/br-stc.png';
+import transfer from './assets/stickers/tr-stc.png';
+import kiss from './assets/stickers/kiss-stc.png';
+import bumper from './assets/stickers/bum-stc.png';
+import metal from './assets/stickers/metal.png';
+import holo from './assets/stickers/holo-stc.png';
+import roll from './assets/stickers/roll-stc.png';
+import sheet from './assets/stickers/sheet-stc.png';
+import lanyard from './assets/stickers/lanyard.png';
+
+export const bestProducts = [
+    {
+        title: 'Transfer Sticker',
+        img: transfer,
+        startPrice: 0.22
+    },
+    {
+        title: 'Die cut sticker',
+        img: dieCut,
+        startPrice: 0.08
+    },
+    {
+        title: 'kiss cut sticker',
+        img: kiss,
+        startPrice: 0.08
+    },
+    {
+        title: 'bumper sticker',
+        img: bumper,
+        startPrice: 0.36
+    },
+];
+export const products = [
+    {
+        title: 'Transfer Sticker',
+        img: transfer,
+        startPrice: 0.22
+    },
+    {
+        title: 'Metallic Sticker',
+        img: metal,
+        startPrice: 0.32
+    },
+    {
+        title: 'Die cut sticker',
+        img: dieCut,
+        startPrice: 0.08
+    },
+    {
+        title: 'roll labels',
+        img: roll,
+        startPrice: 0.07
+    },
+    {
+        title: 'kiss cut sticker',
+        img: kiss,
+        startPrice: 0.08
+    },
+    {
+        title: 'hologram sticker',
+        img: holo,
+        startPrice: 0.08
+    },
+    {
+        title: 'bumper sticker',
+        img: bumper,
+        startPrice: 0.36
+    },
+    {
+        title: 'sticker sheets',
+        img: sheet,
+        startPrice: 0.36
+    },
+];
+
+export const customs = [
+    {
+        title: 'sticker',
+        startPrice: 0.22,
+        img: dieCut,
+        steps: ['select sticker', ' Select Sticker Type', ' Select Sticker Size', ' Select Sticker Material Type', 'upload artwork']
+    },
+    {
+        title: 'lanyard',
+        startPrice: 0.22,
+        img: lanyard,
+        steps: ['select Printing Method', 'select Lanyard Size', 'select Lanyard Color', 'upload artwork', 'select attachment']
+    },
+];
 
 export const navLinks = [
     {
@@ -225,7 +314,7 @@ export const faqs = [
     },
 ];
 
-export const images = [demo, demo, demo, demo, demo, demo];
+export const images = [dieCut, dieCut, dieCut, dieCut, dieCut, dieCut];
 
 export const custom = [
     {

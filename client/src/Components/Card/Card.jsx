@@ -1,29 +1,27 @@
 import './Card.css';
 import Primary_Button from '../Primary_Button/Primary_Button';
 import { Link } from 'react-router-dom';
-import demo from '../../assets/br-stc.png';
 
-const Card = () => {
+const Card = ({ custom }) => {
   return (
     <div className='card'>
-      <Link className='card-link' to='/customize/sticker'>
+      <Link className='card-link' to={`/customize/${custom.title}`}>
         <div className="col col-1">
-          <h2 className="header">Custom stickers</h2>
-          <h2 className='header-medium'>price $0.22+</h2>
+          <h2 className="header">Custom {custom.title}</h2>
+          <h2 className='header-medium'>price ${custom.startPrice}+</h2>
         </div>
         <div className="col col-2">
           <div className="row row-1">
-            <img className='custom-img' src={demo} alt="" loading='lazy' />
+            <img className='custom-img' src={custom.img} alt="" loading='lazy' />
           </div>
           <div className="row row-2">
-            <p className="title">Custom sticker in 6 simple steps:</p>
+            <p className="title">Custom {custom.title} in simple steps:</p>
             <ul className='card-list'>
-              <li className='card-list_item'>Select sticker</li>
-              <li className='card-list_item'>Select sticker type</li>
-              <li className='card-list_item'>Select sticker size</li>
-              <li className='card-list_item'>Select material type</li>
-              <li className='card-list_item'>Upload artwork</li>
-              <li className='card-list_item'>Place order</li>
+              {
+                custom.steps.map((step, indx) => (
+                  <li className='card-list_item' key={indx}>{step}</li>
+                ))
+              }
             </ul>
             <Primary_Button text={'customize now!'}/>
           </div>

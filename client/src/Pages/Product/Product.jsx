@@ -1,5 +1,5 @@
 import './Product.css';
-import demo from '../../assets/prod.webp';
+import demo from '../../assets/stickers/br-stc.png';
 import Primary_Button from '../../Components/Primary_Button/Primary_Button';
 import Slideshow from '../../Components/Slideshow/Slideshow';
 import Modal from '../../Components/Modal/Modal';

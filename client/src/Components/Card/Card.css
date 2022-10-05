@@ -52,13 +52,14 @@
 .card .col.col-2 .row .custom-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .card .col.col-2 .row.row-2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 20px;
 }
 
 .card .col.col-2 .row .title {
@@ -73,6 +74,7 @@
 
 .card .col.col-2 .row .card-list .card-list_item {
     line-height: 1.8;
+    text-transform: capitalize;
 }
 
 @media screen and (max-width: 1024px) {
