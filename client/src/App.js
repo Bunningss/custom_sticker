@@ -15,6 +15,7 @@ import Register from './Pages/Register/Register';
 import About from './Pages/About/About';
 import Faqs from './Pages/Faqs/Faqs';
 import Product from './Pages/Product/Product';
+import Sticker from './Pages/Sticker/Sticker';
 
 function App() {
   const [ active, setActive ] = useState(false)
@@ -31,6 +32,7 @@ function App() {
         <Route exact path='/about' element={<About/>}/>
         <Route exact path='/faqs' element={<Faqs/>}/>
         <Route exact path='/product/:id' element={<Product/>}/>
+        <Route exact path='/customize/sticker' element={<Sticker/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

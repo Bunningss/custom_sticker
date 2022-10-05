@@ -394,3 +394,115 @@ export const custom = [
         ]
     },
 ];
+
+// Steps to a custom sticker
+export const  stickerSteps = [
+    {
+        title: 'Select sticker',
+        card: [
+            {
+                img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-cdbcb900-e680-11eb-8b08-d7f6203b752f.png.webp',
+                name: 'circle'
+            },
+            {
+                img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210719-53086de0-e8a7-11eb-bf9f-89283f841ab9.png.webp',
+                name: 'square'
+            },
+            {
+                img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-dec72280-e680-11eb-9a6d-871146373871.png.webp',
+                name: 'rectangle'
+            },
+            {
+                img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-bf9c6c90-e680-11eb-a6b7-6b9838e68602.png.webp',
+                name: 'custom shape'
+            },
+        ]
+    },
+    {
+        title: 'Select sticker type',
+        card: [
+            {
+                img: dieCut,
+                name: 'die cut'
+            },
+            {
+                img: kiss,
+                name: 'kiss cut'
+            },
+            {
+                img: roll,
+                name: 'roll'
+            },
+            {
+                img: sheet,
+                name: 'sheet'
+            },
+        ]
+    },
+    {
+        title: 'Select sticker size',
+        card: [
+            {
+                
+            },
+            {
+                
+            },
+            {
+                
+            },
+            {
+                
+            },
+        ]
+    },
+    {
+        title: 'Select sticker material type',
+        card: [
+            {
+                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5b3d4720-ce03-11eb-a9fc-3d82aaaf6a77.png.webp',
+                name: 'vinyl'
+            },
+            {
+                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5c2f7350-ce03-11eb-94d3-e36e56826255.png.webp',
+                name: 'metallic silver paper'
+            },
+            {
+                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5ca1c8e0-ce03-11eb-8bb7-8d40a263516f.png.webp',
+                name: 'metallic gold paper'
+            },
+            {
+                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5bcb42c0-ce03-11eb-abec-df232f615f24.png.webp',
+                name: 'eproxy'
+            },
+            {
+                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5d1c9460-ce03-11eb-a9bf-4fcbc603329e.png.webp',
+                name: 'kraft paper'
+            },
+            {
+                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5df2fbc0-ce03-11eb-9034-cf4c865ac742.png.webp',
+                name: 'crafted art paper'
+            },
+            {
+                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5ea787e0-ce03-11eb-b4a7-677c8815f152.png.webp',
+                name: 'crepe paper'
+            },
+            {
+                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-a48ce990-e535-11eb-a0a7-637602cbfa8f.png.webp',
+                name: 'PVC'
+            },
+            {
+                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-a4e2e7f0-e535-11eb-b9a4-494fb604cdce.png.webp',
+                name: 'clear sticker'
+            },
+            {
+                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-a3f41130-e535-11eb-b155-f9706ff062fa.png.webp',
+                name: 'transfer sticker'
+            },
+            {
+                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-a51c90b0-e535-11eb-ac45-879fc3f6d80c.png.webp',
+                name: 'metallic sticker'
+            },
+        ]
+    },
+];
