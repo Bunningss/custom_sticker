@@ -412,10 +412,10 @@ export const  stickerSteps = [
                 img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-dec72280-e680-11eb-9a6d-871146373871.png.webp',
                 name: 'rectangle'
             },
-            {
-                img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-bf9c6c90-e680-11eb-a6b7-6b9838e68602.png.webp',
-                name: 'custom shape'
-            },
+            // {
+            //     img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-bf9c6c90-e680-11eb-a6b7-6b9838e68602.png.webp',
+            //     name: 'custom shape'
+            // },
         ]
     },
     {
@@ -439,23 +439,26 @@ export const  stickerSteps = [
             },
         ]
     },
-    {
-        title: 'Select sticker size',
-        card: [
-            {
-                
-            },
-            {
-                
-            },
-            {
-                
-            },
-            {
-                
-            },
-        ]
-    },
+    // {
+    //     title: 'Select sticker size',
+    //     card: [
+    //         {
+    //             img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210723-4dd18fb0-ebf8-11eb-89fd-67a0a6ea889c.png.webp'
+    //         },
+    //         {
+    //             img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210723-4d1a4ae0-ebf7-11eb-99ec-890a730bf403.png.webp'
+    //         },
+    //         {
+    //             img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210723-4dba7630-ebf7-11eb-8622-d51fc52657f7.png.webp'
+    //         },
+    //         {
+    //             img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210723-4e5bb800-ebf7-11eb-96b1-7f5c55edd7ba.png.webp'
+    //         },
+    //         {
+    //             img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210723-101c52b0-ebf7-11eb-b39d-270209d41eb7.png.webp'
+    //         },
+    //     ]
+    // },
     {
         title: 'Select sticker material type',
         card: [

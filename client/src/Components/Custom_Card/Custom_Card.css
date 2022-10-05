@@ -8,6 +8,10 @@
     cursor: pointer;
 }
 
+.c-card.active {
+    border: 2px solid var(--color-secondary);
+}
+
 .c-card .row.row-1 {
     height: 70%;
 }
