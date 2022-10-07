@@ -1,6 +1,7 @@
 import './Select_Menu.css';
 
 const Select_Menu = ({ item }) => {
+  console.log(item)
   return (
     <div className='select-wrapper'>
       <label className='text-regular label' htmlFor="select">{item.label}</label>

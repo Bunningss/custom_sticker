@@ -16,7 +16,7 @@
 }
 
 .dropdown-item .dropdown-q.vis {
-    background: var(--white);
+    background: white;
     color: inherit;
 }
 

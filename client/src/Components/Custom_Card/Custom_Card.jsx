@@ -1,16 +1,18 @@
 import './Custom_Card.css';
 
-const Custom_Card = ({ card, active, setActive }) => {
+const Custom_Card = ({ info, setValues, values, active, setActive }) => {
+  const handleSelection = () => {
+    setValues({...values, [info.selection]: info.name})
+    setActive(info.name)
+  }
+  // console.log(active)
   return (
-    <div className={active ? 'c-card active' : 'c-card'} onClick={() => setActive(card.name)}>
+    <div className={active ? 'c-card active' : 'c-card'} onClick={handleSelection}>
         <div className="row row-1">
-          <img loading='lazy' src={card.img} alt="" className="c-card-img" />
+          <img loading='lazy' src={info.img} alt={info.name} className="c-card-img" />
         </div>
         <div className="row row-2">
-          {
-            card.name && card.img ? <h2 className="title">{card.name}</h2> :
-            <input type="number" />
-          }
+            <h2 className="title">{info.name}</h2>
         </div>
     </div>
   )

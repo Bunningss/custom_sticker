@@ -395,117 +395,125 @@ export const custom = [
     },
 ];
 
-// Steps to a custom sticker
-export const  stickerSteps = [
+// Sticker Customization
+export const sSticker = [
+  {
+    name: "Circle",
+    selection: 'sticker',
+    img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-cdbcb900-e680-11eb-8b08-d7f6203b752f.png.webp'
+  },
+  {
+    name: "square",
+    selection: 'sticker',
+    img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210719-53086de0-e8a7-11eb-bf9f-89283f841ab9.png.webp'
+  },
+  {
+    name: "rectangle",
+    selection: 'sticker',
+    img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-dec72280-e680-11eb-9a6d-871146373871.png.webp'
+  },
+  {
+    name: "custom",
+    selection: 'sticker',
+    img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-bf9c6c90-e680-11eb-a6b7-6b9838e68602.png.webp'
+  },
+];
+
+export const sSize = [
+  {
+    name: "2 in x 2 in",
+    selection: 'size',
+    img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-cdbcb900-e680-11eb-8b08-d7f6203b752f.png.webp'
+  },
+  {
+    name: "3 in x 3 in",
+    selection: 'size',
+    img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210719-53086de0-e8a7-11eb-bf9f-89283f841ab9.png.webp'
+  },
+  {
+    name: "4 in x 4 in",
+    selection: 'size',
+    img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-dec72280-e680-11eb-9a6d-871146373871.png.webp'
+  },
+  {
+    name: "5 in x 5 in",
+    selection: 'size',
+    img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-bf9c6c90-e680-11eb-a6b7-6b9838e68602.png.webp'
+  },
+];
+
+export const sType = [
     {
-        title: 'Select sticker',
-        card: [
-            {
-                img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-cdbcb900-e680-11eb-8b08-d7f6203b752f.png.webp',
-                name: 'circle'
-            },
-            {
-                img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210719-53086de0-e8a7-11eb-bf9f-89283f841ab9.png.webp',
-                name: 'square'
-            },
-            {
-                img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-dec72280-e680-11eb-9a6d-871146373871.png.webp',
-                name: 'rectangle'
-            },
-            // {
-            //     img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-bf9c6c90-e680-11eb-a6b7-6b9838e68602.png.webp',
-            //     name: 'custom shape'
-            // },
-        ]
+        selection: 'type',
+        name: 'Die cut',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-3aadd710-e52f-11eb-a7c7-17d4a134f28b.png.webp'
     },
     {
-        title: 'Select sticker type',
-        card: [
-            {
-                img: dieCut,
-                name: 'die cut'
-            },
-            {
-                img: kiss,
-                name: 'kiss cut'
-            },
-            {
-                img: roll,
-                name: 'roll'
-            },
-            {
-                img: sheet,
-                name: 'sheet'
-            },
-        ]
+        selection: 'type',
+        name: 'Kiss cut',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210716-276b2b80-e5fa-11eb-9bd3-45aa931d2826.png.webp'
     },
-    // {
-    //     title: 'Select sticker size',
-    //     card: [
-    //         {
-    //             img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210723-4dd18fb0-ebf8-11eb-89fd-67a0a6ea889c.png.webp'
-    //         },
-    //         {
-    //             img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210723-4d1a4ae0-ebf7-11eb-99ec-890a730bf403.png.webp'
-    //         },
-    //         {
-    //             img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210723-4dba7630-ebf7-11eb-8622-d51fc52657f7.png.webp'
-    //         },
-    //         {
-    //             img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210723-4e5bb800-ebf7-11eb-96b1-7f5c55edd7ba.png.webp'
-    //         },
-    //         {
-    //             img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210723-101c52b0-ebf7-11eb-b39d-270209d41eb7.png.webp'
-    //         },
-    //     ]
-    // },
     {
-        title: 'Select sticker material type',
-        card: [
-            {
-                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5b3d4720-ce03-11eb-a9fc-3d82aaaf6a77.png.webp',
-                name: 'vinyl'
-            },
-            {
-                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5c2f7350-ce03-11eb-94d3-e36e56826255.png.webp',
-                name: 'metallic silver paper'
-            },
-            {
-                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5ca1c8e0-ce03-11eb-8bb7-8d40a263516f.png.webp',
-                name: 'metallic gold paper'
-            },
-            {
-                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5bcb42c0-ce03-11eb-abec-df232f615f24.png.webp',
-                name: 'eproxy'
-            },
-            {
-                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5d1c9460-ce03-11eb-a9bf-4fcbc603329e.png.webp',
-                name: 'kraft paper'
-            },
-            {
-                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5df2fbc0-ce03-11eb-9034-cf4c865ac742.png.webp',
-                name: 'crafted art paper'
-            },
-            {
-                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-5ea787e0-ce03-11eb-b4a7-677c8815f152.png.webp',
-                name: 'crepe paper'
-            },
-            {
-                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-a48ce990-e535-11eb-a0a7-637602cbfa8f.png.webp',
-                name: 'PVC'
-            },
-            {
-                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-a4e2e7f0-e535-11eb-b9a4-494fb604cdce.png.webp',
-                name: 'clear sticker'
-            },
-            {
-                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-a3f41130-e535-11eb-b155-f9706ff062fa.png.webp',
-                name: 'transfer sticker'
-            },
-            {
-                img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-a51c90b0-e535-11eb-ac45-879fc3f6d80c.png.webp',
-                name: 'metallic sticker'
-            },
-        ]
+        selection: 'type',
+        name: 'roll',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-3b4789f0-e52f-11eb-930d-6d58947c0bb3.png.webp'
+    },
+    {
+        selection: 'type',
+        name: 'Sheet',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210716-27a94800-e5fa-11eb-8b14-a745eb575cc2.png.webp'
+    },
+];
+
+export const sMaterial = [
+    {
+        selection: 'material',
+        name: 'Vinyl',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-8a99a670-ce02-11eb-85ab-3d1003e7ae49.png.webp'
+    },
+    {
+        selection: 'material',
+        name: 'metallic silver paper',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-8bdb3ac0-ce02-11eb-9dd2-0382e2e56ff0.png.webp'
+    },
+    {
+        selection: 'material',
+        name: 'metallic gold paper',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-8c4d9a80-ce02-11eb-af9d-1567c057077f.png.webp'
+    },
+    {
+        selection: 'material',
+        name: 'eproxy',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-8b6595c0-ce02-11eb-9f11-f11b094743e1.png.webp'
+    },
+    {
+        selection: 'material',
+        name: 'kraft paper',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-8cef54a0-ce02-11eb-ba6e-a53dee513814.png.webp'
+    },
+    {
+        selection: 'material',
+        name: 'coated art paper',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-8d5f5db0-ce02-11eb-a23e-278caed2350c.png.webp'
+    },
+    {
+        selection: 'material',
+        name: 'crepe paper',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-8ddf4a80-ce02-11eb-ae56-2d61a79b4715.png.webp'
+    },
+    {
+        selection: 'material',
+        name: 'PVC',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-85899390-e535-11eb-8bd4-ffc9faa8453b.png.webp'
+    },
+    {
+        selection: 'material',
+        name: 'clear sticker',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-85f9a420-e535-11eb-be1b-532aa5d9f4f0.png.webp'
+    },
+    {
+        selection: 'material',
+        name: 'transfer sticker',
+        img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-6c24d8e0-e535-11eb-be39-156d0a660590.png.webp'
     },
 ];
