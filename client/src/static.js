@@ -398,7 +398,7 @@ export const custom = [
 // Sticker Customization
 export const sSticker = [
   {
-    name: "Circle",
+    name: "circle",
     selection: 'sticker',
     img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-cdbcb900-e680-11eb-8b08-d7f6203b752f.png.webp'
   },
@@ -419,27 +419,81 @@ export const sSticker = [
   },
 ];
 
-export const sSize = [
+export const circleSize = [
   {
-    name: "2 in x 2 in",
+    name: "2in x 2in",
     selection: 'size',
-    img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-cdbcb900-e680-11eb-8b08-d7f6203b752f.png.webp'
+    img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210714-5c58f1f0-e529-11eb-89ef-07d7b2a53f6f.png.webp'
   },
   {
-    name: "3 in x 3 in",
+    name: "3in x 3in",
     selection: 'size',
-    img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210719-53086de0-e8a7-11eb-bf9f-89283f841ab9.png.webp'
+    img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210714-5c9be930-e529-11eb-9664-ed4f5757285a.png.webp'
   },
   {
-    name: "4 in x 4 in",
+    name: "4in x 4in",
     selection: 'size',
-    img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-dec72280-e680-11eb-9a6d-871146373871.png.webp'
+    img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210714-5ceb6b50-e529-11eb-82a4-f9ddb6f8ab32.png.webp'
   },
   {
-    name: "5 in x 5 in",
+    name: "5in x 5in",
     selection: 'size',
-    img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-bf9c6c90-e680-11eb-a6b7-6b9838e68602.png.webp'
+    img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210714-5d483960-e529-11eb-a798-d192f90c22ab.png.webp'
   },
+];
+
+export const squareSize = [
+  {
+    name: "2in x 2in",
+    selection: 'size',
+    img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-723d6d80-ce01-11eb-bad8-535cbed53925.png.webp'
+  },
+  {
+    name: "3in x 3in",
+    selection: 'size',
+    img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-72b4fae0-ce01-11eb-9c31-33b4edf7861e.png.webp'
+  },
+  {
+    name: "4in x 4in",
+    selection: 'size',
+    img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210615-72fe11d0-ce01-11eb-9171-39604c6323cf.png.webp'
+  },
+  {
+    name: "5in x 5in",
+    selection: 'size',
+    img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210708-a54ec140-dfa9-11eb-bb09-bfdb2ee406be.png.webp'
+  },
+];
+
+export const rectangleSize = [
+  {
+    name: "2in x 1in",
+    selection: 'size',
+    img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-835b6fd0-e529-11eb-83f6-63027b3d78e7.png.webp'
+  },
+  {
+    name: "3in x 2in",
+    selection: 'size',
+    img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-840e9be0-e529-11eb-8171-0daef062807e.png.webp'
+  },
+  {
+    name: "4in x 2in",
+    selection: 'size',
+    img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-844f8ea0-e529-11eb-8444-87c6c03a19fc.png.webp'
+  },
+  {
+    name: "5in x 3in",
+    selection: 'size',
+    img: 'https://static.customstickersnow.com/fit-in/400x400/option_20210715-84786c40-e529-11eb-ae9b-1d02b369594d.png.webp'
+  },
+];
+
+export const customSize = [
+    {
+        selection: 'size',
+        name: '',
+        img: 'https://static.customstickersnow.com/fit-in/324x324/product_20210716-bf9c6c90-e680-11eb-a6b7-6b9838e68602.png.webp',
+    }
 ];
 
 export const sType = [

@@ -9,7 +9,7 @@
 }
 
 .c-card.active {
-    border: 2px solid var(--color-secondary);
+    border: 5px solid var(--color-secondary);
 }
 
 .c-card .row.row-1 {
@@ -33,4 +33,52 @@
 .c-card .row.row-2 .title {
     text-transform: capitalize;
     text-align: center;
+}
+
+.c-card .row.row-2 .c-size {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.c-card .row.row-2 .c-size .c-size-input, .c-card .row.row-2 .c-quantity .c-size-input {
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-transform: capitalize;
+}
+
+.c-card .row.row-2 .c-quantity {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 5px;
+}
+
+.c-card .row.row-2 .custom-size {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.c-card .row.row-2 .custom-size .row {
+    margin: 5px 0;
+}
+
+.c-card .row.row-2 .custom-size .row.row.row-1 {
+    display: flex;
+    gap: 5px;
+}
+
+.c-card .row.row-2 .custom-size .row .custom-input {
+    width: 100%;
+    padding: 5px;
+    margin: 2px 0;
+    border: 1px solid var(--font-primary);
+    border-radius: 5px;
+    outline: none;
 }
