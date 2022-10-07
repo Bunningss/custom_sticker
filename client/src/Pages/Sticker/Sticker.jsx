@@ -34,12 +34,17 @@ const Sticker = () => {
     }
   },[selected]);
   
-  // Reset all selection on sticker change
+  // Reset selections on sticker change
   useEffect(() => {
     setSize({...size, ['height']: '', ["width"]: ''})
-    setQuantity(null)
+    setQuantity('')
     setValues({...values, ['size']: ''})
   }, [values.sticker]);
+
+  // Reset quantity on sizemchange
+  useEffect(() => {
+    setQuantity('')
+  },[values.size]);
 
   console.log(size)
   return (
