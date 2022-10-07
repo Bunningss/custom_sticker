@@ -7,10 +7,12 @@ import { useEffect } from 'react';
 
 const Sticker = () => {
   const [ sizeData, setSizeData ] = useState([]);
+
   const [ size, setSize ] = useState({
     height: '',
     width: ''
-  })
+  });
+
   const [ quantity, setQuantity ] = useState('');
   const [ values, setValues ] = useState({
     sticker: '',
@@ -19,6 +21,7 @@ const Sticker = () => {
     material: '',
     art: false
   });
+
   const [ selected, setSelected ] = useState('');
   
   // Update Size Selection Card
@@ -41,14 +44,13 @@ const Sticker = () => {
     setValues({...values, ['size']: ''})
   }, [values.sticker]);
 
-  // Reset quantity on sizemchange
+  // Reset quantity on size change
   useEffect(() => {
     setQuantity('')
   },[values.size]);
 
-  console.log(size)
   return (
-    <div className='main-wrapper sticker'>
+    <div className='main-wrapper sticker default'>
       <Float values={values} quantity={quantity} size={size}/>
       <div className="content">
         {/* Select Sticker */}
