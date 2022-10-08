@@ -6,6 +6,7 @@
   justify-content: flex-start;
   overflow-x: scroll;
   overflow-y: hidden;
+  user-select: none;
 }
 .slideshow::-webkit-scrollbar {
   display: block;

@@ -2,6 +2,7 @@ import './Register.css';
 import Header_Primary from '../../Components/Header_Primary/Header_Primary';
 import FormInput from '../../Components/FormInput/FormInput';
 import Primary_Button from '../../Components/Primary_Button/Primary_Button';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
 
@@ -60,6 +61,9 @@ const inputs = [
                 }
                 <Primary_Button text={"Continue"}/>
             </form>
+            <div className="account-additional">
+                <Link to='/login'>Already have an account? Login Instead</Link>
+            </div>
         </div>
     </div>
   )

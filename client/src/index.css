@@ -21,6 +21,11 @@ body {
     color: var(--font-primary);
 }
 
+::selection {
+    background: var(--color-secondary);
+    color: var(--white);
+}
+
 ::-webkit-scrollbar {
     display: none;
 }

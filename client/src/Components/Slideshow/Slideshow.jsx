@@ -6,7 +6,7 @@ const Slideshow = ({ setModalImg }) => {
     <div className='slideshow'>
       {
         images.map((img, indx) => (
-          <img className='slideshow-img' src={img} key={indx} onClick={() => setModalImg(img)} />
+          <img className='slideshow-img' src={img} key={indx} onClick={() => setModalImg(img)} loading='lazy' />
         ))
       }
     </div>

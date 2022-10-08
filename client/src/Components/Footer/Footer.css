@@ -19,6 +19,7 @@
     justify-content: center;
     align-items: center;
     margin: 30px 0;
+    user-select: none;
 }
 
 .footer .payment .verified-payment {

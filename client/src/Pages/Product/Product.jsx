@@ -37,7 +37,7 @@ const Product = () => {
 
     // Always load page on top
     Scroller()
-    
+
   return (
     <div className='product-si default'>
         {
@@ -45,7 +45,7 @@ const Product = () => {
         }
         <div className="wrapper">
             <div className="col">
-                <img src={demo} alt="" className="product-si-img" />
+                <img src={demo} alt="" className="product-si-img" loading='lazy' />
             </div>
             <div className="col">
                 <div className="product-si-info">
@@ -67,7 +67,7 @@ const Product = () => {
                         }
                         {
                             values.ArtworkType === 'HELP' &&
-                            <input type="text" onChange={handleChange} name='ArtworkInstruction' className="formInput text-regular" required placeholder='Provide Instructions' onInvalid={(e) => e.target.setCustomValidity("Please provide artwork instruction.")} onInput={(e) => e.target.setCustomValidity("")}/>
+                            <input type="text" onChange={handleChange} name='ArtworkInstruction' className="formInput text-regular" required placeholder='Provide Artwork Instructions' onInvalid={(e) => e.target.setCustomValidity("Please provide artwork instruction.")} onInput={(e) => e.target.setCustomValidity("")}/>
                         }
                         <Primary_Button text={"add to cart"}/>
                     </form>

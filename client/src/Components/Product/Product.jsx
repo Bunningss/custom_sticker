@@ -8,7 +8,7 @@ const Product = ({ prod }) => {
     <div className='product'>
         <Link to='product/:id'>
             <div className="product-image-wrapper">
-                <img src={prod.img} alt="" className="product-image" />
+                <img src={prod.img} alt="" className="product-image" loading='lazy' />
             </div>
             <div className="product-info">
                 <h6 className="title">{prod.title}</h6>
