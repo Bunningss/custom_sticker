@@ -15,7 +15,7 @@ const Product = ({ prod }) => {
                 <div className="product-details">
                     <div className="col col-1">
                         <p className="text-small">Multiple sizes available</p>
-                        <p className="text-small">Multiple sizes available</p>
+                        {/* <p className="text-small">Multiple sizes available</p> */}
                     </div>
                     <div className="col col-2">
                         <img className='icon-small' src={delivery} alt="" />

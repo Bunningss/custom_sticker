@@ -32,6 +32,10 @@
     justify-content: center;
 }
 
+.product .product-info .title {
+    text-transform: capitalize;
+}
+
 .product .product-info .product-details {
     display: flex;
     align-items: center;
@@ -87,5 +91,11 @@
 
     .product .product-info .product-details .col .btn-primary {
         padding: 5px 10px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .product .product-info .product-details {
+        margin: 0 0 5px 0;
     }
 }

@@ -25,4 +25,18 @@
         top: 90px;
         right: 5px;
     }
+
+    .float .float-text span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .float .float-text {
+        font-size: 10px;
+    }
+
+    .float .float-text span {
+        font-size: 12px;
+    }
 }

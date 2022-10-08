@@ -1,4 +1,6 @@
-.sticker {}
+.sticker {
+    overflow: hidden;
+}
 
 .sticker .content {}
 
