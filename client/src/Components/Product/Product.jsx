@@ -6,9 +6,9 @@ import Primary_Button from '../Primary_Button/Primary_Button';
 const Product = ({ prod }) => {
   return (
     <div className='product'>
-        <Link to='product/:id'>
+        <Link to={`product/${prod._id}`}>
             <div className="product-image-wrapper">
-                <img src={prod.img} alt="" className="product-image" loading='lazy' />
+                <img src={prod.img || prod.img[0]} alt="" className="product-image" loading='lazy' />
             </div>
             <div className="product-info">
                 <h6 className="title">{prod.title}</h6>

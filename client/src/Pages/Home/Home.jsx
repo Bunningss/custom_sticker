@@ -3,9 +3,13 @@ import Banner from '../../Components/Banner/Banner';
 import Section from '../../Components/Section/Section';
 import Header_Primary from '../../Components/Header_Primary/Header_Primary';
 import Card from '../../Components/Card/Card';
-import { bestProducts, customs, products, Scroller } from '../../static';
+import { bestProducts, customs, Scroller } from '../../static';
+import { useEffect, useState } from 'react';
+import { publicReq } from '../../Utilities/requestMethods';
 
 const Home = () => {
+  const [ products, setProducts ] = useState([]);
+  const [ topProducts, setTopProducts ] = useState([]);
   const headers = {
     small: "top products",
     large: "best selling stickers"
@@ -19,6 +23,32 @@ const Home = () => {
     large: 'Your Design, your choice'
   }
 
+  // Fetch all products
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await publicReq.get('/products')
+        setProducts(res.data)
+      } catch (err) {
+        console.log(err.message)
+      }
+    }
+    getProducts();
+  }, []);
+
+  // Fetch top Products
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await publicReq.get('/products?top=top')
+        setTopProducts(res.data)
+      } catch (err) {
+        console.log(err.message)
+      }
+    }
+    getProducts()
+  }, [])
+
   // Always load page on top
   Scroller()
   
@@ -26,7 +56,7 @@ const Home = () => {
     <div className='home default'>
       <Banner/>
       <div className="main-wrapper">
-        <Section headers={headers} prods={bestProducts}/>
+        <Section headers={headers} prods={topProducts}/>
         <Section headers={headers_2} prods={products}/>
         <div className="customize">
           <Header_Primary headers={header_3}/>

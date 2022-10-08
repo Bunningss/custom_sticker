@@ -1,10 +1,9 @@
 import './Slideshow.css';
-import { images } from '../../static';
 
-const Slideshow = ({ setModalImg }) => {
+const Slideshow = ({ setModalImg, images }) => {
   return (
     <div className='slideshow'>
-      {
+      { images &&
         images.map((img, indx) => (
           <img className='slideshow-img' src={img} key={indx} onClick={() => setModalImg(img)} loading='lazy' />
         ))
