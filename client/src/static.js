@@ -332,6 +332,8 @@ export const images = [dieCut, dieCut, dieCut, dieCut, dieCut, dieCut];
 export const custom = [
     {
         label: "Sticker Type",
+        tooltip: "Please select a sticker type.",
+        value: 'StickerType',
         opts: [
             {
                 name: 'Select Sticker Type',
@@ -349,6 +351,8 @@ export const custom = [
     },
     {
         label: "Select Size",
+        tooltip: "Please select a sticker size.",
+        value: 'StickerSize',
         opts: [
             {
                 name: "Select Sticker Size",
@@ -374,7 +378,13 @@ export const custom = [
     },
     {
         label: "Number of Imprint Colors",
+        tooltip: "Please select imrpint colors",
+        value: 'ImprintColors',
         opts: [
+            {
+                name: "Select Imprint Colors",
+                value: ''
+            },
             {
                 name : "Full Color Imprint",
                 value: 'FC'
@@ -395,14 +405,20 @@ export const custom = [
     },
     {
         label: "Artwork Type",
+        tooltip: "Please select artwork type",
+        value: 'ArtworkType',
         opts: [
             {
-                name: 'Upload Artwork',
+                name: "Select Artwork Type",
                 value: ''
             },
             {
+                name: 'Upload Artwork',
+                value: 'UPLOAD'
+            },
+            {
                 name: 'Help With Artwork',
-                value: ''
+                value: 'HELP'
             },
         ]
     },
