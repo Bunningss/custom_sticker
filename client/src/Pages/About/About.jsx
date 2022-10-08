@@ -1,6 +1,10 @@
 import './About.css';
+import { Scroller } from '../../static';
 
 const About = () => {
+
+  // Always load page on top
+  Scroller()
   return (
     <div className='about main-wrapper'>
       <div className="wrapper">

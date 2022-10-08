@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Primary_Button = ({ text }) => {
   return (
     <button className='btn-primary button'>
-        <Link to=''>{text}</Link>
+        {text}{/* <Link to=''>{text}</Link> */}
     </button>
   )
 }

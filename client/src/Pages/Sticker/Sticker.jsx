@@ -2,7 +2,7 @@ import './Sticker.css';
 import { useState } from 'react';
 import Custom_Card from '../../Components/Custom_Card/Custom_Card';
 import Float from '../../Components/Float/Float';
-import { sSticker, circleSize, squareSize, rectangleSize, sType, sMaterial, customSize } from '../../static';
+import { sSticker, circleSize, squareSize, rectangleSize, sType, sMaterial, customSize, Scroller } from '../../static';
 import { useEffect } from 'react';
 
 const Sticker = () => {
@@ -48,6 +48,9 @@ const Sticker = () => {
   useEffect(() => {
     setQuantity('')
   },[values.size]);
+
+  // Always load on page top
+  Scroller()
 
   return (
     <div className='main-wrapper sticker default'>

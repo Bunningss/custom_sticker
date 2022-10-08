@@ -6,13 +6,16 @@ import Modal from '../../Components/Modal/Modal';
 import { useState } from 'react';
 import Select_Menu from '../../Components/Select_Menu/Select_Menu';
 import Header_Primary from '../../Components/Header_Primary/Header_Primary';
-import { custom } from '../../static';
+import { custom, Scroller } from '../../static';
 const Product = () => {
     const [ modalImg, setModalImg ] = useState(null);
     const headers = {
         small: "details",
         large: "product information"
-    }
+    };
+
+    // Always load page on top
+    Scroller()
   return (
     <div className='product-si default'>
         {

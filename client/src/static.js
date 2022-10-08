@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 import mail from './assets/icons/mail.png';
 import phone from './assets/icons/phone.png';
 
@@ -10,6 +12,17 @@ import holo from './assets/stickers/holo-stc.png';
 import roll from './assets/stickers/roll-stc.png';
 import sheet from './assets/stickers/sheet-stc.png';
 import lanyard from './assets/stickers/lanyard.png';
+
+// Universal Functions
+export const Scroller = () => {
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "auto"
+        })
+    }, [])
+}
+
 
 export const bestProducts = [
     {

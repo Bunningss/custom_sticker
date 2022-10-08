@@ -1,6 +1,11 @@
 import './Error.css';
+import { Scroller } from '../../static';
 
 const Error = () => {
+
+  // Always load page on top
+  Scroller()
+
   return (
     <div className='error default'>
         <div className="content">

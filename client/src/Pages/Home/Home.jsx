@@ -3,7 +3,7 @@ import Banner from '../../Components/Banner/Banner';
 import Section from '../../Components/Section/Section';
 import Header_Primary from '../../Components/Header_Primary/Header_Primary';
 import Card from '../../Components/Card/Card';
-import { bestProducts, customs, products } from '../../static';
+import { bestProducts, customs, products, Scroller } from '../../static';
 
 const Home = () => {
   const headers = {
@@ -18,6 +18,10 @@ const Home = () => {
     small: 'Custom',
     large: 'Your Design, your choice'
   }
+
+  // Always load page on top
+  Scroller()
+  
   return (
     <div className='home default'>
       <Banner/>
