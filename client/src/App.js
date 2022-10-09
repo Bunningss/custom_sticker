@@ -19,9 +19,11 @@ import Sticker from './Pages/Sticker/Sticker';
 import Lanyard from './Pages/Lanyard/Lanyard';
 import Cart from './Pages/Cart/Cart';
 import { useSelector } from 'react-redux';
+import My_Account from './Pages/My_Account/My_Account';
 
 function App() {
   const user = useSelector((state) => state.user);
+  
   const [ active, setActive ] = useState(false)
   return (
     <BrowserRouter>
@@ -31,8 +33,8 @@ function App() {
       <Routes>
         <Route exact path='*' element={<Error/>}/>
         <Route exact path='' element={<Home/>}/>
-        <Route exact path='/login' element={<Login/>}/>
-        <Route exact path='/register' element={<Register/>}/>
+        <Route exact path='/login' element={ !user.currentUser ? <Login/> : <My_Account/> }/>
+        <Route exact path='/register' element={!user.currentUser ? <Register/> : <My_Account/>}/>
         <Route exact path='/about' element={<About/>}/>
         <Route exact path='/faqs' element={<Faqs/>}/>
         <Route exact path='/product/sticker/:id' element={<Product/>}/>

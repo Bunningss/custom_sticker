@@ -6,13 +6,24 @@ import ListItem from '../ListItem/ListItem';
 import { navLinks } from '../../static';
 import Hamburger from '../Hamburger/Hamburger';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../Redux/userRedux';
 
 const Navbar = ({ active, setActive }) => {
-
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
   const quantity = useSelector(( state ) => state.cart);
+
+  const handleClick = () => {
+    dispatch(logout())
+  };
 
   return (
     <div className='navbar'>
+      {
+        user.currentUser &&
+        <h4 className="logout listItem" onClick={handleClick}>Logout</h4>
+      }
       <div className="wrapper">
         <div className="col col-1" onClick={() => setActive(false)}>
           <Link to=''>
@@ -26,6 +37,7 @@ const Navbar = ({ active, setActive }) => {
                 <ListItem item={item} key={indx}/>
               ))
             }
+            
           </ul>
         </div>
         <div className="col col-3">

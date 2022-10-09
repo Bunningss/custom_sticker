@@ -3,10 +3,9 @@
 :root {
     --white: #f5fbfd;
     --font-primary: #07627b;
-    /* --color-secondary: #fd6239; */
+    --color-accent: #fd6239;
     --color-secondary: #00af9e;
     --color-dark: #212121;
-    --color-accent: #f5fbfd;
 }
 
 * {
@@ -14,7 +13,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Balsamiq Sans', cursive;
-    /* font-size: 18px; */
 }
 
 body {

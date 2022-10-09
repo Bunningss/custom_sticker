@@ -57,6 +57,21 @@
     height: 100%;
 }
 
+.logout {
+    color: #fd6239;
+    font-weight: 800;
+    font-size: 20px;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: fit-content;
+    text-shadow: 1px 0px 4px rgba(253, 98, 57, 1);
+    cursor: pointer;
+    user-select: none;
+}
+
 /* Col 3 */
 .navbar .wrapper .col.col-3 a {
     position: relative;
@@ -104,5 +119,9 @@
 
     .navbar .wrapper .col.col-4 {
         display: flex;
+    }
+
+    .logout {
+        display: none;
     }
 }
