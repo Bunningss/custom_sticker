@@ -6,7 +6,7 @@ import Primary_Button from '../Primary_Button/Primary_Button';
 const Product = ({ prod }) => {
   return (
     <div className='product'>
-        <Link to={`product/${prod._id}`}>
+        <Link to={`product/sticker/${prod._id}`}>
             <div className="product-image-wrapper">
                 <img src={prod.img || prod.img[0]} alt="" className="product-image" loading='lazy' />
             </div>

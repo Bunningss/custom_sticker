@@ -3,7 +3,8 @@
 :root {
     --white: #f5fbfd;
     --font-primary: #07627b;
-    --color-secondary: #fd6239;
+    /* --color-secondary: #fd6239; */
+    --color-secondary: #00af9e;
     --color-dark: #212121;
     --color-accent: #f5fbfd;
 }

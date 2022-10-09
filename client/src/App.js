@@ -17,6 +17,7 @@ import Faqs from './Pages/Faqs/Faqs';
 import Product from './Pages/Product/Product';
 import Sticker from './Pages/Sticker/Sticker';
 import Lanyard from './Pages/Lanyard/Lanyard';
+import Cart from './Pages/Cart/Cart';
 
 function App() {
   const [ active, setActive ] = useState(false)
@@ -32,9 +33,10 @@ function App() {
         <Route exact path='/register' element={<Register/>}/>
         <Route exact path='/about' element={<About/>}/>
         <Route exact path='/faqs' element={<Faqs/>}/>
-        <Route exact path='/product/:id' element={<Product/>}/>
+        <Route exact path='/product/sticker/:id' element={<Product/>}/>
         <Route exact path='/customize/sticker' element={<Sticker/>}/>
         <Route exact path='/customize/lanyard' element={<Lanyard/>}/>
+        <Route exact path='/cart' element={<Cart/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

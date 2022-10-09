@@ -1,6 +1,6 @@
 import './Banner.css';
-import banner from '../../assets/Customizable.png';
-import promo from '../../assets/promo.png';
+import banner from '../../assets/banner.png';
+import promo from '../../assets/tagline.png';
 
 const Banner = () => {
   return (

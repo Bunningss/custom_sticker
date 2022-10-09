@@ -38,8 +38,8 @@ const Product = () => {
         setValues({...values, ["ArtworkInstruction"]: ''})
     }, [values.ArtworkType]);
 
-    const id = useLocation().pathname?.split('/')[2]
-
+    const id = useLocation().pathname?.split('/')[3]
+    
     // Fetch product from server
     useEffect(() => {
         const getProduct = async () => {
