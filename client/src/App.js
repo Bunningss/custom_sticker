@@ -18,8 +18,10 @@ import Product from './Pages/Product/Product';
 import Sticker from './Pages/Sticker/Sticker';
 import Lanyard from './Pages/Lanyard/Lanyard';
 import Cart from './Pages/Cart/Cart';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const user = useSelector((state) => state.user);
   const [ active, setActive ] = useState(false)
   return (
     <BrowserRouter>

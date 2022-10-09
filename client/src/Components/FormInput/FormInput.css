@@ -20,14 +20,18 @@
 }
 
 .formInput:invalid[focused="true"] {
-    border: 1px solid var(--color-secondary);
+    border: 1px solid red;
 }
 
 .warning {
     width: 100%;
     font-weight: 500;
-    color: var(--color-secondary);
+    color: red;
     margin: 5px 0 5px 0;
-    display: none;
     text-align: center;
+    display: none;
+}
+
+.warning.error-message {
+    display: block;
 }

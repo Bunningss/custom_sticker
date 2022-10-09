@@ -332,7 +332,7 @@ export const images = [dieCut, dieCut, dieCut, dieCut, dieCut, dieCut];
 export const custom = [
     {
         label: "Sticker Type",
-        tooltip: "Please select a sticker type.",
+        tooltip: "Please Select a Sticker Type.",
         value: 'StickerType',
         opts: [
             {
@@ -341,17 +341,17 @@ export const custom = [
             },
             {
                 name: 'Random Cut',
-                value: 'RC'
+                value: 'Random Cut'
             },
             {
                 name: 'Separate',
-                value: 'S'
+                value: 'Separate'
             },
         ]
     },
     {
         label: "Select Size",
-        tooltip: "Please select a sticker size.",
+        tooltip: "Please Select a Sticker Size.",
         value: 'StickerSize',
         opts: [
             {
@@ -360,25 +360,25 @@ export const custom = [
             },
             {
                 name: "2 in x 2 in",
-                value: '2x2'
+                value: '2inx2in'
             },
             {
                 name: "3 in x 3 in",
-                value: '3x3'
+                value: '3inx3in'
             },
             {
                 name: "4 in x 4 in",
-                value: '4x4'
+                value: '4inx4in'
             },
             {
                 name: "5 in x 5 in",
-                value: '5x5'
+                value: '5inx5in'
             },
         ]
     },
     {
         label: "Number of Imprint Colors",
-        tooltip: "Please select imrpint colors",
+        tooltip: "Please Select Imrpint Color",
         value: 'ImprintColors',
         opts: [
             {
@@ -387,25 +387,25 @@ export const custom = [
             },
             {
                 name : "Full Color Imprint",
-                value: 'FC'
+                value: 'Full Color Imprint'
             },
             {
                 name : "1 Color",
-                value: '1C'
+                value: '1 Color'
             },
             {
                 name : "2 Colors",
-                value: '2C'
+                value: '2 Color'
             },
             {
                 name : "3 Colors",
-                value: '3C'
+                value: '3 Color'
             },
         ]
     },
     {
         label: "Artwork Type",
-        tooltip: "Please select artwork type",
+        tooltip: "Please Select Artwork Type",
         value: 'ArtworkType',
         opts: [
             {
@@ -414,11 +414,11 @@ export const custom = [
             },
             {
                 name: 'Upload Artwork',
-                value: 'UPLOAD'
+                value: 'Upload Artwork'
             },
             {
                 name: 'Help With Artwork',
-                value: 'HELP'
+                value: 'Help With Artwork'
             },
         ]
     },

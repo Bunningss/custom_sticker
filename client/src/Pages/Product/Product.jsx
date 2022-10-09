@@ -9,8 +9,12 @@ import Header_Primary from '../../Components/Header_Primary/Header_Primary';
 import { custom, Scroller } from '../../static';
 import { publicReq } from '../../Utilities/requestMethods';
 import { useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../../Redux/cartRedux';
 
 const Product = () => {
+    const dispatch = useDispatch();
+
     const [ product, setProduct ] = useState({});
     const [ modalImg, setModalImg ] = useState(null);
     const [ values, setValues ] = useState({
@@ -20,7 +24,7 @@ const Product = () => {
         ImprintColors: "",
         ArtworkType: "",
         ArtworkFile: "",
-        ArtworkInstruction: ""
+        ArtworkInstruction: "",
     });
 
     const headers = {
@@ -53,6 +57,13 @@ const Product = () => {
         getProduct();
     }, [id]);
 
+    // Add to cart
+    const handleClick = (e) => {
+        e.preventDefault()
+        dispatch(addProduct({
+            ...product, ...values, total: values.Quantity * product.startPrice
+        }))
+    }
     // Always load page on top
     Scroller()
 
@@ -71,23 +82,23 @@ const Product = () => {
                     <h4 className="header-medium">Price Per Sticker - $0.08</h4>
                     <Slideshow modalImg={modalImg} setModalImg={setModalImg} images={product.img}/>
                     {/* Form starts here */}
-                    <form action="" t className="product-si-form">
+                    <form action="" onSubmit={handleClick} className="product-si-form">
                         <label className='text-regular' htmlFor="quantity">Select Quantity</label>
-                        <input type="number" className='formInput text-regular' name='Quantity' min='10' max='10000' required onInvalid={(e) => e.target.setCustomValidity("Quantity must be greater than 10 and less than 10000")} onInput={(e) => e.target.setCustomValidity('')} onChange={handleChange}/>
+                        <input type="number" className='formInput text-regular' name='Quantity' min='10' max='10000' required onInvalid={(e) => e.target.setCustomValidity("Quantity Must Be Greater Than 10 And Less Than 10000")} onInput={(e) => e.target.setCustomValidity('')} onChange={handleChange}/>
                         {
                             custom.map((item, indx) => (
                                 <Select_Menu item={item} key={indx} values={values} setValues={setValues}/>
                             ))
                         }
                         {
-                            values.ArtworkType === 'UPLOAD' &&
+                            values.ArtworkType === 'Upload Artwork' &&
                             <input type="file" onChange={handleChange} name='ArtworkFile' className='formInput text-regular' required onInvalid={(e) => e.target.setCustomValidity("Please upload your artwork")} onInput={(e) => e.target.setCustomValidity("")}/>
                         }
                         {
-                            values.ArtworkType === 'HELP' &&
+                            values.ArtworkType === 'Help With Artwork' &&
                             <input type="text" onChange={handleChange} name='ArtworkInstruction' className="formInput text-regular" required placeholder='Provide Artwork Instructions' onInvalid={(e) => e.target.setCustomValidity("Please provide artwork instruction.")} onInput={(e) => e.target.setCustomValidity("")}/>
                         }
-                        <Primary_Button text={"add to cart"}/>
+                        <Primary_Button text={"add to cart"} />
                     </form>
                 </div>
             </div>
