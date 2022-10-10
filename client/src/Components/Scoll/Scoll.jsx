@@ -10,6 +10,7 @@ const Scoll = () => {
       behavior: "smooth"
     })
   };
+  
     const handleScroll = () => {
         setHeight(window.scrollY);
     }
