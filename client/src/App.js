@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Footer from './Components/Footer/Footer';
+import { useSelector } from 'react-redux';
 
 // Components
 import Navbar from './Components/Navbar/Navbar';
 import Sidebar from './Components/Sidebar/Sidebar';
 import Scroll from './Components/Scoll/Scoll';
+import Footer from './Components/Footer/Footer';
 
 // Pages
 import Error from './Pages/Error/Error';
@@ -18,8 +19,8 @@ import Product from './Pages/Product/Product';
 import Sticker from './Pages/Sticker/Sticker';
 import Lanyard from './Pages/Lanyard/Lanyard';
 import Cart from './Pages/Cart/Cart';
-import { useSelector } from 'react-redux';
 import My_Account from './Pages/My_Account/My_Account';
+import Contact from './Pages/Contact/Contact';
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -41,6 +42,7 @@ function App() {
         <Route exact path='/customize/sticker' element={<Sticker/>}/>
         <Route exact path='/customize/lanyard' element={<Lanyard/>}/>
         <Route exact path='/cart' element={<Cart/>}/>
+        <Route exact path='/contact' element={<Contact/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
