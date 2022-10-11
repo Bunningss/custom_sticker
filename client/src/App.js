@@ -21,6 +21,9 @@ import Lanyard from './Pages/Lanyard/Lanyard';
 import Cart from './Pages/Cart/Cart';
 import My_Account from './Pages/My_Account/My_Account';
 import Contact from './Pages/Contact/Contact';
+import Forgot from './Pages/Password/Forgot/Forgot';
+import Reset from './Pages/Password/Reset/Reset';
+import User_Info from './Pages/User_Info/User_Info';
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -36,6 +39,9 @@ function App() {
         <Route exact path='' element={<Home/>}/>
         <Route exact path='/login' element={ !user.currentUser ? <Login/> : <My_Account/> }/>
         <Route exact path='/register' element={!user.currentUser ? <Register/> : <My_Account/>}/>
+        <Route exact path='/forgot' element={!user.currentUser ? <Forgot/> : <My_Account/>}/>
+        <Route exact path='/reset' element={!user.currentUser ? <Reset/> : <My_Account/>}/>
+        <Route exact path='/update' element={user.currentUser ? <User_Info/> : <My_Account/>}/>
         <Route exact path='/about' element={<About/>}/>
         <Route exact path='/faqs' element={<Faqs/>}/>
         <Route exact path='/product/sticker/:id' element={<Product/>}/>

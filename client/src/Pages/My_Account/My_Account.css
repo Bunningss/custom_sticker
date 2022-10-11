@@ -10,6 +10,10 @@
     padding: 15px 0;
 }
 
+.my-account .wrapper .greeting .header a {
+    text-decoration: underline var(--font-primary);
+}
+
 .my-account .wrapper .greeting .logout-wrapper {
     min-width: 200px;
 }

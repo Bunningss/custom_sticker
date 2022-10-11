@@ -16,7 +16,7 @@ const Contact = () => {
   const handleSubmit = (e) => {}
 
   return (
-    <div className='contact'>
+    <div className='contact default'>
       <div className="wrapper main-wrapper">
         <div className="row"></div>
         <div className="row">

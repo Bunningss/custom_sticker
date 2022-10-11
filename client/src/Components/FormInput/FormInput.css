@@ -3,7 +3,7 @@
     margin: 20px 0 5px 0;
 }
 
-.formInput {
+.input {
     color: var(--font-primary);
     width: 100%;
     padding: 12px 15px;
@@ -15,11 +15,11 @@
     margin: 5px 0 2px 0;
 }
 
-.formInput:invalid[focused="true"] ~ .warning {
+.input:invalid[focused="true"] ~ .warning {
     display: block;
 }
 
-.formInput:invalid[focused="true"] {
+.input:invalid[focused="true"] {
     border: 1px solid red;
 }
 

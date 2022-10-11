@@ -5,19 +5,58 @@ import Header_Alternate from '../../Components/Header_Alternate/Header_Alternate
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Secondary_Button from '../../Components/Secondary_Button/Secondary_Button';
+import Primary_Button from '../../Components/Primary_Button/Primary_Button';
+import { publicReq } from '../../Utilities/requestMethods';
+
+import { useStripe } from '@stripe/react-stripe-js';
 
 const Cart = () => {
   const navigate = useNavigate();
+  const stripe = useStripe();
   const header = {
     small: 'Review Your Items',
     large: 'Shopping Cart'
   }
+
+  const user = useSelector((state) => state.user)
   const cart = useSelector(( state ) => state.cart);
 
   const handleClick = () => {
     navigate('/')
   };
 
+  // Handle Checkout
+  const handleCheckout = async (e) => {
+    e.preventDefault();
+
+    const line_items = cart.products.map((item) => {
+      // console.log(item.img)
+      return {
+        quantity: item.Quantity,
+        price_data: {
+          currency: 'usd',
+          unit_amount: item.startPrice * 100, //amount in cents
+          product_data: {
+            name: item.title,
+            description: item.title,
+            images: item.img
+          }
+        }
+      }
+    });
+
+    const response = await publicReq.post('/create-checkout-session', { line_items, customer_email: "test@gmail.com" });
+
+    const  sessionId  = response.data.sessionID;
+
+    const { error } = await stripe.redirectToCheckout({
+      sessionId: sessionId
+    });
+
+    if (error) {
+      console.log(error)
+    };
+  }
   // Always load on top
   Scroller()
   return (
@@ -34,6 +73,9 @@ const Cart = () => {
               ))
             }
           </div>
+          <form action="" onSubmit={handleCheckout}>
+            <Primary_Button text={"Checkout"}/>
+          </form>
         </div>
       }
       {
@@ -41,7 +83,7 @@ const Cart = () => {
         <div className="wrapper empty main-wrapper">
           <div className="content">
             <h4>404</h4>
-            <h6>Items not Found!</h6>
+            <h6>No Items Found!</h6>
           </div>
           <div className="content">
             <Secondary_Button text={"Continue Shopping"} handleClick={handleClick}/>

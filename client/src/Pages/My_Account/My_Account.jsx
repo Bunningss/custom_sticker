@@ -1,9 +1,9 @@
 import './My_Account.css';
-import Header_Alternate from '../../Components/Header_Alternate/Header_Alternate';
-import Secondary_Button from '../../Components/Secondary_Button/Secondary_Button';
-import Cart_Item from '../../Components/Cart_Item/Cart_Item';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../Redux/userRedux';
+import Header_Primary from '../../Components/Header_Primary/Header_Primary';
+import Secondary_Button from '../../Components/Secondary_Button/Secondary_Button';
 import Order_Item from '../../Components/Order_Item/Order_Item';
 
 const My_Account = () => {
@@ -11,6 +11,7 @@ const My_Account = () => {
 
   const user = useSelector((state) => state.user);
 
+  // Logout
   const handleClick = () => {
     dispatch(logout())
   };
@@ -20,16 +21,11 @@ const My_Account = () => {
     large: 'Your Orders'
   }
 
-  const headers_1 = {
-    small: 'Previously Ordered Items',
-    large: 'Your Orders'
-  }
-
   return (
-    <div className='my-account'>
+    <div className='my-account default'>
       <div className="wrapper main-wrapper">
         <div className="greeting">
-          <h2 className="header">Hello, {user.currentUser.others.name}</h2>
+          <h2 className="header">Hello, <Link to='/update'>{user.currentUser.others.name}</Link> </h2>
           <div className="logout-wrapper">
             {
               user.currentUser &&
@@ -39,7 +35,7 @@ const My_Account = () => {
         </div>
         {/* Active Orders */}
         <div className="ongoing-orders">
-          <Header_Alternate headers={headers}/>
+          <Header_Primary headers={headers}/>
           <div className="content">
             <Order_Item/>
             <Order_Item/>

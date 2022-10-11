@@ -84,7 +84,7 @@ const Product = () => {
                     {/* Form starts here */}
                     <form action="" onSubmit={handleClick} className="product-si-form">
                         <label className='text-regular' htmlFor="quantity">Select Quantity</label>
-                        <input type="number" className='formInput text-regular' name='Quantity' min='10' max='10000' required onInvalid={(e) => e.target.setCustomValidity("Quantity Must Be Greater Than 10 And Less Than 10000")} onInput={(e) => e.target.setCustomValidity('')} onChange={handleChange}/>
+                        <input type="number" className='input text-regular' name='Quantity' min='10' max='10000' required onInvalid={(e) => e.target.setCustomValidity("Quantity Must Be Greater Than 10 And Less Than 10000")} onInput={(e) => e.target.setCustomValidity('')} onChange={handleChange}/>
                         {
                             custom.map((item, indx) => (
                                 <Select_Menu item={item} key={indx} values={values} setValues={setValues}/>
@@ -92,11 +92,11 @@ const Product = () => {
                         }
                         {
                             values.ArtworkType === 'Upload Artwork' &&
-                            <input type="file" onChange={handleChange} name='ArtworkFile' className='formInput text-regular' required onInvalid={(e) => e.target.setCustomValidity("Please upload your artwork")} onInput={(e) => e.target.setCustomValidity("")}/>
+                            <input type="file" onChange={handleChange} name='ArtworkFile' className='input text-regular' required onInvalid={(e) => e.target.setCustomValidity("Please upload your artwork")} onInput={(e) => e.target.setCustomValidity("")}/>
                         }
                         {
                             values.ArtworkType === 'Help With Artwork' &&
-                            <input type="text" onChange={handleChange} name='ArtworkInstruction' className="formInput text-regular" required placeholder='Provide Artwork Instructions' onInvalid={(e) => e.target.setCustomValidity("Please provide artwork instruction.")} onInput={(e) => e.target.setCustomValidity("")}/>
+                            <textarea type="text" rows='5' onChange={handleChange} name='ArtworkInstruction' className="input text-regular" required placeholder='Provide Artwork Instructions' onInvalid={(e) => e.target.setCustomValidity("Please provide artwork instruction.")} onInput={(e) => e.target.setCustomValidity("")}/>
                         }
                         <Primary_Button text={"add to cart"} />
                     </form>

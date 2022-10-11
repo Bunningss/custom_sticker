@@ -76,7 +76,7 @@ const Login = () => {
           <Primary_Button text={"Sign In"} onClick={handleSubmit}/>
         </form>
         <div className="account-additional">
-          <Link to=''>
+          <Link to='/forgot'>
             forgot password?
           </Link>
           <Link to='/register'>create an account</Link>
