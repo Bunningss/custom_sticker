@@ -7,6 +7,25 @@
 
 .contact .wrapper .row {}
 
+.contact .wrapper .row:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact .wrapper .row .col {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact .wrapper .row .col .icon-small {
+    width: 35px;
+    background-color: rgba(0, 175, 158, .1);
+    border-radius: 50%;
+}
+
 .contact .wrapper .row .contact-form {}
 
 .contact .wrapper .row .contact-form .form-input {

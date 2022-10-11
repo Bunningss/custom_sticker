@@ -40,7 +40,7 @@ function App() {
         <Route exact path='/login' element={ !user.currentUser ? <Login/> : <My_Account/> }/>
         <Route exact path='/register' element={!user.currentUser ? <Register/> : <My_Account/>}/>
         <Route exact path='/forgot' element={!user.currentUser ? <Forgot/> : <My_Account/>}/>
-        <Route exact path='/reset' element={!user.currentUser ? <Reset/> : <My_Account/>}/>
+        <Route exact path='/reset/:id' element={!user.currentUser ? <Reset/> : <My_Account/>}/>
         <Route exact path='/update' element={user.currentUser ? <User_Info/> : <My_Account/>}/>
         <Route exact path='/about' element={<About/>}/>
         <Route exact path='/faqs' element={<Faqs/>}/>
