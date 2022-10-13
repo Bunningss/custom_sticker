@@ -27,11 +27,12 @@ import User_Info from './Pages/User_Info/User_Info';
 // Admin
 import Admin from './Pages/Admin/Admin';
 import List from './Pages/Admin/Pages/List/List';
-import Edit_Product from './Pages/Admin/Pages/Edit_Product/Edit_Product.jsx'
+import Add_Product from './Pages/Admin/Pages/Add_Product/Add_Product.jsx';
+import EditProduct from './Pages/Admin/Pages/EditProduct/EditProduct.jsx';
 
 function App() {
   const user = useSelector((state) => state.user);
-  console.log(user.currentUser?.others.isAdmin)
+
   const [ active, setActive ] = useState(false)
   return (
     <BrowserRouter>
@@ -55,12 +56,15 @@ function App() {
         <Route exact path='/contact' element={<Contact/>}/>
 
         {/* Admin */}
-        <Route exact path='/admin' element={<Admin/>}/>
-        <Route exact path='/admin/list' element={<List/>}/>
-        <Route exact path='/admin/list/:id' element={<Edit_Product/>}/>
-        {/* {
-          user.currentUser?.others.isAdmin &&
-        } */}
+        {
+          user.currentUser?.others.isAdmin && 
+          <>
+            <Route exact path='/admin' element={<Admin/>}/>
+            <Route exact path='/admin/products' element={<List/>}/>
+            <Route exact path='/admin/products/new' element={<Add_Product/>}/>
+            <Route exact path='/admin/products/edit/:id' element={<EditProduct/>}/>
+          </>
+        }
       </Routes>
       <Footer/>
     </BrowserRouter>

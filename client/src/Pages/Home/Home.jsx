@@ -3,7 +3,7 @@ import Banner from '../../Components/Banner/Banner';
 import Section from '../../Components/Section/Section';
 import Header_Primary from '../../Components/Header_Primary/Header_Primary';
 import Card from '../../Components/Card/Card';
-import { bestProducts, customs, Scroller } from '../../static';
+import { customs, Scroller } from '../../static';
 import { useEffect, useState } from 'react';
 import { publicReq } from '../../Utilities/requestMethods';
 

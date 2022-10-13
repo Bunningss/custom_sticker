@@ -30,7 +30,7 @@
     margin: 10px 0 0 0;
 }
 
-.dashboard .col.col-2 ul li {
+.dashboard .col.col-2 ul li a {
     display: flex;
     align-items: center;
     gap: 5px;

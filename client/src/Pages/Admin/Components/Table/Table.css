@@ -18,7 +18,7 @@
     border-radius: 5px;
 }
 
-.status.Approved {
+.status.Delivered {
     color: green;
     background-color: rgba(0, 128,0,.151);
 }

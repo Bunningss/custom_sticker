@@ -4,7 +4,7 @@ import Datatable from '../../Components/Datatable/Datatable';
 
 const List = () => {
   return (
-    <div className='list'>
+    <div className='list default'>
       <div className="row">
         <Sidebar/>
       </div>

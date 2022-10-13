@@ -1,4 +1,8 @@
 import './Sidebar.css';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../../../Redux/userRedux';
+
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
@@ -11,57 +15,83 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const Sidebar = () => {
+    const dispatch = useDispatch();
+    const handleLogout = () => {
+        dispatch(logout())
+    };
   return (
     <div className='dashboard'>
       <div className="col col-1">
-        <span className="logo">admin</span>
+        <Link to='/admin'>
+            <span className="logo">admin</span>
+        </Link>
       </div>
       <hr />
       <div className="col col-2">
         <ul>
             <p className="text-medium">MAIN</p>
             <li>
-                <DashboardIcon className='icon'/>
-                <span>Dashboard</span>
+                <Link to='/admin'>
+                    <DashboardIcon className='icon'/>
+                    <span>Dashboard</span>
+                </Link>
             </li>
             <p className="text-medium">LISTS</p>
             <li>
-                <SupervisedUserCircleIcon className='icon'/>
-                <span>Users</span>
+                <Link to=''>
+                    <SupervisedUserCircleIcon className='icon'/>
+                    <span>Users</span>
+                </Link>
             </li>
             <li>
-                <WarehouseIcon className='icon'/>
-                <span>Products</span>
+                <Link to='/admin/products'>
+                    <WarehouseIcon className='icon'/>
+                    <span>Products</span>
+                </Link>
             </li>
             <li>
-                <CreditCardIcon className='icon'/>
-                <span>Orders</span>
+                <Link to=''>
+                    <CreditCardIcon className='icon'/>
+                    <span>Orders</span>
+                </Link>
             </li>
             <li>
-                <LocalShippingIcon className='icon'/>
-                <span>Delivery</span>
+                <Link to=''>
+                    <LocalShippingIcon className='icon'/>
+                    <span>Delivery</span>
+                </Link>
             </li>
             <p className="text-medium">USEFUL LINKS</p>
             <li>
-                <QueryStatsIcon className='icon'/>
-                <span>Stats</span>
+                <Link to=''>
+                    <QueryStatsIcon className='icon'/>
+                    <span>Stats</span>
+                </Link>
             </li>
             <li>
-                <NotificationsActiveIcon className='icon'/>
-                <span>Notifications</span>
+                <Link to=''>
+                    <NotificationsActiveIcon className='icon'/>
+                    <span>Notifications</span>
+                </Link>
             </li>
             <li>
-                <SettingsApplicationsIcon className='icon'/>
-                <span>Settings</span>
+                <Link to=''>
+                    <SettingsApplicationsIcon className='icon'/>
+                    <span>Settings</span>
+                </Link>
             </li>
             <p className="text-medium">USER</p>
             <li>
-                <AccountBoxIcon className='icon'/>
-                <span>Proile</span>
+                <Link to=''>
+                    <AccountBoxIcon className='icon'/>
+                    <span>Proile</span>
+                </Link>
             </li>
-            <li>
-                <LogoutIcon className='icon'/>
-                <span>Logout</span>
+            <li onClick={handleLogout}>
+                <Link to=''>
+                    <LogoutIcon className='icon'/>
+                    <span>Logout</span>
+                </Link>
             </li>
         </ul>
       </div>

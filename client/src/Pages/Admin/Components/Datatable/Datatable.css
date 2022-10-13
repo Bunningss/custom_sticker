@@ -1,3 +1,7 @@
+.datatable {
+    padding: 10px;
+}
+
 .table-image-wrapper {
     height: 32px;
     width: 32px;
@@ -10,6 +14,7 @@
 }
 
 .cell-action {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
