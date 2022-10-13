@@ -1,0 +1,16 @@
+.edit-prod {
+    display: flex;
+}
+
+.edit-prod .row:nth-child(1) {
+    flex: 1;
+}
+.edit-prod .row:nth-child(2) {
+    flex: 6;
+}
+
+.edit-prod .row .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

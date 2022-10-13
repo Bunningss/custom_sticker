@@ -1,0 +1,17 @@
+.table-image-wrapper {
+    height: 32px;
+    width: 32px;
+}
+
+.table-image-wrapper .table-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.cell-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

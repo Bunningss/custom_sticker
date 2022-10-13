@@ -17,8 +17,8 @@ const Admin = () => {
                 <Widget type='earnings'/>
                 <Widget type='balance'/>
               </div>
-              <div className="list">
-                <span className="list-title">Latest Transactions</span>
+              <div className="table-list">
+                <h4 className="list-title">Latest Transactions</h4>
                 <Table/>
               </div>
             </div>

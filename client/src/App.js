@@ -24,12 +24,13 @@ import Contact from './Pages/Contact/Contact';
 import Forgot from './Pages/Password/Forgot/Forgot';
 import Reset from './Pages/Password/Reset/Reset';
 import User_Info from './Pages/User_Info/User_Info';
+// Admin
 import Admin from './Pages/Admin/Admin';
 import List from './Pages/Admin/Pages/List/List';
+import Edit_Product from './Pages/Admin/Pages/Edit_Product/Edit_Product.jsx'
 
 function App() {
   const user = useSelector((state) => state.user);
-  console.log(user.currentUser?.others.isAdmin)
   const [ active, setActive ] = useState(false)
   return (
     <BrowserRouter>
@@ -55,9 +56,7 @@ function App() {
         {/* Admin */}
         <Route exact path='/admin' element={<Admin/>}/>
         <Route exact path='/admin/list' element={<List/>}/>
-        {/* {
-          user.currentUser?.others.isAdmin &&
-        } */}
+        <Route exact path='/admin/list/:id' element={<Edit_Product/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

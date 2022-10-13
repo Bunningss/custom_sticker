@@ -22,13 +22,13 @@
     padding: 20px;
 }
 
-.admin .wrapper .row.row-2 .list {
+.admin .wrapper .row.row-2 .table-list {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 20px;
     margin: 20px;
 }
 
-.admin .wrapper .row.row-2 .list .list-title {
+.admin .wrapper .row.row-2 .table-list .list-title {
     font-weight: 500;
     color: gray;
     margin-bottom: 15px;
