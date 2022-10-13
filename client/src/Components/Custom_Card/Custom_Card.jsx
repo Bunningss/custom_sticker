@@ -1,6 +1,6 @@
 import './Custom_Card.css';
 
-const Custom_Card = ({ info, setValues, values, active, setActive, setQuantity, size, setSize }) => {
+const Custom_Card = ({ info, setValues, values, active, setActive, size, setSize }) => {
   const handleSelection = () => {
     setValues({...values, [info.selection]: info.name})
     setActive(info.name)
@@ -19,29 +19,17 @@ const Custom_Card = ({ info, setValues, values, active, setActive, setQuantity, 
             {
               info.selection==='size' && values.sticker==='custom' &&
               <div className="c-size">
-                <input type="number" placeholder='H' className='c-size-input' min='2' name='height' onChange={handleChange} />
-                <input type="number" placeholder='W' className='c-size-input' min='2' name='width' onChange={handleChange} />
+                <input type="number" placeholder='H' className='c-size-input' min='2' name='height' required onChange={handleChange} />
+                <input type="number" placeholder='W' className='c-size-input' min='2' name='width' required onChange={handleChange} />
               </div>
             }
             {/* Quantity Select */}
             {
-              info.selection==='size' && active &&
+              info.selection==='size' && // && active
               <div className="c-quantity">
-                <input type="number" placeholder='quantity' className='c-size-input' min='10' onChange={(e) => setQuantity(e.target.value)} />
+                <input type="number" placeholder='quantity' name='quantity' className='c-size-input' min='10' onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value} )} />
               </div>
             }
-            {/* {
-              info.selection==='size' && values.sticker==='custom' ?
-              <div className="custom-size">
-                <div className="row row-1">
-                  <input type="number" className='custom-input' placeholder='Height' min='1' />
-                  <input type="number" className='custom-input' placeholder='Width' min='1' />
-                </div>
-                <div className="row">
-                  <input type="number" className='custom-input' placeholder='Quantity' min='10' />
-                </div>
-              </div> : null
-            } */}
         </div>
     </div>
   )

@@ -40,5 +40,9 @@
         padding-left: 5px;
         padding-right: 5px;
     }
+
+    .footer .wrapper .footer-item {
+        width: 50%;
+    }
 }
 

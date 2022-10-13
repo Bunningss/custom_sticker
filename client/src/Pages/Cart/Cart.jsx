@@ -18,7 +18,7 @@ const Cart = () => {
     large: 'Shopping Cart'
   }
 
-  const user = useSelector((state) => state.user)
+  const user = useSelector((state) => state.user) // If user unavailable canno make purchase.
   const cart = useSelector(( state ) => state.cart);
 
   const handleClick = () => {
@@ -30,15 +30,15 @@ const Cart = () => {
     e.preventDefault();
 
     const line_items = cart.products.map((item) => {
-      // console.log(item.img)
+
       return {
-        quantity: item.Quantity,
+        quantity: item.Quantity || item.quantity,
         price_data: {
           currency: 'usd',
           unit_amount: item.startPrice * 100, //amount in cents
           product_data: {
-            name: item.title,
-            description: item.title,
+            name: item.title || item.sticker + " " + "sticker",
+            description: item.title || item.sticker,
             images: item.img
           }
         }

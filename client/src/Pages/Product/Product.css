@@ -3,6 +3,10 @@
     position: relative;
 }
 
+.product-si .product-details {
+    margin: 0 0 30px 0;
+}
+
 .product-si .wrapper {
     display: flex;
     justify-content: space-between;

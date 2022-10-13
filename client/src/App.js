@@ -27,7 +27,8 @@ import User_Info from './Pages/User_Info/User_Info';
 
 function App() {
   const user = useSelector((state) => state.user);
-  
+  const cart = useSelector((state) => state.cart)
+  console.log(cart)
   const [ active, setActive ] = useState(false)
   return (
     <BrowserRouter>

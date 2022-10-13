@@ -11,19 +11,19 @@ const cartSlice = createSlice({
         addProduct: (state, action) => {
             state.quantity += 1;
             state.products.push(action.payload);
-            state.total += action.payload.price;
+            state.total = Number((state.total + action.payload.price).toFixed(2));
         },
         removeProduct: (state, action) => {
             state.quantity -= 1;
             state.products.forEach((prod) => {
-                if (prod._id === action.payload.id) {
+                if (prod.serial === action.payload.serial) {
                     const index = state.products.indexOf(prod)
-                    console.log(index)
                     if (index > -1) {
                         state.products.splice(index, 1)
                     };
                 };
             });
+            state.total = Number((state.total - action.payload.price).toFixed(2))
         },
     }
 });
