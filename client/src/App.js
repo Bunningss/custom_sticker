@@ -31,6 +31,7 @@ import Edit_Product from './Pages/Admin/Pages/Edit_Product/Edit_Product.jsx'
 
 function App() {
   const user = useSelector((state) => state.user);
+  console.log(user.currentUser?.others.isAdmin)
   const [ active, setActive ] = useState(false)
   return (
     <BrowserRouter>
@@ -57,6 +58,9 @@ function App() {
         <Route exact path='/admin' element={<Admin/>}/>
         <Route exact path='/admin/list' element={<List/>}/>
         <Route exact path='/admin/list/:id' element={<Edit_Product/>}/>
+        {/* {
+          user.currentUser?.others.isAdmin &&
+        } */}
       </Routes>
       <Footer/>
     </BrowserRouter>
