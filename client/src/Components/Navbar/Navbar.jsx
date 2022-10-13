@@ -43,7 +43,7 @@ const Navbar = ({ active, setActive }) => {
         <div className="col col-3">
           <Link to='/cart'>
             <img className='icon-small' src={cart} alt="" />
-            <p className='widget text-small'>{quantity.quantity}</p>
+            <p className='widget-n text-small'>{quantity.quantity}</p>
           </Link>
         </div>
         <div className="col col-4">

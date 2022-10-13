@@ -24,11 +24,12 @@ import Contact from './Pages/Contact/Contact';
 import Forgot from './Pages/Password/Forgot/Forgot';
 import Reset from './Pages/Password/Reset/Reset';
 import User_Info from './Pages/User_Info/User_Info';
+import Admin from './Pages/Admin/Admin';
+import List from './Pages/Admin/Pages/List/List';
 
 function App() {
   const user = useSelector((state) => state.user);
-  const cart = useSelector((state) => state.cart)
-  console.log(cart)
+  console.log(user.currentUser?.others.isAdmin)
   const [ active, setActive ] = useState(false)
   return (
     <BrowserRouter>
@@ -50,6 +51,13 @@ function App() {
         <Route exact path='/customize/lanyard' element={<Lanyard/>}/>
         <Route exact path='/cart' element={<Cart/>}/>
         <Route exact path='/contact' element={<Contact/>}/>
+
+        {/* Admin */}
+        <Route exact path='/admin' element={<Admin/>}/>
+        <Route exact path='/admin/list' element={<List/>}/>
+        {/* {
+          user.currentUser?.others.isAdmin &&
+        } */}
       </Routes>
       <Footer/>
     </BrowserRouter>
