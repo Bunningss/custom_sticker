@@ -39,7 +39,7 @@ const Cart = () => {
           product_data: {
             name: item.title || item.sticker + " " + "sticker",
             description: item.title || item.sticker,
-            images: item.img
+            images: item.img,
           }
         }
       }
@@ -48,9 +48,9 @@ const Cart = () => {
     const response = await publicReq.post('/create-checkout-session', { line_items, customer_email: "test@gmail.com" });
 
     const  sessionId  = response.data.sessionID;
-
+    
     const { error } = await stripe.redirectToCheckout({
-      sessionId: sessionId
+      sessionId
     });
 
     if (error) {

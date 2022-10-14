@@ -18,3 +18,10 @@
 .edit-prod .row .wrapper .form {
     padding: 10px;
 }
+
+.success-message {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 16px;
+    color: green;
+}

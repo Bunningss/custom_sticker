@@ -29,6 +29,7 @@ import Admin from './Pages/Admin/Admin';
 import List from './Pages/Admin/Pages/List/List';
 import Add_Product from './Pages/Admin/Pages/Add_Product/Add_Product.jsx';
 import EditProduct from './Pages/Admin/Pages/EditProduct/EditProduct.jsx';
+import Order from './Pages/Admin/Pages/Order/Order';
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -63,6 +64,7 @@ function App() {
             <Route exact path='/admin/products' element={<List/>}/>
             <Route exact path='/admin/products/new' element={<Add_Product/>}/>
             <Route exact path='/admin/products/edit/:id' element={<EditProduct/>}/>
+            <Route exact path='/admin/orders' element={<Order/>} />
           </>
         }
       </Routes>

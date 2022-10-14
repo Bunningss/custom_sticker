@@ -50,7 +50,7 @@ const Sidebar = () => {
                 </Link>
             </li>
             <li>
-                <Link to=''>
+                <Link to='/admin/orders'>
                     <CreditCardIcon className='icon'/>
                     <span>Orders</span>
                 </Link>
