@@ -12,15 +12,15 @@ const EditProduct = () => {
         startPrice: '',
         desc: ''
     });
-    const id = useLocation().pathname.split('/')[4];
 
+    const id = useLocation().pathname.split('/')[4];
     useEffect(() => {
         const getProduct = async () => {
             try {
                 const res = await publicReq.get(`/products/${id}`)
-                setProduct(res.data)
+                setProduct(res.data);
             } catch (err) {
-                console.log('An error occured.')
+                console.log('An error occured.');
             }
         };
         getProduct();
@@ -32,12 +32,12 @@ const EditProduct = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // try {
-        //     const res = await userReq.put(`/products/${id}`, {values});
-        //     console.log(res)
-        // } catch (err) {
-        //     console.log(err.message)
-        // }
+        try {
+            const res = await userReq.put(`/products/${id}`, { title: values.title === '' ? product.title : values.title, startPrice: values.startPrice === '' ? product.startPrice : values.startPrice, desc: values.desc === '' ? product.desc : values.desc });
+            console.log(res.data)
+        } catch (err) {
+            console.log(err.message)
+        }
     }
 
   return (
@@ -55,8 +55,9 @@ const EditProduct = () => {
                         <div className="form-wrapper">
                             <div className="col">
                                 <input type="text" className="input" placeholder={product.title} name='title' onChange={handleChange} />
-                                <input type="text" className="input" placeholder={product.startPrice} name='startPrice' onChange={handleChange} />
-                                <input type="file" className="input" name='file' />
+                                <input type="number" min='0.01' step="0.01" className="input" placeholder={product.startPrice} name='startPrice' onChange={handleChange} />
+                                <input type="number" min='0' step='0.01' className="input" placeholder={product.maxPrice} name='maxPrice' onChange={handleChange} />
+                                {/* <input type="file" className="input" name='file' /> */}
                             </div>
                             <div className="col">
                                 <textarea className='input' name="desc" onChange={handleChange} placeholder={product.desc || "Description"} id="" cols="30" rows="10"></textarea>

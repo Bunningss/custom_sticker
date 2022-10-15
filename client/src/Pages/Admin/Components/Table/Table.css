@@ -23,6 +23,11 @@
     background-color: rgba(0, 128,0,.151);
 }
 
+.status.Production {
+    color: white;
+    background-color: yellowgreen;
+}
+
 .status.Pending {
     color: goldenrod;
     background-color: rgba(189, 189, 3, 0.103);
