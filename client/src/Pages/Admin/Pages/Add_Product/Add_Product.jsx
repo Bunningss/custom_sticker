@@ -76,6 +76,7 @@ const Edit_Product = () => {
           <form action="" className="form" onSubmit={handleSubmit}>
             <input type="text" name='title' onChange={handleChange} className='input' placeholder='Product Title' required />
             <input type="number" step="0.01" name='startPrice' onChange={handleChange} className='input' placeholder='Product Price' required />
+            <input type="number" step="0.01" name='maxPrice' onChange={handleChange} className='input' placeholder='Display Price' required />
             <textarea rows={5} type="text" name='desc' onChange={handleChange} className='input' placeholder='Product Details' required />
             <input type="file" className='input' required onChange={(e) => setFile(e.target.files[0])}/>
             {

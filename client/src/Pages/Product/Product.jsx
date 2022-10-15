@@ -104,7 +104,7 @@ const Product = () => {
         </div>
         <Header_Primary headers={headers}/>
         <p className="text-medium product-details">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas repudiandae minima, iusto voluptatem molestiae dolorem soluta eos magni unde laudantium! Odio nostrum officiis fugit dicta, veniam iure blanditiis sit sequi quibusdam quam quaerat iusto, cupiditate exercitationem totam. Possimus, dolorem? Quidem accusantium vitae repellat accusamus nisi cupiditate necessitatibus soluta! Nesciunt tempora optio laudantium voluptas quo? Quibusdam nemo optio laudantium animi ipsum ut ullam magnam culpa quod, impedit enim voluptatum voluptatibus officiis, dolore necessitatibus itaque nulla, ea ipsa illo commodi odio. Nesciunt eos minus atque obcaecati culpa doloribus illo doloremque ab assumenda tenetur maxime libero cum quo fuga velit vel consequuntur similique ut aliquid praesentium, iste asperiores. Eaque omnis at, velit quia animi porro maxime nobis voluptatibus reprehenderit architecto accusamus voluptates, rem amet natus quas qui? Accusantium maiores quaerat tenetur ut perspiciatis harum ex reprehenderit, veniam iusto maxime aliquid accusamus vero cum autem quam esse soluta eligendi! Est molestiae velit magnam repellat? Autem velit, sequi reiciendis sunt dolorem sint voluptatem ipsam? Quod, veritatis, facilis consequuntur illo sapiente id praesentium pariatur laudantium velit repellat nam veniam omnis assumenda ut, nesciunt cum in. At quaerat fugiat sit ducimus! Expedita cum nam nihil qui impedit ratione dignissimos earum, dolorem optio eligendi rem commodi quia iure.
+            {product.desc}
         </p>
     </div>
   )

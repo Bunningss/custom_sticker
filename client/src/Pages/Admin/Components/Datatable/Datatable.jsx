@@ -2,7 +2,7 @@ import './Datatable.css';
 import { DataGrid } from '@mui/x-data-grid';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { publicReq } from '../../../../Utilities/requestMethods';
+import { publicReq, userReq } from '../../../../Utilities/requestMethods';
 import Primary_Button from '../../../../Components/Primary_Button/Primary_Button';
 import Secondary_Button from '../../../../Components/Secondary_Button/Secondary_Button';
 
@@ -14,12 +14,24 @@ export const actionColumn = [
         headerName: "Actions",
         width: 300,
         renderCell: (params) => {
+
+            const handleDelete = async () => {
+                try {
+                    await userReq.delete(`/products/${params.row._id}`);
+                    window.location.reload();
+                } catch (err) {
+                    console.log(err)
+                }
+            };
+            
             return (
                 <div className='cell-action'>
                     <Link to={`edit/${params.row._id}`}>
                         <Primary_Button text={"Edit"} />
                     </Link>
-                    <Secondary_Button text={"Delete"}/>
+                    <p  onClick={handleDelete}>
+                        <Secondary_Button text={"Delete"}/>
+                    </p>
                 </div>
             )
         }

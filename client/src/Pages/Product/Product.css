@@ -5,6 +5,7 @@
 
 .product-si .product-details {
     margin: 0 0 30px 0;
+    white-space: pre-wrap;
 }
 
 .product-si .wrapper {
