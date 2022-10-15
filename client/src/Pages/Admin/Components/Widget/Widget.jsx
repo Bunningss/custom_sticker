@@ -1,10 +1,17 @@
 import './Widget.css';
 import { Link } from 'react-router-dom';
-import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import AccountBalanceOutlinedIcon from '@mui/icons-material/AccountBalanceOutlined';
-import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+
+// Icons
+import balance from '../../../../assets/icons/balance.png';
+import money from '../../../../assets/icons/money.png';
+import shopping_cart from '../../../../assets/icons/shopping_cart.png';
+import user from '../../../../assets/icons/user.png';
+
+// import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
+// import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+// import AccountBalanceOutlinedIcon from '@mui/icons-material/AccountBalanceOutlined';
+// import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
+// import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Widget = ({ type }) => {
     let data;
@@ -16,7 +23,7 @@ const Widget = ({ type }) => {
                 isMoney: false,
                 link: "See All Users",
                 icon: (
-                    <PersonOutlineOutlinedIcon className='icon'/>
+                    <img src={user} alt='' className='icon'/>
                 )
             };
             break;
@@ -26,7 +33,7 @@ const Widget = ({ type }) => {
                 isMoney: false,
                 link: "See All Orders",
                 icon: (
-                    <ShoppingCartOutlinedIcon className='icon'/>
+                    <img src={shopping_cart} alt='' className='icon'/>
                 )
             };
             break;
@@ -36,7 +43,7 @@ const Widget = ({ type }) => {
                 isMoney: true,
                 link: "See All Earnings",
                 icon: (
-                    <MonetizationOnOutlinedIcon className='icon'/>
+                    <img src={money} alt='' className='icon'/>
                 )
             };
             break;
@@ -46,7 +53,7 @@ const Widget = ({ type }) => {
                 isMoney: true,
                 link: "See Details",
                 icon: (
-                    <AccountBalanceOutlinedIcon className='icon'/>
+                    <img src={balance} alt='' className='icon'/>
                 )
             };
             break;
@@ -63,8 +70,8 @@ const Widget = ({ type }) => {
         </div>
         <div className="right row">
             <div className="percentage">
-                <KeyboardArrowUpOutlinedIcon/>
-                20%
+                {/* <img src={arrow} alt='' className='extra-small'/>
+                20% */}
             </div>
             {data.icon}
         </div>

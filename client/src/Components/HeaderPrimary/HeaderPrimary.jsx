@@ -1,4 +1,4 @@
-import './Header_Primary.css';
+import './HeaderPrimary.css';
 
 const Header_Primary = ({ headers }) => {
     const { small, large } = headers;

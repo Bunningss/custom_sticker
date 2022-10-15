@@ -1,4 +1,4 @@
-import './Select_Menu.css';
+import './SelectMenu.css';
 
 const Select_Menu = ({ item, values, setValues }) => {
   const handleChange = (e) => {

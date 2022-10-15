@@ -1,7 +1,7 @@
 import './Product.css';
 import { Link } from 'react-router-dom';
 import delivery from '../../assets/icons/delivery.png';
-import Primary_Button from '../Primary_Button/Primary_Button';
+import PrimaryButton from '../PrimaryButton/PrimaryButton';
 
 const Product = ({ prod }) => {
   return (
@@ -27,7 +27,7 @@ const Product = ({ prod }) => {
                         <h6 className="title color-accent">${prod.startPrice}+</h6>
                     </div>
                     <div className="col">
-                        <Primary_Button text={"details"}/>
+                        <PrimaryButton text={"details"}/>
                     </div>
                 </div>
             </div>

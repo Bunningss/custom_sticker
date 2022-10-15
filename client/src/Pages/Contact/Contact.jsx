@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Contact.css';
-import Secondary_Button from '../../Components/Secondary_Button/Secondary_Button';
+import SecondaryButton from '../../Components/SecondaryButton/SecondaryButton';
 import phone from '../../assets/icons/phone-green.png';
 import email from '../../assets/icons/email-green.png';
 import location from '../../assets/icons/location-green.png';
@@ -41,7 +41,7 @@ const Contact = () => {
             <input name="name" placeholder='Enter Your Name' type="text" required className='form-input text-regular' onChange={handleChange} />
             <input name="email" placeholder='Enter Email Address' type="email" required className='form-input text-regular' onChange={handleChange} />
             <textarea name="message" placeholder='Enter Your Message'  required className='form-input text-regular' id="" cols="30" rows="10" onChange={handleChange}></textarea>
-            <Secondary_Button text={"Send"}/>
+            <SecondaryButton text={"Send"}/>
           </form>
         </div>
       </div>

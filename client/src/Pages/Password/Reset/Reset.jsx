@@ -2,8 +2,8 @@ import './Reset.css';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { publicReq } from '../../../Utilities/requestMethods';
-import Header_Primary from '../../../Components/Header_Primary/Header_Primary';
-import Secondary_Button from '../../../Components/Secondary_Button/Secondary_Button';
+import HeaderPrimary from '../../../Components/HeaderPrimary/HeaderPrimary';
+import SecondaryButton from '../../../Components/SecondaryButton/SecondaryButton';
 
 const Reset = () => {
   const location = useLocation();
@@ -38,14 +38,14 @@ const Reset = () => {
   return (
     <div className='reset account'>
       <div className="wrapper">
-        <Header_Primary headers={headers}/>
+        <HeaderPrimary headers={headers}/>
         <form action="" className="form" onSubmit={handleSubmit}>
           <label htmlFor="password" className='inputLabel'>Enter Password</label>
           <input type="password" name='password' required placeholder='Enter new password' className='input text-regular' minLength='8' onChange={handleChange}/>
           <label htmlFor="password" className='inputLabel'>Confirm Password</label>
           <input type="password" name='confirmPassword' required placeholder='Enter new password' className='input text-regular' pattern={values.password} onChange={handleChange} onInvalid={(e) => e.target.setCustomValidity("Passwords Do Not Match.")} onInput={(e) => e.target.setCustomValidity("")}/>
           <p className="error-message text-small warning">{message}</p>
-          <Secondary_Button text={"Continue"}/>
+          <SecondaryButton text={"Continue"}/>
         </form>
       </div>
     </div>

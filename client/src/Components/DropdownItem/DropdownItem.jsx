@@ -1,5 +1,5 @@
+import './DropdownItem.css';
 import { useState } from 'react';
-import './Dropdown_Item.css';
 
 const Dropdown_Item = ({ faq }) => {
   const [ vis, setVis ] = useState(false);

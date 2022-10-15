@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { sSticker, circleSize, squareSize, rectangleSize, sType, sMaterial, customSize, Scroller } from '../../static';
 import { addProduct } from '../../Redux/cartRedux';
-import Custom_Card from '../../Components/Custom_Card/Custom_Card';
-import Primary_Button from '../../Components/Primary_Button/Primary_Button';
+import CustomCard from '../../Components/CustomCard/CustomCard';
+import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton';
 import Float from '../../Components/Float/Float';
 
 const Sticker = () => {
@@ -81,7 +81,7 @@ const Sticker = () => {
           <div className="section-content">
             {
               sSticker.map((s, indx) => (
-                <Custom_Card info={s} key={indx} values={values} setValues={setValues} active={selected === s.name} setActive={setSelected}/>
+                <CustomCard info={s} key={indx} values={values} setValues={setValues} active={selected === s.name} setActive={setSelected}/>
               ))
             }
           </div>
@@ -94,7 +94,7 @@ const Sticker = () => {
           <div className="section-content">
             {
               sType.map((s, indx) => (
-                <Custom_Card info={s} key={indx} values={values} setValues={setValues} active={selected === s.name} setActive={setSelected}/>
+                <CustomCard info={s} key={indx} values={values} setValues={setValues} active={selected === s.name} setActive={setSelected}/>
               ))
             }
           </div>
@@ -107,7 +107,7 @@ const Sticker = () => {
           <div className="section-content">
             {
               sizeData.map((s, indx) => (
-                <Custom_Card info={s} key={indx} values={values} setValues={setValues} active={selected === s.name} setActive={setSelected} size={size} setSize={setSize}/>
+                <CustomCard info={s} key={indx} values={values} setValues={setValues} active={selected === s.name} setActive={setSelected} size={size} setSize={setSize}/>
               ))
             }
           </div>
@@ -120,13 +120,13 @@ const Sticker = () => {
           <div className="section-content">
             {
               sMaterial.map((s, indx) => (
-                <Custom_Card info={s} key={indx} values={values} setValues={setValues} active={selected === s.name} setActive={setSelected}/>
+                <CustomCard info={s} key={indx} values={values} setValues={setValues} active={selected === s.name} setActive={setSelected}/>
               ))
             }
           </div>
         </section>
       </div>
-      <Primary_Button text={"Add to cart"} handleClick={handleClick}/>
+      <PrimaryButton text={"Add to cart"} handleClick={handleClick}/>
     </div>
   )
 }

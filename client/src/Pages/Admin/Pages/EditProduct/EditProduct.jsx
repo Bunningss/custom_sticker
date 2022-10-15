@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { publicReq, userReq } from '../../../../Utilities/requestMethods';
 import Sidebar from '../../Components/Sidebar/Sidebar';
-import Primary_Button from '../../../../Components/Primary_Button/Primary_Button';
+import PrimaryButton from '../../../../Components/PrimaryButton/PrimaryButton';
 
 const EditProduct = () => {
     const [ product, setProduct ] = useState({});
@@ -63,7 +63,7 @@ const EditProduct = () => {
                                 <textarea className='input' name="desc" onChange={handleChange} placeholder={product.desc || "Description"} id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
-                        <Primary_Button text={"update product"}/>
+                        <PrimaryButton text={"update product"}/>
                     </form>
                 </div>
             </div>

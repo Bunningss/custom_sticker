@@ -3,8 +3,8 @@ import { DataGrid } from '@mui/x-data-grid';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { publicReq, userReq } from '../../../../Utilities/requestMethods';
-import Primary_Button from '../../../../Components/Primary_Button/Primary_Button';
-import Secondary_Button from '../../../../Components/Secondary_Button/Secondary_Button';
+import PrimaryButton from '../../../../Components/PrimaryButton/PrimaryButton';
+import SecondaryButton from '../../../../Components/SecondaryButton/SecondaryButton';
 
 //  Permanent Column
 export const actionColumn = [
@@ -27,10 +27,10 @@ export const actionColumn = [
             return (
                 <div className='cell-action'>
                     <Link to={`edit/${params.row._id}`}>
-                        <Primary_Button text={"Edit"} />
+                        <PrimaryButton text={"Edit"} />
                     </Link>
                     <p  onClick={handleDelete}>
-                        <Secondary_Button text={"Delete"}/>
+                        <SecondaryButton text={"Delete"}/>
                     </p>
                 </div>
             )
@@ -94,7 +94,7 @@ const handleClick = () => {
             rowsPerPageOptions={[5]}
             checkboxSelection
         />
-        <Primary_Button text={"add new product"} handleClick={handleClick}/>
+        <PrimaryButton text={"add new product"} handleClick={handleClick}/>
     </div>
   )
 }

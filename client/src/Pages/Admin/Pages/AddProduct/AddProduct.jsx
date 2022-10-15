@@ -1,11 +1,11 @@
-import './Add_Product.css';
+import './AddProduct.css';
 import { useState } from 'react';
 import { Scroller } from '../../../../static';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { userReq } from '../../../../Utilities/requestMethods';
 import app from '../../../../firebase';
 import Sidebar from '../../Components/Sidebar/Sidebar';
-import Primary_Button from '../../../../Components/Primary_Button/Primary_Button';
+import PrimaryButton from '../../../../Components/PrimaryButton/PrimaryButton';
 
 const Edit_Product = () => {
   const [ message, setMessage ] = useState('');
@@ -84,7 +84,7 @@ const Edit_Product = () => {
               message && 
                 <p className='success-message'>{message}</p>
             }
-            <Primary_Button text={"Add product"}/>
+            <PrimaryButton text={"Add product"}/>
           </form>
         </div>
       </div>

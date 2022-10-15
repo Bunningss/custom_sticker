@@ -1,4 +1,4 @@
-import './Custom_Card.css';
+import './CustomCard.css';
 
 const Custom_Card = ({ info, setValues, values, active, setActive, size, setSize }) => {
   const handleSelection = () => {

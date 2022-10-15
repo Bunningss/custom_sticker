@@ -1,12 +1,12 @@
 import './Cart.css';
 import { Scroller } from '../../static';
-import Cart_Item from '../../Components/Cart_Item/Cart_Item';
-import Header_Alternate from '../../Components/Header_Alternate/Header_Alternate';
+import { publicReq } from '../../Utilities/requestMethods';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import Secondary_Button from '../../Components/Secondary_Button/Secondary_Button';
-import Primary_Button from '../../Components/Primary_Button/Primary_Button';
-import { publicReq } from '../../Utilities/requestMethods';
+import SecondaryButton from '../../Components/SecondaryButton/SecondaryButton';
+import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton';
+import CartItem from '../../Components/CartItem/CartItem';
+import HeaderAlternate from '../../Components/HeaderAlternate/HeaderAlternate';
 
 import { useStripe } from '@stripe/react-stripe-js';
 
@@ -18,7 +18,7 @@ const Cart = () => {
     large: 'Shopping Cart'
   }
 
-  const user = useSelector((state) => state.user) // If user unavailable canno make purchase.
+  // const user = useSelector((state) => state.user) // If user unavailable canno make purchase.
   const cart = useSelector(( state ) => state.cart);
 
   const handleClick = () => {
@@ -64,17 +64,17 @@ const Cart = () => {
       {
         cart.quantity > 0 &&
         <div className="wrapper main-wrapper">
-          <Header_Alternate headers={header}/>
+          <HeaderAlternate headers={header}/>
           {/* <Header_Primary headers={header}/> */}
           <div className="cart-content">
             {
               cart.products.map((item, indx) => (
-                <Cart_Item key={indx} item={item}/>
+                <CartItem key={indx} item={item}/>
               ))
             }
           </div>
           <form action="" onSubmit={handleCheckout}>
-            <Primary_Button text={"Checkout"}/>
+            <PrimaryButton text={"Checkout"}/>
           </form>
         </div>
       }
@@ -86,7 +86,7 @@ const Cart = () => {
             <h6>No Items Found!</h6>
           </div>
           <div className="content">
-            <Secondary_Button text={"Continue Shopping"} handleClick={handleClick}/>
+            <SecondaryButton text={"Continue Shopping"} handleClick={handleClick}/>
           </div>
         </div>
       }

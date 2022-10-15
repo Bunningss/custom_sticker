@@ -1,12 +1,12 @@
 import './Login.css';
-import FormInput from '../../Components/FormInput/FormInput';
-import Header_Primary from '../../Components/Header_Primary/Header_Primary';
-import Primary_Button from '../../Components/Primary_Button/Primary_Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { publicReq } from '../../Utilities/requestMethods';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginFailure, loginStart, loginSuccess } from '../../Redux/userRedux';
+import FormInput from '../../Components/FormInput/FormInput';
+import HeaderPrimary from '../../Components/HeaderPrimary/HeaderPrimary';
+import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -62,7 +62,7 @@ const Login = () => {
   return (
     <div className='login account default'>
       <div className="wrapper">
-        <Header_Primary headers={headers}/>
+        <HeaderPrimary headers={headers}/>
         <form action="#" onSubmit={handleSubmit} className='form'>
           {
             inputs.map((input, indx) => (
@@ -73,7 +73,7 @@ const Login = () => {
             error && 
             <span className='warning error-message text-small'>{error}</span>
           }
-          <Primary_Button text={"Sign In"} onClick={handleSubmit}/>
+          <PrimaryButton text={"Sign In"} onClick={handleSubmit}/>
         </form>
         <div className="account-additional">
           <Link to='/forgot'>

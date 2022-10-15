@@ -1,4 +1,4 @@
-import './Secondary_Button.css';
+import './SecondaryButton.css';
 
 const Secondary_Button = ({ text, handleClick }) => {
   return (

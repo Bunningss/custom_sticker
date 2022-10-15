@@ -3,16 +3,23 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../../../Redux/userRedux';
 
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import WarehouseIcon from '@mui/icons-material/Warehouse';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import QueryStatsIcon from '@mui/icons-material/QueryStats';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import LogoutIcon from '@mui/icons-material/Logout';
+// Icons
+import dashboard from '../../../../assets/icons/dashboard.png';
+import logout_icon from '../../../../assets/icons/logout.png';
+import order from '../../../../assets/icons/order.png';
+import product from '../../../../assets/icons/product.png';
+
+
+// import DashboardIcon from '@mui/icons-material/Dashboard';
+// import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
+// import CreditCardIcon from '@mui/icons-material/CreditCard';
+// import WarehouseIcon from '@mui/icons-material/Warehouse';
+// import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+// import QueryStatsIcon from '@mui/icons-material/QueryStats';
+// import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+// import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
+// import AccountBoxIcon from '@mui/icons-material/AccountBox';
+// import LogoutIcon from '@mui/icons-material/Logout';
 
 const Sidebar = () => {
     const dispatch = useDispatch();
@@ -32,64 +39,64 @@ const Sidebar = () => {
             <p className="text-medium">MAIN</p>
             <li>
                 <Link to='/admin'>
-                    <DashboardIcon className='icon'/>
+                    <img src={dashboard} alt='' className='icon'/>
                     <span>Dashboard</span>
                 </Link>
             </li>
             <p className="text-medium">LISTS</p>
-            <li>
+            <li className='disabled'>
                 <Link to=''>
-                    <SupervisedUserCircleIcon className='icon'/>
+                    <img src='' alt='' className='icon'/>
                     <span>Users</span>
                 </Link>
             </li>
             <li>
                 <Link to='/admin/products'>
-                    <WarehouseIcon className='icon'/>
+                    <img src={product} alt='' className='icon'/>
                     <span>Products</span>
                 </Link>
             </li>
             <li>
                 <Link to='/admin/orders'>
-                    <CreditCardIcon className='icon'/>
+                    <img src={order} alt='' className='icon'/>
                     <span>Orders</span>
                 </Link>
             </li>
-            <li>
+            <li className='disabled'>
                 <Link to=''>
-                    <LocalShippingIcon className='icon'/>
+                    <img src='' alt='' className='icon'/>
                     <span>Delivery</span>
                 </Link>
             </li>
             <p className="text-medium">USEFUL LINKS</p>
-            <li>
+            <li className='disabled'>
                 <Link to=''>
-                    <QueryStatsIcon className='icon'/>
+                    <img src='' alt='' className='icon'/>
                     <span>Stats</span>
                 </Link>
             </li>
-            <li>
+            <li className='disabled'>
                 <Link to=''>
-                    <NotificationsActiveIcon className='icon'/>
+                    <img src='' alt='' className='icon'/>
                     <span>Notifications</span>
                 </Link>
             </li>
-            <li>
+            <li className='disabled'>
                 <Link to=''>
-                    <SettingsApplicationsIcon className='icon'/>
+                    <img src='' alt='' className='icon'/>
                     <span>Settings</span>
                 </Link>
             </li>
             <p className="text-medium">USER</p>
-            <li>
+            <li className='disabled'>
                 <Link to=''>
-                    <AccountBoxIcon className='icon'/>
+                    <img src='' alt='' className='icon'/>
                     <span>Proile</span>
                 </Link>
             </li>
             <li onClick={handleLogout}>
                 <Link to=''>
-                    <LogoutIcon className='icon'/>
+                    <img src={logout_icon} alt='' className='icon'/>
                     <span>Logout</span>
                 </Link>
             </li>

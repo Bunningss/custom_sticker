@@ -1,4 +1,4 @@
-import './Order_Item.css';
+import './OrderItem.css';
 import demo from '../../assets/stickers/bum-stc.png';
 
 const Order_Item = () => {

@@ -1,11 +1,11 @@
 import './Sidebar.css';
-import ListItem from '../ListItem/ListItem';
 import { navLinks } from '../../static';
-import Primary_Button from '../Primary_Button/Primary_Button';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../Redux/userRedux';
-import Secondary_Button from '../Secondary_Button/Secondary_Button';
+import ListItem from '../ListItem/ListItem';
+import PrimaryButton from '../PrimaryButton/PrimaryButton';
+import SecondaryButton from '../SecondaryButton/SecondaryButton';
 
 const Sidebar = ({ active, setActive}) => {
     const navigate = useNavigate();
@@ -28,10 +28,10 @@ const Sidebar = ({ active, setActive}) => {
                         <ListItem item={item} key={indx}/>
                     ))
                 }
-                <Primary_Button text={"View cart"} handleClick={handleClick}/>
+                <PrimaryButton text={"View cart"} handleClick={handleClick}/>
                 {
                     user.currentUser &&
-                    <Secondary_Button text={"Logout"} handleClick={handleLogout}/>
+                    <SecondaryButton text={"Logout"} handleClick={handleLogout}/>
                 }
             </ul>
         </div>

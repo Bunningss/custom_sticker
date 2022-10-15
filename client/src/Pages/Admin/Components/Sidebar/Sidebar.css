@@ -43,8 +43,7 @@
 }
 
 .dashboard .col.col-2 ul li .icon {
-    font-size: 18px;
-    color: #6439ff;
+    width: 18px;
 }
 
 .dashboard .col.col-2 ul li span {

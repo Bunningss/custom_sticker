@@ -1,10 +1,10 @@
 import './Register.css';
-import Header_Primary from '../../Components/Header_Primary/Header_Primary';
-import FormInput from '../../Components/FormInput/FormInput';
-import Primary_Button from '../../Components/Primary_Button/Primary_Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { publicReq } from '../../Utilities/requestMethods';
+import HeaderPrimary from '../../Components/HeaderPrimary/HeaderPrimary';
+import FormInput from '../../Components/FormInput/FormInput';
+import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton';
 
 const Register = () => {
 const navigate = useNavigate();
@@ -77,7 +77,7 @@ const handleSubmit = async (e) => {
   return (
     <div className='register account default'>
         <div className="wrapper">
-            <Header_Primary headers={headers}/>
+            <HeaderPrimary headers={headers}/>
             <form className='form' onSubmit={handleSubmit} action="">
                 {
                     inputs.map((input, indx) => (
@@ -88,7 +88,7 @@ const handleSubmit = async (e) => {
                     error && 
                     <span className='warning error-message text-small'>{error}</span>
                 }
-                <Primary_Button text={"Continue"}/>
+                <PrimaryButton text={"Continue"}/>
             </form>
             <div className="account-additional">
                 <Link to='/login'>Already have an account? Login Instead</Link>

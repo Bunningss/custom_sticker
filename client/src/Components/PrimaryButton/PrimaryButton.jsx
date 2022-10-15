@@ -1,5 +1,4 @@
-import './Primary_Button.css';
-import { Link } from 'react-router-dom';
+import './PrimaryButton.css';
 
 const Primary_Button = ({ text, handleClick }) => {
   return (

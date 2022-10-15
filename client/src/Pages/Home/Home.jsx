@@ -1,11 +1,11 @@
 import './Home.css';
-import Banner from '../../Components/Banner/Banner';
-import Section from '../../Components/Section/Section';
-import Header_Primary from '../../Components/Header_Primary/Header_Primary';
-import Card from '../../Components/Card/Card';
 import { customs, Scroller } from '../../static';
 import { useEffect, useState } from 'react';
 import { publicReq } from '../../Utilities/requestMethods';
+import Banner from '../../Components/Banner/Banner';
+import Section from '../../Components/Section/Section';
+import HeaderPrimary from '../../Components/HeaderPrimary/HeaderPrimary';
+import Card from '../../Components/Card/Card';
 
 const Home = () => {
   const [ products, setProducts ] = useState([]);
@@ -59,7 +59,7 @@ const Home = () => {
         <Section headers={headers} prods={topProducts}/>
         <Section headers={headers_2} prods={products}/>
         <div className="customize">
-          <Header_Primary headers={header_3}/>
+          <HeaderPrimary headers={header_3}/>
           <div className="wrapper">
             {
               customs.map((custom, indx) => (

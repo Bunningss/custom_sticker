@@ -1,9 +1,9 @@
 import './EditOrder.css';
 import { useEffect, useState } from 'react';
-import Primary_Button from '../../../../Components/Primary_Button/Primary_Button';
-import Sidebar from '../../Components/Sidebar/Sidebar';
 import { userReq } from '../../../../Utilities/requestMethods';
 import { useLocation } from 'react-router-dom';
+import PrimaryButton from '../../../../Components/PrimaryButton/PrimaryButton';
+import Sidebar from '../../Components/Sidebar/Sidebar';
 
 const EditOrder = () => {
     const [ status, setStatus ] = useState('');
@@ -48,7 +48,7 @@ const EditOrder = () => {
                     <option value="Production">In Production</option>
                     <option value="Delivered">Delivered</option>
                 </select>
-                <Primary_Button text={"update"}/>
+                <PrimaryButton text={"update"}/>
             </form>
         </div>
     </div>

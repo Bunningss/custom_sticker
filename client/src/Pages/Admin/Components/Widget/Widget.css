@@ -37,10 +37,14 @@
 }
 
 .widget .row .icon {
-    font-size: 30px;
+    width: 30px;
     padding: 5px;
     background-color: rgb(204, 160, 248);
     border-radius: 5px;
     align-self: flex-end;
-    color: black;
+}
+
+.widget .row .extra-small {
+    width: 12px;
+    justify-self: flex-end;
 }

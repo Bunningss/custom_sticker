@@ -1,4 +1,4 @@
-import './Header_Alternate.css';
+import './HeaderAlternate.css';
 
 const Header_Alternate = ({ headers }) => {
   return (

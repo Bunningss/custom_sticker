@@ -1,5 +1,5 @@
 import './Card.css';
-import Primary_Button from '../Primary_Button/Primary_Button';
+import PrimaryButton from '../PrimaryButton/PrimaryButton';
 import { Link } from 'react-router-dom';
 
 const Card = ({ custom }) => {
@@ -23,7 +23,7 @@ const Card = ({ custom }) => {
                 ))
               }
             </ul>
-            <Primary_Button text={'customize now!'}/>
+            <PrimaryButton text={'customize now!'}/>
           </div>
         </div>
       </Link>
