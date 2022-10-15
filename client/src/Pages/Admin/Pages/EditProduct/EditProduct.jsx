@@ -33,7 +33,7 @@ const EditProduct = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         // try {
-        //     const res = await userReq.put(`/products/${id}`, {...values});
+        //     const res = await userReq.put(`/products/${id}`, {values});
         //     console.log(res)
         // } catch (err) {
         //     console.log(err.message)

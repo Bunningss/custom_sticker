@@ -12,6 +12,7 @@ const Edit_Product = () => {
   const [ values, setValues ] = useState({
     title: '',
     startPrice: '',
+    maxPrice: '',
     desc: '',
   });
   const [ file, setFile ] = useState(null);
@@ -75,8 +76,8 @@ const Edit_Product = () => {
         <div className="wrapper">
           <form action="" className="form" onSubmit={handleSubmit}>
             <input type="text" name='title' onChange={handleChange} className='input' placeholder='Product Title' required />
-            <input type="number" step="0.01" name='startPrice' onChange={handleChange} className='input' placeholder='Product Price' required />
-            <input type="number" step="0.01" name='maxPrice' onChange={handleChange} className='input' placeholder='Display Price' required />
+            <input type="number" step="0.01" name='startPrice' onChange={handleChange} className='input' placeholder='Display Price' required />
+            <input type="number" step="0.01" name='maxPrice' onChange={handleChange} className='input' placeholder='Maximum Price' required />
             <textarea rows={5} type="text" name='desc' onChange={handleChange} className='input' placeholder='Product Details' required />
             <input type="file" className='input' required onChange={(e) => setFile(e.target.files[0])}/>
             {
