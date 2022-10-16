@@ -3,15 +3,26 @@ import { useState } from 'react';
 import  { publicReq } from '../../../Utilities/requestMethods';
 import HeaderPrimary from '../../../Components/HeaderPrimary/HeaderPrimary';
 import SecondaryButton from '../../../Components/SecondaryButton/SecondaryButton';
+import FormInput from '../../../Components/FormInput/FormInput';
 
 const Forgot = () => {
-  const [ email, setEmail ] = useState('');
   const [ message, setMessage ] = useState('');
+
+  const input = {
+    name: 'email',
+    type: 'email',
+    required: true,
+    minLength: 10,
+    placeholder: 'Enter your email address',
+    errorMsg: "Enter a valid email address"
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const data = new FormData(e.target);
+    const email = Object.fromEntries(data.entries());
     try {
-      const res = await publicReq.post('/auth/forgot', {email});
+      const res = await publicReq.post('/auth/forgot', email);
       setMessage(res.data.msg);
     } catch (err) {
       setMessage(err.response.data.msg);
@@ -28,7 +39,7 @@ const Forgot = () => {
         <div className="wrapper main-wrapper">
           <HeaderPrimary headers={headers}/>
           <form action="" onSubmit={handleSubmit} className='form'>
-            <input type="email" required placeholder='Enter your email address' className='input text-regular' onChange={(e) => setEmail(e.target.value)} />
+            <FormInput {...input}/>
             <p className="warning error-message text-small">{message}</p>
             <SecondaryButton text={"continue"}/>
           </form>

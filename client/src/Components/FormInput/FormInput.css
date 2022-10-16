@@ -15,7 +15,7 @@
     margin: 5px 0 2px 0;
 }
 
-.input:invalid[focused="true"] ~ .warning {
+.input:invalid[focused="true"] + .warning {
     display: block;
 }
 

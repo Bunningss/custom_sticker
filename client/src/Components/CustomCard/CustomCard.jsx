@@ -25,7 +25,7 @@ const Custom_Card = ({ info, setValues, values, active, setActive, size, setSize
             }
             {/* Quantity Select */}
             {
-              info.selection==='size' && // && active
+              info.selection==='size' && active &&
               <div className="c-quantity">
                 <input type="number" placeholder='quantity' name='quantity' className='c-size-input' min='10' onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value} )} />
               </div>

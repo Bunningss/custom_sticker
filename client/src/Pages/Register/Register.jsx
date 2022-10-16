@@ -10,17 +10,11 @@ const Register = () => {
 const navigate = useNavigate();
 
 const [ error, setError ] = useState('');
-const [ values, setValues ] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: ""
-})
 
 const headers = {
     small: 'Register',
     large: 'Create an account with us'
-} 
+};
 
 const inputs = [
 {
@@ -56,21 +50,22 @@ const inputs = [
     placeholder: "Confirm password",
     required: true,
     errorMsg: "Passwords do not match",
-    pattern: values.password
 },
 ];
 
-const handleChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value })
-}
-
 const handleSubmit = async (e) => {
     e.preventDefault()
-    try {
-        await publicReq.post("/auth/register", values)
-        navigate('/login')
-    } catch (err) {
-        setError(err.response.data.msg)
+    const data = new FormData(e.target);
+    const formData = Object.fromEntries(data.entries());
+    if (formData.password !== formData.confirmPassword) {
+        return setError("Passwords do not match");
+    } else {
+        try {
+            await publicReq.post("/auth/register", formData)
+            navigate('/login')
+        } catch (err) {
+            setError(err.response.data.msg)
+        }
     }
 }
 
@@ -81,7 +76,7 @@ const handleSubmit = async (e) => {
             <form className='form' onSubmit={handleSubmit} action="">
                 {
                     inputs.map((input, indx) => (
-                        <FormInput {...input} key={indx} handleChange={handleChange}/>
+                        <FormInput {...input} key={indx}/>
                     ))
                 }
                 {

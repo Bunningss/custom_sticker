@@ -7,12 +7,6 @@ import money from '../../../../assets/icons/money.png';
 import shopping_cart from '../../../../assets/icons/shopping_cart.png';
 import user from '../../../../assets/icons/user.png';
 
-// import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
-// import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-// import AccountBalanceOutlinedIcon from '@mui/icons-material/AccountBalanceOutlined';
-// import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
-// import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-
 const Widget = ({ type }) => {
     let data;
 

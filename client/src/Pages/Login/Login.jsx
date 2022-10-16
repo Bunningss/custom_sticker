@@ -9,14 +9,10 @@ import HeaderPrimary from '../../Components/HeaderPrimary/HeaderPrimary';
 import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton';
 
 const Login = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   
   const [ error, setError ] = useState('');
-  const [ values, setValues ] = useState({
-    email: '',
-    password: ''
-  });
 
   const headers = {
     small: 'login',
@@ -41,23 +37,21 @@ const Login = () => {
     },
   ];
 
-  const handleChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value })
-  }
-
   // Login Logic
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const data = new FormData(e.target); // Get data from form
+    const formData = Object.fromEntries(data.entries()); // Get data from form
     dispatch(loginStart());
     try {
-      const res = await publicReq.post('/auth/login', values);
+      const res = await publicReq.post('/auth/login', formData);
       dispatch(loginSuccess(res.data));
       navigate('/')
     } catch (err) {
       dispatch(loginFailure());
       setError(err.response.data.msg);
     }
-  }
+  };
 
   return (
     <div className='login account default'>
@@ -66,7 +60,7 @@ const Login = () => {
         <form action="#" onSubmit={handleSubmit} className='form'>
           {
             inputs.map((input, indx) => (
-              <FormInput {...input} key={indx} handleChange={handleChange}/>
+              <FormInput {...input} key={indx}/>
             ))
           }
           {

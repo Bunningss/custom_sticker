@@ -1,7 +1,7 @@
 import './Datatable.css';
 import { DataGrid } from '@mui/x-data-grid';
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { publicReq, userReq } from '../../../../Utilities/requestMethods';
 import PrimaryButton from '../../../../Components/PrimaryButton/PrimaryButton';
 import SecondaryButton from '../../../../Components/SecondaryButton/SecondaryButton';
@@ -39,14 +39,14 @@ export const actionColumn = [
 ];
 
 const Datatable = () => {
-const [ rows, setRows ] = useState([]);
+let rows = [];
 const navigate = useNavigate();
 
 useEffect(() => {
     const getProducts = async () => {
         try {
             const res = await publicReq.get("/products")
-            setRows(res.data)
+            rows = res.data;
         } catch (err) {
             console.log("An error occured.")
         }

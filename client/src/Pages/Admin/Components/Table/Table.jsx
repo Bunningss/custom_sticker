@@ -6,17 +6,17 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { userReq } from '../../../../Utilities/requestMethods';
 
 const List = () => {
-  const [ rows, setRows ] = useState([]);
+  let rows = [];
 
   useEffect(() => {
     const getOrders = async () => {
       try {
         const res = await userReq.get('/orders?recent=recent')
-        setRows(res.data);
+        rows = res.data;
       } catch (err) {
         console.log(err)
       }
