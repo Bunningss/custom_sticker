@@ -16,7 +16,7 @@ const columns = [
     sortable: false,
     width: 130,
 },
-{ field: 'createdAt', headerName: 'Order Date', type: Date, width: 200 },
+{ field: 'createdAt', headerName: 'Order Date', type: String, width: 200 },
 {
     field: 'total',
     headerName: 'Total',

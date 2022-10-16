@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { publicReq, userReq } from '../../../../Utilities/requestMethods';
 import PrimaryButton from '../../../../Components/PrimaryButton/PrimaryButton';
 import SecondaryButton from '../../../../Components/SecondaryButton/SecondaryButton';
+import { useState } from 'react';
 
 //  Permanent Column
 export const actionColumn = [
@@ -39,14 +40,14 @@ export const actionColumn = [
 ];
 
 const Datatable = () => {
-let rows = [];
+const [ rows, setRows ] = useState([]);
 const navigate = useNavigate();
 
 useEffect(() => {
     const getProducts = async () => {
         try {
             const res = await publicReq.get("/products")
-            rows = res.data;
+            setRows(res.data)
         } catch (err) {
             console.log("An error occured.")
         }

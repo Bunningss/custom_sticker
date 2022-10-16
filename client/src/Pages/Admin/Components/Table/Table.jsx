@@ -8,15 +8,16 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useEffect } from "react";
 import { userReq } from '../../../../Utilities/requestMethods';
+import { useState } from "react";
 
 const List = () => {
-  let rows = [];
+  const [ rows, setRows ] = useState([])
 
   useEffect(() => {
     const getOrders = async () => {
       try {
         const res = await userReq.get('/orders?recent=recent')
-        rows = res.data;
+        setRows(res.data)
       } catch (err) {
         console.log(err)
       }

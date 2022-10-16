@@ -51,7 +51,6 @@ const AddProduct = () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           const info = new FormData(e.target);
           const formData = Object.fromEntries(info.entries());
-          console.log(formData);
           const product = { ...formData, img: downloadURL };
           createProduct(product);
         });

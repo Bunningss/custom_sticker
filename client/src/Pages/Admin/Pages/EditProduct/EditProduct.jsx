@@ -7,11 +7,6 @@ import PrimaryButton from '../../../../Components/PrimaryButton/PrimaryButton';
 
 const EditProduct = () => {
     const [ product, setProduct ] = useState({});
-    const [ values, setValues ] = useState({
-        title: '',
-        startPrice: '',
-        desc: ''
-    });
 
     const id = useLocation().pathname.split('/')[4];
     useEffect(() => {
@@ -26,15 +21,13 @@ const EditProduct = () => {
         getProduct();
     }, [id]);
 
-    const handleChange = (e) => {
-        setValues({ ...values, [e.target.name]: e.target.value });
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const data = new FormData(e.target)
+        const formData = Object.fromEntries(data.entries())
         try {
-            const res = await userReq.put(`/products/${id}`, { title: values.title === '' ? product.title : values.title, startPrice: values.startPrice === '' ? product.startPrice : values.startPrice, desc: values.desc === '' ? product.desc : values.desc });
-            console.log(res.data)
+            await userReq.put(`/products/${id}`, { title: formData.title === '' || null ? product.title : formData.title, startPrice: formData.startPrice === '' || null ? product.startPrice : formData.startPrice, desc: formData.desc === '' || null ? product.desc : formData.desc });
+            window.location.reload();
         } catch (err) {
             console.log(err.message)
         }
@@ -54,13 +47,13 @@ const EditProduct = () => {
                     <form action="" className='form' onSubmit={handleSubmit}>
                         <div className="form-wrapper">
                             <div className="col">
-                                <input type="text" className="input" placeholder={product.title} name='title' onChange={handleChange} />
-                                <input type="number" min='0.01' step="0.01" className="input" placeholder={product.startPrice} name='startPrice' onChange={handleChange} />
-                                <input type="number" min='0' step='0.01' className="input" placeholder={product.maxPrice} name='maxPrice' onChange={handleChange} />
+                                <input type="text" className="input" placeholder={product.title} name='title'  />
+                                <input type="number" min='0.01' step="0.01" className="input" placeholder={product.startPrice} name='startPrice'  />
+                                <input type="number" min='0' step='0.01' className="input" placeholder={product.maxPrice} name='maxPrice'  />
                                 {/* <input type="file" className="input" name='file' /> */}
                             </div>
                             <div className="col">
-                                <textarea className='input' name="desc" onChange={handleChange} placeholder={product.desc || "Description"} id="" cols="30" rows="10"></textarea>
+                                <textarea className='input' name="desc"  placeholder={product.desc || "Description"} id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                         <PrimaryButton text={"update product"}/>
