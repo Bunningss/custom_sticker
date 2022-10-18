@@ -2,6 +2,7 @@ import './Register.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { publicReq } from '../../Utilities/requestMethods';
+import { Scroller } from '../../static';
 import HeaderPrimary from '../../Components/HeaderPrimary/HeaderPrimary';
 import FormInput from '../../Components/FormInput/FormInput';
 import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton';
@@ -53,6 +54,8 @@ const inputs = [
 },
 ];
 
+Scroller();
+
 const handleSubmit = async (e) => {
     e.preventDefault()
     const data = new FormData(e.target);
@@ -68,6 +71,9 @@ const handleSubmit = async (e) => {
         }
     }
 }
+
+// load on top
+Scroller()
 
   return (
     <div className='register account default'>

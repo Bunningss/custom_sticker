@@ -2,6 +2,7 @@ import './MyAccount.css';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../Redux/userRedux';
+import { Scroller } from '../../static';
 import HeaderPrimary from '../../Components/HeaderPrimary/HeaderPrimary';
 import SecondaryButton from '../../Components/SecondaryButton/SecondaryButton';
 import OrderItem from '../../Components/OrderItem/OrderItem';
@@ -20,6 +21,9 @@ const My_Account = () => {
     small: 'View Your Ordered Items',
     large: 'Your Orders'
   }
+
+  // load on top
+  Scroller();
 
   return (
     <div className='my-account default'>

@@ -73,6 +73,9 @@
     width: 100%;
     object-fit: contain;
 }
+.navbar .wrapper .col.col-3 a .icon-small.cart-icon,.navbar .wrapper .col.col-3 a .widget-n {
+    user-select: none;
+}
 
 .navbar .wrapper .col.col-3 a .widget-n {
     position: absolute;

@@ -6,6 +6,6 @@
     flex: 1;
 }
 
-.row:nth-child(2) {
+.order .row:nth-child(2) {
     flex: 6;
 }

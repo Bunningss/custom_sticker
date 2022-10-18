@@ -25,6 +25,7 @@ const EditProduct = () => {
         e.preventDefault();
         const data = new FormData(e.target)
         const formData = Object.fromEntries(data.entries())
+        console.log(formData)
         try {
             await userReq.put(`/products/${id}`, { title: formData.title === '' || null ? product.title : formData.title, startPrice: formData.startPrice === '' || null ? product.startPrice : formData.startPrice, desc: formData.desc === '' || null ? product.desc : formData.desc });
             window.location.reload();
@@ -48,12 +49,12 @@ const EditProduct = () => {
                         <div className="form-wrapper">
                             <div className="col">
                                 <input type="text" className="input" placeholder={product.title} name='title'  />
-                                <input type="number" min='0.01' step="0.01" className="input" placeholder={product.startPrice} name='startPrice'  />
-                                <input type="number" min='0' step='0.01' className="input" placeholder={product.maxPrice} name='maxPrice'  />
+                                <input type="number" min='0.01' step="0.01" className="input" placeholder='Enter new display price' name='startPrice'  />
+                                <input type="number" min='0' step='0.01' className="input" placeholder='Enter new maximum price' name='maxPrice'  />
                                 {/* <input type="file" className="input" name='file' /> */}
                             </div>
                             <div className="col">
-                                <textarea className='input' name="desc"  placeholder={product.desc || "Description"} id="" cols="30" rows="10"></textarea>
+                                <textarea className='input' name="desc"  placeholder='Enter new product description' id="" cols="30" rows="10"></textarea>
                             </div>
                         </div>
                         <PrimaryButton text={"update product"}/>

@@ -2,6 +2,7 @@ import './Reset.css';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { publicReq } from '../../../Utilities/requestMethods';
+import { Scroller } from '../../../static';
 import HeaderPrimary from '../../../Components/HeaderPrimary/HeaderPrimary';
 import SecondaryButton from '../../../Components/SecondaryButton/SecondaryButton';
 
@@ -34,6 +35,9 @@ const Reset = () => {
     small: 'new password',
     large: 'reset your password'
   }
+
+  // load on top
+  Scroller();
 
   return (
     <div className='reset account'>

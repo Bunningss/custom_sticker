@@ -1,17 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCECQRzicu1MEEE2P2ye4yg-ZiVfOcqas8",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "custom-sticker-a9385.firebaseapp.com",
-  projectId: "custom-sticker-a9385",
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   storageBucket: "custom-sticker-a9385.appspot.com",
   messagingSenderId: "585926828225",
-  appId: "1:585926828225:web:b13ff9e4d33aaadf0bf440",
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
   measurementId: "G-3H1EX3VM11"
 };
 

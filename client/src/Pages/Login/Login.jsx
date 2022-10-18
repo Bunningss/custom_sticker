@@ -4,6 +4,7 @@ import { publicReq } from '../../Utilities/requestMethods';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginFailure, loginStart, loginSuccess } from '../../Redux/userRedux';
+import { Scroller } from '../../static';
 import FormInput from '../../Components/FormInput/FormInput';
 import HeaderPrimary from '../../Components/HeaderPrimary/HeaderPrimary';
 import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton';
@@ -52,6 +53,9 @@ const Login = () => {
       setError(err.response.data.msg);
     }
   };
+
+  //load on top
+  Scroller();
 
   return (
     <div className='login account default'>

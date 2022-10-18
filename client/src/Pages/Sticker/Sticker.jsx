@@ -22,7 +22,7 @@ const Sticker = () => {
     type: '',
     img: ['https://images.pexels.com/photos/13761592/pexels-photo-13761592.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load'],
     size: '',
-    quantity: '',
+    Quantity: '',
     material: '',
     art: '',
     startPrice: 0.24,
@@ -49,20 +49,20 @@ const Sticker = () => {
   useEffect(() => {
     setSize({...size, ['height']: '', ["width"]: ''})
     setValues({...values, ['size']: ''})
-    setValues({...values, ['quantity']: ''})
+    setValues({...values, ['Quantity']: ''})
   }, [values.sticker]);
 
   // Reset quantity on size change
   useEffect(() => {
-    setValues({ ...values, ['quantity']: '' })
+    setValues({ ...values, ['Quantity']: '' })
   },[values.size]);
 
   // Add to cart
   const handleClick = () => {
-    if (!values.sticker || !values.size || !values.type || !values.quantity || !values.material) {
+    if (!values.sticker || !values.size || !values.type || !values.Quantity || !values.material) {
       return
     } else {
-      dispatch(addProduct({ serial: Math.random() * 10000 + 20000, ...values, price: Number((values.quantity * values.startPrice).toFixed(2)) }))
+      dispatch(addProduct({ serial: Math.random() * 10000 + 20000, ...values, price: Number((values.Quantity * values.startPrice).toFixed(2)) }))
     }
   }
 
@@ -71,7 +71,7 @@ const Sticker = () => {
 
   return (
     <div className='main-wrapper sticker default'>
-      <Float values={values} quantity={values.quantity} size={size}/>
+      <Float values={values} size={size}/>
       <div className="content">
         {/* Select Sticker */}
         <section className='section-step'>

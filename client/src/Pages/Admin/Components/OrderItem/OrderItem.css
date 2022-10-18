@@ -1,0 +1,30 @@
+.admin-order-item {
+    padding: 10px;
+    border: 1px solid grey;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 10px;
+}
+
+.admin-order-item .col {
+    width: 50%;
+}
+
+.admin-order-item .col:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-order-item .col .artwork-img {
+    max-height: 250px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.admin-order-item .col .text-medium {
+    line-height: 2;
+}
+
+.text-medium span {
+    color: #fd6239;
+}

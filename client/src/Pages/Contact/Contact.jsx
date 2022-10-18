@@ -1,5 +1,6 @@
-import { useState } from 'react';
 import './Contact.css';
+import { Scroller } from '../../static';
+import { useState } from 'react';
 import SecondaryButton from '../../Components/SecondaryButton/SecondaryButton';
 import phone from '../../assets/icons/phone-green.png';
 import email from '../../assets/icons/email-green.png';
@@ -17,6 +18,9 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {}
+
+  //load on top
+  Scroller();
 
   return (
     <div className='contact default'>

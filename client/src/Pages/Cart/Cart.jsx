@@ -29,33 +29,35 @@ const Cart = () => {
   const handleCheckout = async (e) => {
     e.preventDefault();
 
-    const line_items = cart.products.map((item) => {
+    // const line_items = cart.products.map((item) => {
 
-      return {
-        quantity: item.Quantity || item.quantity,
-        price_data: {
-          currency: 'usd',
-          unit_amount: item.startPrice * 100, //amount in cents
-          product_data: {
-            name: item.title || item.sticker + " " + "sticker",
-            description: item.title || item.sticker,
-            images: item.img,
-          }
-        }
-      }
-    });
+    //   return {
+    //     quantity: item.Quantity || item.quantity,
+    //     price_data: {
+    //       currency: 'usd',
+    //       unit_amount: item.startPrice * 100, //amount in cents
+    //       product_data: {
+    //         name: item.title || item.sticker + " " + "sticker",
+    //         description: item.title || item.sticker,
+    //         images: item.img,
+    //       }
+    //     }
+    //   }
+    // });
+    // const response = await publicReq.post('/create-checkout-session', { line_items, customer_email: "test@gmail.com" });
 
-    const response = await publicReq.post('/create-checkout-session', { line_items, customer_email: "test@gmail.com" });
+    // const  sessionId  = response.data.sessionID;
+    // const { error } = await stripe.redirectToCheckout({
+    //   sessionId
+    // });
+    // console.log(sessionId)
 
-    const  sessionId  = response.data.sessionID;
-    
-    const { error } = await stripe.redirectToCheckout({
-      sessionId
-    });
+    // if (error) {
+    //   console.log(error)
+    // };
 
-    if (error) {
-      console.log(error)
-    };
+    // Custom Checkout Logic
+    navigate('/checkout')
   }
   // Always load on top
   Scroller()

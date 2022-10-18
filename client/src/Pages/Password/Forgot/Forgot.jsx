@@ -1,6 +1,7 @@
 import './Forgot.css';
 import { useState } from 'react';
 import  { publicReq } from '../../../Utilities/requestMethods';
+import { Scroller } from '../../../static';
 import HeaderPrimary from '../../../Components/HeaderPrimary/HeaderPrimary';
 import SecondaryButton from '../../../Components/SecondaryButton/SecondaryButton';
 import FormInput from '../../../Components/FormInput/FormInput';
@@ -33,6 +34,9 @@ const Forgot = () => {
     small: 'forgot password',
     large: 'request new password'
   }
+
+  // load on top
+  Scroller();
 
   return (
     <div className='forgot account default'>

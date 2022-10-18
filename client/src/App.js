@@ -24,6 +24,7 @@ import Contact from './Pages/Contact/Contact';
 import Forgot from './Pages/Password/Forgot/Forgot';
 import Reset from './Pages/Password/Reset/Reset';
 import UserInfo from './Pages/UserInfo/UserInfo';
+import CustomCheckout from './Pages/CustomCheckout/CustomCheckout';
 // Admin
 import Admin from './Pages/Admin/Admin';
 import List from './Pages/Admin/Pages/List/List';
@@ -31,9 +32,11 @@ import AddProduct from './Pages/Admin/Pages/AddProduct/AddProduct.jsx';
 import EditProduct from './Pages/Admin/Pages/EditProduct/EditProduct.jsx';
 import Order from './Pages/Admin/Pages/Order/Order';
 import EditOrder from './Pages/Admin/Pages/EditOrder/EditOrder';
+import ViewOrder from './Pages/Admin/Pages/Order/ViewOrder/ViewOrder';
 
 function App() {
   const user = useSelector((state) => state.user);
+  const cart = useSelector((state) => state.cart);
 
   const [ active, setActive ] = useState(false)
   return (
@@ -55,6 +58,10 @@ function App() {
         <Route exact path='/customize/sticker' element={<Sticker/>}/>
         <Route exact path='/customize/lanyard' element={<Lanyard/>}/>
         <Route exact path='/cart' element={<Cart/>}/>
+        {
+          cart.quantity > 0 &&
+          <Route exact path='/checkout' element={<CustomCheckout/>}/>
+        }
         <Route exact path='/contact' element={<Contact/>}/>
 
         {/* Admin */}
@@ -66,6 +73,7 @@ function App() {
             <Route exact path='/admin/products/new' element={<AddProduct/>}/>
             <Route exact path='/admin/products/edit/:id' element={<EditProduct/>}/>
             <Route exact path='/admin/orders' element={<Order/>} />
+            <Route exact path='/admin/orders/view/:id' element={<ViewOrder/>} />
             <Route exact path='/admin/orders/edit/:id' element={<EditOrder/>} />
           </>
         }
