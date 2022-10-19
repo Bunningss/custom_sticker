@@ -11,12 +11,12 @@ const Order = () => {
 const [ rows, setRows ] = useState([]);
 
 const columns = [
-{ field: '_id', headerName: 'Customer ID', width: 70 },
+{ field: '_id', headerName: 'Order ID', width: 200 },
 {
     field: "customer",
     headerName: "Customer",
     sortable: false,
-    width: 130,
+    width: 250,
 },
 { field: 'createdAt', headerName: 'Order Date', type: String, width: 200 },
 { field: 'status', headerName: 'Order Status', type: String, width: 200 },

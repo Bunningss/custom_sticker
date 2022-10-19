@@ -10,6 +10,7 @@ const CustomCheckout = () => {
   const [ values, setValues ] = useState({
     name: '',
     email: '',
+    phone: '',
     shipping: ''
   });
 
@@ -19,7 +20,7 @@ const CustomCheckout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (values.shipping !== '' || values.name !== '' || values.email !== '') {
+    if (values.shipping !== '' || values.name !== '' || values.email !== '' || values.phone === '') {
       if (values.shipping.split('').length > 15) {
         setStep(true)
       } else {
@@ -37,7 +38,12 @@ const CustomCheckout = () => {
           <form className="form" onSubmit={handleSubmit}>
               <input type="text" onChange={handleChange} name='name' required placeholder='Enter Full Name Here' className="input text-regular" />
               <input type="email" onChange={handleChange} name='email' required placeholder='Enter Email Address' className="input text-regular" />
+              <input type="phone" onChange={handleChange} name='phone' required placeholder='Enter Phone Number' className="input text-regular" />
               <input type="text" onChange={handleChange} name='shipping' required placeholder='Enter Shipping Address' className="input text-regular" />
+              {
+                error && 
+                  <p className="warning text-small">{error}</p>
+              }
               <PrimaryButton text={"continue"}/>
           </form>
       }

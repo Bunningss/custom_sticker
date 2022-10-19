@@ -1,44 +1,50 @@
 .order-item {
-    display: flex;
-    height: 300px;
-    border: 1px solid var(--color-secondary);
     margin: 10px 0;
 }
 
-.order-item .row {
-    height: 100%;
-    width: calc(100% / 3);
-    /* padding: 5px; */
+.order-item .wrapper {
+    border: 1px solid var(--color-secondary);
+    padding: 10px;
 }
 
-.order-item .row .col {
+.order-item .wrapper .order-info {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
-    border: 1px solid var(--color-secondary);
-    padding: 5px;
-}
-
-.order-item .row .col:nth-child(1) {
-    border-bottom: 1px solid var(--color-secondary);
-    height: 20%;
     align-items: center;
 }
 
-.order-item .row .col:nth-child(2) {
-    height: 80%;
-    width: 100%;
+.order-item .wrapper .order-info .text-medium {
+    line-height: 1.4;
 }
-
-.order-item .row .col .image {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-}
-
-.order-item .row .col .text-regular span {
+.order-item .wrapper .order-info .text-medium.order-status {
+    font-weight: 800;
+    font-size: 18px;
     text-decoration: underline;
-    font-weight: 900;
+}
+
+.order-item .wrapper .order-info .text-medium.order-status .Delivered {
+    color: green;
+}
+
+.order-item .wrapper .order-info .text-medium.order-status .Pending {
+    color: goldenrod;
+}
+
+.order-item .wrapper .order-info .text-medium.order-status .Production {
+    color: yellowgreen;
+}
+
+.order-item .wrapper .order-details {
+    margin: 15px 0;
+}
+
+.order-item .wrapper .order-details .order-title {
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.order-item .wrapper .order-details .text-medium {
     line-height: 1.5;
 }

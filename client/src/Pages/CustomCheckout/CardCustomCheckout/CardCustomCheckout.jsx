@@ -1,6 +1,6 @@
 import './CardCustomCheckout.css';
 import { CardNumberElement, CardExpiryElement, CardCvcElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { publicReq } from '../../../Utilities/requestMethods';
+import { publicReq, userReq } from '../../../Utilities/requestMethods';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -16,6 +16,8 @@ const CardCustomCheckout = ({ shipping }) => {
     const elements = useElements();
     const cart = useSelector((state) => state.cart);
     const cartItems = cart.products;
+    const user = useSelector((state) => state.user);
+    const userInfo = user.currentUser?.others._id;
 
     useEffect(() => {
         const items = cartItems.map(item => ({ price: item.price, quantity: item.Quantity }));
@@ -35,7 +37,7 @@ const CardCustomCheckout = ({ shipping }) => {
             }
 
             const CustomCheckout = async () => {
-                const res = await publicReq.post('/pay/create-payment-intent', body);
+                const res = await userReq.post('/pay/create-payment-intent', body);
                 setClientSecret(res.data.clientSecret);
             }
             CustomCheckout(); // Making the function call
@@ -67,8 +69,10 @@ const CardCustomCheckout = ({ shipping }) => {
             setError(`Payment failed: ${payload.error.message}`)
         } else {
             const details = cartItems.map((item) => ({ productName: item.sticker || item.title, productID: item._id, artwork: item.ArtworkFile || item.artFile, instruction: item.ArtworkInstruction || item.art, color: item.ImprintColor, size: item.StickerSize || item.size, quantity: item.Quantity || item.quantity, type: item.StickerType || item.type, custom: item.custom,  }));
-            await publicReq.post('/orders', {
-                customer: shipping.email,
+            await userReq.post('/orders', {
+                customer: userInfo,
+                email: shipping.email,
+                phone: shipping.phone,
                 total: cart.total,
                 deliveryAddress: shipping.shipping,
                 details

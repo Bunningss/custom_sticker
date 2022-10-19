@@ -30,11 +30,13 @@ const ViewOrder = () => {
         </div>
         <div className="row wrapper">
             <div className="order">
-                <p className="text-medium">Order Date - <span>{new Date(order.createdAt).toLocaleDateString()}</span></p>
+                <p className="text-medium">Order Date - <span>{new Date(order.createdAt).toDateString()}</span></p>
                 <p className="text-medium">Customer - <span>{order.customer}</span></p>
                 <p className="text-medium">Order Status - <span>{order.status}</span></p>
-                <p className="text-medium">Order Total - <span>{order.total}</span></p>
+                <p className="text-medium">Order Total - <span>{order.total}$</span></p>
                 <p className="text-medium">Delivery Address - <span>{order.deliveryAddress}</span></p>
+                <p className="text-medium">Email Address - <span>{order.email}</span></p>
+                <p className="text-medium">Phone Number - <span>{order.phone}</span></p>
                 {
                     order.details &&
                         order.details.map((item, indx) => (

@@ -77,7 +77,7 @@ const Product = () => {
             </div>
             <div className="col">
                 <div className="product-si-info">
-                    <h2 className="header">Die cut stickers</h2>
+                    <h2 className="header">{product.title}</h2>
                     <h4 className="header-medium">Price Per Sticker - ${product.startPrice}</h4>
                     <Slideshow modalImg={modalImg} setModalImg={setModalImg} images={product.img}/>
                     {/* Form starts here */}

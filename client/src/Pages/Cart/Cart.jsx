@@ -12,7 +12,8 @@ import { useStripe } from '@stripe/react-stripe-js';
 
 const Cart = () => {
   const navigate = useNavigate();
-  const stripe = useStripe();
+  const user = useSelector((state) => state.user)?.currentUser?.others
+
   const header = {
     small: 'Review Your Items',
     large: 'Shopping Cart'
@@ -28,34 +29,7 @@ const Cart = () => {
   // Handle Checkout
   const handleCheckout = async (e) => {
     e.preventDefault();
-
-    // const line_items = cart.products.map((item) => {
-
-    //   return {
-    //     quantity: item.Quantity || item.quantity,
-    //     price_data: {
-    //       currency: 'usd',
-    //       unit_amount: item.startPrice * 100, //amount in cents
-    //       product_data: {
-    //         name: item.title || item.sticker + " " + "sticker",
-    //         description: item.title || item.sticker,
-    //         images: item.img,
-    //       }
-    //     }
-    //   }
-    // });
-    // const response = await publicReq.post('/create-checkout-session', { line_items, customer_email: "test@gmail.com" });
-
-    // const  sessionId  = response.data.sessionID;
-    // const { error } = await stripe.redirectToCheckout({
-    //   sessionId
-    // });
-    // console.log(sessionId)
-
-    // if (error) {
-    //   console.log(error)
-    // };
-
+    
     // Custom Checkout Logic
     navigate('/checkout')
   }
@@ -75,9 +49,13 @@ const Cart = () => {
               ))
             }
           </div>
-          <form action="" onSubmit={handleCheckout}>
-            <PrimaryButton text={"Checkout"}/>
-          </form>
+            {
+              user ? 
+                <form action="" onSubmit={handleCheckout}>
+                    <PrimaryButton text={"Checkout"}/> 
+                </form> :
+                <SecondaryButton text={'login to proceed to checkout'}/>
+            }
         </div>
       }
       {
