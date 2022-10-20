@@ -39,7 +39,7 @@ const CustomCheckout = () => {
               <input type="text" onChange={handleChange} name='name' required placeholder='Enter Full Name Here' className="input text-regular" />
               <input type="email" onChange={handleChange} name='email' required placeholder='Enter Email Address' className="input text-regular" />
               <input type="phone" onChange={handleChange} name='phone' required placeholder='Enter Phone Number' className="input text-regular" />
-              <input type="text" onChange={handleChange} name='shipping' required placeholder='Enter Shipping Address' className="input text-regular" />
+              <input type="text" onChange={handleChange} name='shipping' required placeholder='Enter Shipping Address' minLength="20" className="input text-regular" />
               {
                 error && 
                   <p className="warning text-small">{error}</p>

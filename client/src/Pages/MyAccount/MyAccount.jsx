@@ -49,7 +49,7 @@ const My_Account = () => {
             }
           </div>
         </div>
-        {/* Active Orders */}
+        {/* Fetch Orders */}
         <div className="ongoing-orders">
           <HeaderPrimary headers={headers}/>
           <div className="content">

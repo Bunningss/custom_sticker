@@ -66,7 +66,8 @@ const CardCustomCheckout = ({ shipping }) => {
             }
         });
         if (payload.error) {
-            setError(`Payment failed: ${payload.error.message}`)
+            setProcessing(false);
+            setError(`Payment failed: ${payload.error.message}`);
         } else {
             const details = cartItems.map((item) => ({ productName: item.sticker || item.title, productID: item._id, artwork: item.ArtworkFile || item.artFile, instruction: item.ArtworkInstruction || item.art, color: item.ImprintColor, size: item.StickerSize || item.size, quantity: item.Quantity || item.quantity, type: item.StickerType || item.type, custom: item.custom,  }));
             await userReq.post('/orders', {
@@ -77,6 +78,7 @@ const CardCustomCheckout = ({ shipping }) => {
                 deliveryAddress: shipping.shipping,
                 details
             });
+            setProcessing(false);
             navigate('/success');
         }
     }
@@ -86,24 +88,28 @@ const CardCustomCheckout = ({ shipping }) => {
         <HeaderPrimary headers={headers}/>
         <div className="stripe-card">
             <CardNumberElement 
-                className='card-element'
+                className='input'
                 onChange={cardHandleChange}
             />
         </div>
         <div className="stripe-card">
             <CardExpiryElement 
-                className='card-element'
+                className='input'
                 onChange={cardHandleChange}
             />
         </div>
         <div className="stripe-card">
             <CardCvcElement 
-                className='card-element'
+                className='input'
                 onChange={cardHandleChange}
             />
         </div>
+        {
+            error &&
+                <span className="warning error-message text-small">{error}</span>
+        }
         <div className="submit-container">
-            <PrimaryButton text={'submit'} handleClick={handleCheckout}/>
+            <PrimaryButton text={processing ? "processing" : 'submit'} handleClick={handleCheckout}/>
         </div>
     </div>
   )

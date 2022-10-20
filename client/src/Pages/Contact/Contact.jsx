@@ -1,23 +1,26 @@
 import './Contact.css';
 import { Scroller } from '../../static';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import SecondaryButton from '../../Components/SecondaryButton/SecondaryButton';
 import phone from '../../assets/icons/phone-green.png';
 import email from '../../assets/icons/email-green.png';
 import location from '../../assets/icons/location-green.png';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-  const [ values, setValues ] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
+  const formRef = useRef();
 
-  const handleChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value })
+  const handleSubmit = (e) => {
+    e.preventDefault();
+        emailjs.sendForm('service_eiboynh', 'template_lzygkxe', formRef.current, 'ZFdpndrA2VyADKPkr')
+      .then((result) => {
+          // console.log(result.text);
+          alert("Message Delivered")
+      }, (error) => {
+          // console.log(error.text);
+          alert("Sending Failed")
+      })
   };
-
-  const handleSubmit = (e) => {}
 
   //load on top
   Scroller();
@@ -41,10 +44,11 @@ const Contact = () => {
         </div>
         <div className="row">
           <h2 className="header">contact us</h2>
-          <form action="" onSubmit={handleSubmit} className="contact-form">
-            <input name="name" placeholder='Enter Your Name' type="text" required className='form-input text-regular' onChange={handleChange} />
-            <input name="email" placeholder='Enter Email Address' type="email" required className='form-input text-regular' onChange={handleChange} />
-            <textarea name="message" placeholder='Enter Your Message'  required className='form-input text-regular' id="" cols="30" rows="10" onChange={handleChange}></textarea>
+          <form action="" onSubmit={handleSubmit} className="contact-form" ref={formRef}>
+            <input name="user_name" placeholder='Enter Your Name' type="text" required className='form-input text-regular' />
+            <input name="user_email" placeholder='Enter Email Address' type="email" required className='form-input text-regular' />
+            <input name="user_subject" placeholder='Subject' type="text" required className='form-input text-regular' />
+            <textarea name="message" placeholder='Enter Your Message'  required className='form-input text-regular' id="" cols="30" rows="10" ></textarea>
             <SecondaryButton text={"Send"}/>
           </form>
         </div>

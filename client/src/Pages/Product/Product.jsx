@@ -2,9 +2,11 @@ import './Product.css';
 import { useState, useEffect } from 'react';
 import { custom, Scroller } from '../../static';
 import { publicReq } from '../../Utilities/requestMethods';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../../Redux/cartRedux';
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import app from '../../firebase';
 import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton';
 import Slideshow from '../../Components/Slideshow/Slideshow';
 import Modal from '../../Components/Modal/Modal';
@@ -13,6 +15,7 @@ import HeaderPrimary from '../../Components/HeaderPrimary/HeaderPrimary';
 
 const Product = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [ product, setProduct ] = useState({});
     const [ modalImg, setModalImg ] = useState(null);
@@ -22,9 +25,9 @@ const Product = () => {
         StickerSize: "",
         ImprintColors: "",
         ArtworkType: "",
-        ArtworkFile: "",
         ArtworkInstruction: "",
     });
+    const [ file, setFile ] = useState(null);
 
     const headers = {
         small: "details",
@@ -37,7 +40,7 @@ const Product = () => {
 
     // Reset artwork file and instruction on artwork type change
     useEffect(() => {
-        setValues({...values, ["ArtworkFile"]: ''})
+        setFile(null)
         setValues({...values, ["ArtworkInstruction"]: ''})
     }, [values.ArtworkType]);
 
@@ -58,15 +61,53 @@ const Product = () => {
 
     // Add to cart
     const handleClick = (e) => {
-        e.preventDefault()
-        dispatch(addProduct({
-            serial: Math.random() * 10000 + 20000,...product, ...values, price: Number((values.Quantity * product.startPrice).toFixed(2))
-        }))
+        e.preventDefault();
+
+//  Firebase Upload
+if (file) {
+    const filename = new Date().getTime() + file.name;
+    const storage = getStorage(app);
+    const storageRef = ref(storage, filename);
+
+    const uploadTask = uploadBytesResumable(storageRef, file);    
+    uploadTask.on('state_changed', 
+    (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+        case 'paused':
+            console.log('Upload is paused');
+            break;
+        case 'running':
+            console.log('Upload is running');
+            break;
+            default:
+        }
+    }, 
+    (error) => {
+        // Handle unsuccessful uploads
+    }, 
+    () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+        //  Add to cart logic
+            dispatch(addProduct({
+                serial: Math.random() * 10000 + 20000,...product, ...values, ArtworkFile: downloadURL, price: Number((values.Quantity * product.startPrice).toFixed(2))
+            }));
+            navigate('/cart');
+        });
     }
+);
+} else {
+    dispatch(addProduct({
+        serial: Math.random() * 10000 + 20000,...product, ...values, price: Number((values.Quantity * product.startPrice).toFixed(2))
+    }));
+    navigate('/cart');
+}
+};
     // Always load page on top
     Scroller()
 
-  return (
+return (
     <div className='product-si default'>
         {
             modalImg && <Modal modalImg={modalImg} setModalImg={setModalImg}/>
@@ -91,7 +132,7 @@ const Product = () => {
                         }
                         {
                             values.ArtworkType === 'Upload Artwork' &&
-                            <input type="file" onChange={handleChange} name='ArtworkFile' className='input text-regular' required onInvalid={(e) => e.target.setCustomValidity("Please upload your artwork")} onInput={(e) => e.target.setCustomValidity("")}/>
+                            <input type="file" onChange={(e) => setFile(e.target.files[0])} className='input text-regular' required onInvalid={(e) => e.target.setCustomValidity("Please upload your artwork")} onInput={(e) => e.target.setCustomValidity("")}/>
                         }
                         {
                             values.ArtworkType === 'Help With Artwork' &&
@@ -107,7 +148,7 @@ const Product = () => {
             {product.desc}
         </p>
     </div>
-  )
+)
 }
 
 export default Product

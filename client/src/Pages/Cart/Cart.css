@@ -1,4 +1,6 @@
-.cart {}
+.cart .wrapper .cart-content .cart-total {
+    text-align: right;
+}
 
 .cart .wrapper.empty {
     min-height: calc(100vh - 80px);

@@ -33,6 +33,7 @@ import EditProduct from './Pages/Admin/Pages/EditProduct/EditProduct.jsx';
 import Order from './Pages/Admin/Pages/Order/Order';
 import EditOrder from './Pages/Admin/Pages/EditOrder/EditOrder';
 import ViewOrder from './Pages/Admin/Pages/Order/ViewOrder/ViewOrder';
+import Success from './Pages/Success/Success';
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -58,6 +59,7 @@ function App() {
         <Route exact path='/customize/sticker' element={<Sticker/>}/>
         <Route exact path='/customize/lanyard' element={<Lanyard/>}/>
         <Route exact path='/cart' element={<Cart/>}/>
+        <Route exact path='/success' element={<Success/>}/>
         {
           cart.quantity > 0 &&
           <Route exact path='/checkout' element={<CustomCheckout/>}/>

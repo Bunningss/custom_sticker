@@ -1,14 +1,11 @@
 import './Cart.css';
 import { Scroller } from '../../static';
-import { publicReq } from '../../Utilities/requestMethods';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import SecondaryButton from '../../Components/SecondaryButton/SecondaryButton';
 import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton';
 import CartItem from '../../Components/CartItem/CartItem';
 import HeaderAlternate from '../../Components/HeaderAlternate/HeaderAlternate';
-
-import { useStripe } from '@stripe/react-stripe-js';
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -19,7 +16,6 @@ const Cart = () => {
     large: 'Shopping Cart'
   }
 
-  // const user = useSelector((state) => state.user) // If user unavailable canno make purchase.
   const cart = useSelector(( state ) => state.cart);
 
   const handleClick = () => {
@@ -41,13 +37,13 @@ const Cart = () => {
         cart.quantity > 0 &&
         <div className="wrapper main-wrapper">
           <HeaderAlternate headers={header}/>
-          {/* <Header_Primary headers={header}/> */}
           <div className="cart-content">
             {
               cart.products.map((item, indx) => (
                 <CartItem key={indx} item={item}/>
               ))
             }
+            <h4 className="title cart-total">Total Amount - {cart.total}$</h4>
           </div>
             {
               user ? 
