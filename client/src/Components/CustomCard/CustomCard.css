@@ -17,7 +17,7 @@
 .c-card.active {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transform: perspective(75rem) rotateX(38deg);
-    border: 5px solid var(--color-secondary);
+    border: 5px solid var(--font-primary);
 }
 
 .c-card .row.row-1 {

@@ -177,18 +177,18 @@ const Sticker = () => {
         </section>
       </div>
       <div className="artwork">
-        <select name="artworkType" id="" className="input" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })} required>
+        <select name="artworkType" id="" className="input text-regular" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })} required>
           <option value="">Select Artwork</option>
           <option value="instruction">Provide Instructions</option>
           <option value="upload">Upload Artwork</option>
         </select>
         {
           values.artworkType === 'instruction' &&
-          <textarea required name="artworkInstuction" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })} className='input' id="" cols="30" rows="10" placeholder='Provide artwork instructions'></textarea>
+          <textarea required name="artworkInstuction" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })} className='input text-regular' id="" cols="30" rows="10" placeholder='Provide artwork instructions'></textarea>
         }
         {
           values.artworkType === 'upload' &&
-          <input required type="file" onChange={(e) => setFile(e.target.files[0])} className="input" />
+          <input required type="file" onChange={(e) => setFile(e.target.files[0])} className="input text-regular" />
         }
       </div>
       <PrimaryButton text={processing ? "processing..." : "Add to cart"}/>
