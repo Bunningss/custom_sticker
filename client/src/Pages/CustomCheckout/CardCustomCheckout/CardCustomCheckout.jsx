@@ -38,7 +38,11 @@ const CardCustomCheckout = ({ shipping }) => {
 
             const CustomCheckout = async () => {
                 const res = await userReq.post('/pay/create-payment-intent', body);
-                setClientSecret(res.data.clientSecret);
+                if (res.data.clientSecret) {
+                    setClientSecret(res.data.clientSecret);
+                } else {
+                    window.location.reload();
+                }
             }
             CustomCheckout(); // Making the function call
         } else {
@@ -109,7 +113,7 @@ const CardCustomCheckout = ({ shipping }) => {
                 <span className="warning error-message text-small">{error}</span>
         }
         <div className="submit-container">
-            <PrimaryButton text={processing ? "processing" : 'submit'} handleClick={handleCheckout}/>
+            <PrimaryButton text={processing ? "processing..." : 'submit'} handleClick={handleCheckout}/>
         </div>
     </div>
   )

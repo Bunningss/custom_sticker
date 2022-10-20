@@ -191,7 +191,7 @@ const Sticker = () => {
           <input required type="file" onChange={(e) => setFile(e.target.files[0])} className="input" />
         }
       </div>
-      <PrimaryButton text={"Add to cart"}/>
+      <PrimaryButton text={processing ? "processing..." : "Add to cart"}/>
     </form>
   )
 }

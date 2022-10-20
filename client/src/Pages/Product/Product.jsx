@@ -17,6 +17,7 @@ const Product = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const [ processing, setProcessing ] = useState(false);
     const [ product, setProduct ] = useState({});
     const [ modalImg, setModalImg ] = useState(null);
     const [ values, setValues ] = useState({
@@ -60,8 +61,9 @@ const Product = () => {
     }, [id]);
 
     // Add to cart
-    const handleClick = (e) => {
-        e.preventDefault();
+const handleClick = (e) => {
+    e.preventDefault();
+    setProcessing(true);
 
 //  Firebase Upload
 if (file) {
@@ -86,6 +88,7 @@ if (file) {
     }, 
     (error) => {
         // Handle unsuccessful uploads
+        setProcessing(false)
     }, 
     () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
@@ -138,7 +141,7 @@ return (
                             values.ArtworkType === 'Help With Artwork' &&
                             <textarea type="text" rows='5' onChange={handleChange} name='ArtworkInstruction' className="input text-regular" required placeholder='Provide Artwork Instructions' onInvalid={(e) => e.target.setCustomValidity("Please provide artwork instruction.")} onInput={(e) => e.target.setCustomValidity("")}/>
                         }
-                        <PrimaryButton text={"add to cart"} />
+                        <PrimaryButton text={processing ? "processing..." : "add to cart"} />
                     </form>
                 </div>
             </div>
