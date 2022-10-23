@@ -64,6 +64,12 @@ const CardCustomCheckout = ({ shipping }) => {
         e.preventDefault();
         
         setProcessing(true);
+        if (!clientSecret) {
+            setProcessing(false);
+            alert("An error occured.");
+            window.location.reload();
+            return
+        }
         const payload = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: elements.getElement(CardNumberElement)
