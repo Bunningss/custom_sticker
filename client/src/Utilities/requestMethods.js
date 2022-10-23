@@ -6,7 +6,7 @@ const base_url = 'https://tmahmud.herokuapp.com/';
 // Fetch Access Token
 const user = JSON.parse(localStorage.getItem("persist:root"))?.user;
 const currentUser = user && JSON.parse(user).currentUser;
-const TOKEN = currentUser?.accessToken;
+const TOKEN = currentUser && currentUser.accessToken;
 
 export const publicReq = axios.create({
     baseURL: base_url

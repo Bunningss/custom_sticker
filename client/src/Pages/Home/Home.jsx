@@ -50,7 +50,7 @@ const Home = () => {
   }, [])
 
   // Always load page on top
-  Scroller()
+  Scroller();
   
   return (
     <div className='home default'>

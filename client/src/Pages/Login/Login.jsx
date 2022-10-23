@@ -50,7 +50,8 @@ const Login = () => {
       const res = await publicReq.post('/auth/login', formData);
       dispatch(loginSuccess(res.data));
       setProcessing(false);
-      navigate('/')
+      navigate('/');
+      window.location.reload();
     } catch (err) {
       setProcessing(false);
       dispatch(loginFailure());
