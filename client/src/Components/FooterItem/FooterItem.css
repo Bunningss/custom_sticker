@@ -1,4 +1,6 @@
-.footer-item {}
+.footer-item {
+    width: 50%;
+}
 
 .footer-item .title {
     margin-bottom: 15px;

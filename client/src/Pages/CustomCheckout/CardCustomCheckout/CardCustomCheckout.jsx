@@ -73,7 +73,7 @@ const CardCustomCheckout = ({ shipping }) => {
             setProcessing(false);
             setError(`Payment failed: ${payload.error.message}`);
         } else {
-            const details = cartItems.map((item) => ({ productName: item.sticker || item.title, productID: item._id, artwork: item.ArtworkFile || item.artFile, instruction: item.ArtworkInstruction || item.art, color: item.ImprintColor, size: item.StickerSize || item.size, quantity: item.Quantity || item.quantity, type: item.StickerType || item.type, custom: item.custom,  }));
+            const details = cartItems.map((item) => ({ productName: item.sticker || item.title, productID: item._id, artwork: item.ArtworkFile || item.artworkFile, instruction: item.ArtworkInstruction || item.artworkInstuction, color: item.ImprintColors, size: item.StickerSize || item.size, quantity: item.Quantity || item.quantity, type: item.StickerType || item.type, custom: item.custom, material: item.material }));
             await userReq.post('/orders', {
                 customer: userInfo,
                 email: shipping.email,

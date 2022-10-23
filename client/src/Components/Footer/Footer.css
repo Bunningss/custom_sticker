@@ -41,8 +41,10 @@
         padding-right: 5px;
     }
 
-    .footer .wrapper .footer-item {
-        width: 50%;
+    .footer .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
+
 }
 

@@ -127,7 +127,7 @@ return (
                     {/* Form starts here */}
                     <form action="" onSubmit={handleClick} className="product-si-form">
                         <label className='text-regular' htmlFor="quantity">Select Quantity</label>
-                        <input type="number" className='input text-regular' name='Quantity' min='10' max='10000' required onInvalid={(e) => e.target.setCustomValidity("Quantity Must Be Greater Than 10 And Less Than 10000")} onInput={(e) => e.target.setCustomValidity('')} onChange={handleChange}/>
+                        <input type="number" className='input text-regular' name='Quantity' min='10' max='10000' placeholder='Select Quantity (Min 10)' required onInvalid={(e) => e.target.setCustomValidity("Quantity Must Be Greater Than 10 And Less Than 10000")} onInput={(e) => e.target.setCustomValidity('')} onChange={handleChange}/>
                         {
                             custom.map((item, indx) => (
                                 <SelectMenu item={item} key={indx} values={values} setValues={setValues}/>

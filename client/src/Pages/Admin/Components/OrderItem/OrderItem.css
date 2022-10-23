@@ -25,6 +25,10 @@
     line-height: 2;
 }
 
+.admin-order-item .col .text-medium.underline span {
+    text-decoration: underline var(--font-primary);
+}
+
 .text-medium span {
     color: #fd6239;
 }

@@ -5,9 +5,7 @@ const Custom_Card = ({ info, setValues, values, active, setActive, size, setSize
     setValues({...values, [info.selection]: info.name})
     setActive(info.name)
   }
-  const handleChange = (e) => {
-    setSize({...size, [e.target.name]: e.target.value})
-  }
+
   return (
     <div className={active ? 'c-card active' : 'c-card'} onClick={handleSelection}>
         <div className="row row-1">
@@ -19,8 +17,8 @@ const Custom_Card = ({ info, setValues, values, active, setActive, size, setSize
             {
               info.selection==='size' && values.sticker==='custom' &&
               <div className="c-size">
-                <input type="number" placeholder='H' className='c-size-input' min='2' name='height' required onChange={handleChange} />
-                <input type="number" placeholder='W' className='c-size-input' min='2' name='width' required onChange={handleChange} />
+                <input type="number" placeholder='H' className='c-size-input' min='2' max='15' name='height' required onChange={(e) => setValues({...values, [e.target.name]: e.target.value})} />
+                <input type="number" placeholder='W' className='c-size-input' min='2' max='15' name='width' required onChange={(e) => setValues({...values, [e.target.name]: e.target.value})} />
               </div>
             }
             {/* Quantity Select */}

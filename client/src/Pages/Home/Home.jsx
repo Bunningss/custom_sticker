@@ -11,8 +11,8 @@ const Home = () => {
   const [ products, setProducts ] = useState([]);
   const [ topProducts, setTopProducts ] = useState([]);
   const headers = {
-    small: "top products",
-    large: "best selling stickers"
+    small: "new products",
+    large: "Our new collection"
   }
   const headers_2 = {
     small: "all products",

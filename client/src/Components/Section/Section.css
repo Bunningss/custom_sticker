@@ -7,7 +7,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
+    gap: 5px;
 }
 
 @media screen and (max-width: 820px) {
@@ -24,6 +24,6 @@
     .section .section-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 5px;
+        gap: 5px;
     }
 }

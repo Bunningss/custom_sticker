@@ -19,7 +19,7 @@ const Cart_Item = ({ item }) => {
         </div>
         <div className="row">
             <p className="text-small cart-item-text">{item.title || item.sticker + " " + 'Sticker'}</p>
-            <li className="text-medium cart-item-text">{item.StickerSize || item.size}</li>
+            <li className="text-medium cart-item-text">{item.StickerSize || item.size || `${item.height}in x ${item.width}in`}</li>
             <li className="text-medium cart-item-text">{item.StickerType || "Sticker type —" + " " + item.type}</li>
             <li className="text-medium cart-item-text">{item.ImprintColors || "Material —" + " " + item.material}</li>
             <li className="text-medium cart-item-text">{item.ArtworkType || "Custom Design"}</li>

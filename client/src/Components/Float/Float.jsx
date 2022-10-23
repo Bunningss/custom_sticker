@@ -1,14 +1,14 @@
 import './Float.css';
 
-const Float = ({ values, Quantity, size }) => {
+const Float = ({ values, file }) => {
   return (
     <div className='float'>
         <h6 className="float-text">Sticker: <span>{values.sticker}</span> </h6>
         <h6 className="float-text">type: <span>{values.type}</span> </h6>
           {
-            size.height &&
+            values.height &&
             <h6 className="float-text">
-              Size: <span>{size.height} x {size.width}</span>
+              Size: <span>{values.height} x {values.width}</span>
             </h6>
           }
           {
@@ -21,7 +21,7 @@ const Float = ({ values, Quantity, size }) => {
           Quantity: <span>{values.Quantity}</span>
         </h6>
         <h6 className="float-text">Material: <span>{values.material}</span> </h6>
-        <h6 className="float-text">Art: <span>{values.art ? "Uploaded" : "Unavailable"}</span> </h6>
+        <h6 className="float-text">Art: <span>{file ? "Selected" : "No File Selected"}</span> </h6>
     </div>
   )
 }

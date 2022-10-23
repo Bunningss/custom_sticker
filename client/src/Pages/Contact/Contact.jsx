@@ -9,16 +9,20 @@ import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const formRef = useRef();
+  const [ processing, setPorcessing ] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-        emailjs.sendForm('service_eiboynh', 'template_lzygkxe', formRef.current, 'ZFdpndrA2VyADKPkr')
+    setPorcessing(true);
+      emailjs.sendForm('service_eiboynh', 'template_lzygkxe', formRef.current, 'ZFdpndrA2VyADKPkr')
       .then((result) => {
           // console.log(result.text);
-          alert("Message Delivered")
+          setPorcessing(false);
+          alert("Message Delivered");
       }, (error) => {
+        setPorcessing(false);
           // console.log(error.text);
-          alert("Sending Failed")
+          alert("Sending Failed");
       })
   };
 
@@ -49,7 +53,7 @@ const Contact = () => {
             <input name="user_email" placeholder='Enter Email Address' type="email" required className='form-input text-regular' />
             <input name="user_subject" placeholder='Subject' type="text" required className='form-input text-regular' />
             <textarea name="message" placeholder='Enter Your Message'  required className='form-input text-regular' id="" cols="30" rows="10" ></textarea>
-            <SecondaryButton text={"Send"}/>
+            <SecondaryButton text={processing ? "Processing..." : "Send Message"}/>
           </form>
         </div>
       </div>

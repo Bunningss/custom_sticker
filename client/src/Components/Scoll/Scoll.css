@@ -21,10 +21,10 @@
 @media screen and (max-width: 500px) {
     .scroll {
         bottom: 15px;
-        right: 15px;
+        right: 25px;
     }
 
     .scroll .icon-small {
-        width: 50px;
+        width: 40px;
     }
 }

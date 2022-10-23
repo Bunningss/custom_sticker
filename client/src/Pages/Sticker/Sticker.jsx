@@ -13,19 +13,17 @@ import Float from '../../Components/Float/Float';
 const Sticker = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [ error, setError ] = useState('');
   const [ processing, setProcessing ] = useState(false);
 
   const [ sizeData, setSizeData ] = useState([]);
-
-  const [ size, setSize ] = useState({
-    height: '',
-    width: ''
-  });
 
   const [ values, setValues ] = useState({
     sticker: '',
     type: '',
     size: '',
+    height: '',
+    width: '',
     Quantity: '',
     material: '',
     artworkInstuction: '',
@@ -53,7 +51,8 @@ const Sticker = () => {
   
   // Reset selections on sticker change
   useEffect(() => {
-    setSize({...size, ['height']: '', ["width"]: ''})
+    setValues({ ...values, ['height']: ''})
+    setValues({ ...values, ['width']: ''})
     setValues({...values, ['size']: ''})
     setValues({...values, ['Quantity']: ''})
   }, [values.sticker]);
@@ -68,52 +67,110 @@ const Sticker = () => {
     e.preventDefault();
     setProcessing(true);
 
-    //  Firebase Upload
-    if (file && (values.sticker || values.size || values.type || values.Quantity || values.Quantity > 50 || values.material)) {
-        const filename = new Date().getTime() + file.name;
-        const storage = getStorage(app);
-        const storageRef = ref(storage, filename);
-
-        const uploadTask = uploadBytesResumable(storageRef, file);    
-        uploadTask.on('state_changed', 
-        (snapshot) => {
-            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            console.log('Upload is ' + progress + '% done');
-        switch (snapshot.state) {
-            case 'paused':
-                console.log('Upload is paused');
-                break;
-            case 'running':
-                console.log('Upload is running');
-                break;
-                default:
-            }
-        }, 
-        (error) => {
-            // Handle unsuccessful uploads
-            setProcessing(false)
-        }, 
-        () => {
-            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            //  Add to cart logic
-            if (!values.sticker || !values.size || !values.type || !values.Quantity || values.Quantity < 50 || !values.material) {
-              return
-            } else {
-              dispatch(addProduct({ serial: Math.random() * 10000 + 20000, ...values, artworkFile: downloadURL, price: Number((values.Quantity * values.startPrice).toFixed(2)) }))
-            };
-                navigate('/cart');
-            });
-        }
-    );
-  } else {
-    if (!values.sticker || !values.size || !values.type || !values.Quantity || values.Quantity < 50 || !values.material || !values.artworkType) {
+    // If artwork upload
+    if (file) {
+      // return if required values are not satisfied
+      if (values.Quantity < 50 || !values.artworkType || !values.material || !values.sticker || !values.type) {
+        setProcessing(false);
+        alert("Please Select all values");
         return
-      } else {
-        dispatch(addProduct({ serial: Math.random() * 10000 + 20000, ...values, price: Number((values.Quantity * values.startPrice).toFixed(2)) }))
       };
-  }
+      if (values.Quantity > 50 && values.artworkType && values.material && values.sticker && values.type) {
+        // If sticker size not selected
+        if (values.size === '') {
+          if (values.height && values.width) {
+            // Add to cart with custom size selected and upload file
+            const filename = new Date().getTime() + file.name;
+            const storage = getStorage(app);
+            const storageRef = ref(storage, filename);
 
+            const uploadTask = uploadBytesResumable(storageRef, file);
+            uploadTask.on('state_changed',
+              (snapshot) => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log('Progress ' + progress);
+                switch (snapshot.state) {
+                  case 'paused':
+                    console.log('Upload paused.')
+                    break;
+                  case 'running':
+                    console.log("Upload running.");
+                    break;
+                    default:
+                }
+              },
+              (error) => {
+                setProcessing(false);
+                alert("Something went wrong.");
+              },
+              () => {
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                  dispatch(addProduct({ serial: Math.random() * 10000 + 20000, ...values, artworkFile: downloadURL, price: Number((values.Quantity * values.startPrice).toFixed(2)) }));
+                  setProcessing(false);
+                  navigate('/cart');
+                });
+              }
+            )
+          };
+        } else if (values.size) {
+          // File upload with default size
+            const filename = new Date().getTime() + file.name;
+            const storage = getStorage(app);
+            const storageRef = ref(storage, filename);
 
+            const uploadTask = uploadBytesResumable(storageRef, file);
+            uploadTask.on('state_changed',
+              (snapshot) => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log('Progress ' + progress);
+                switch (snapshot.state) {
+                  case 'paused':
+                    console.log('Upload paused.')
+                    break;
+                  case 'running':
+                    console.log("Upload running.");
+                    break;
+                    default:
+                }
+              },
+              (error) => {
+                setProcessing(false);
+                alert("Something went wrong.");
+              },
+              () => {
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                  dispatch(addProduct({ serial: Math.random() * 10000 + 20000, ...values, artworkFile: downloadURL, price: Number((values.Quantity * values.startPrice).toFixed(2)) }));
+                  setProcessing(false);
+                  navigate('/cart');
+                });
+              }
+            )
+        }
+      }
+    } else if (!file) {
+      // Return if values are not satisfied
+      // If no file upload
+      if (values.Quantity < 50 || !values.artworkInstuction || !values.material || !values.sticker || !values.type) {
+        setProcessing(false);
+        alert("Please select all the values.");
+        return
+      };
+        // if custom size
+      if (values.Quantity > 50 && values.artworkInstuction && values.material && values.sticker && values.type) {
+        if (values.size === '') {
+          if (values.height && values.width) {
+            dispatch(addProduct({ serial: Math.random() * 10000 + 20000, ...values, price: Number((values.Quantity * values.startPrice).toFixed(2)) }))
+            setProcessing(false);
+            navigate('/cart');
+          }
+        } else if (values.size) {
+          // if default size
+          dispatch(addProduct({ serial: Math.random() * 10000 + 20000, ...values, price: Number((values.Quantity * values.startPrice).toFixed(2)) }))
+          setProcessing(false);
+          navigate('/cart');
+        }
+      }
+    };
   }
 
   // Always load on page top
@@ -121,7 +178,7 @@ const Sticker = () => {
 
   return (
     <form className='main-wrapper sticker default' onSubmit={handleClick}>
-      <Float values={values} size={size}/>
+      <Float values={values} file={file}/>
       <div className="content">
         {/* Select Sticker */}
         <section className='section-step'>
@@ -157,7 +214,7 @@ const Sticker = () => {
           <div className="section-content">
             {
               sizeData.map((s, indx) => (
-                <CustomCard info={s} key={indx} values={values} setValues={setValues} active={selected === s.name} setActive={setSelected} size={size} setSize={setSize}/>
+                <CustomCard info={s} key={indx} values={values} setValues={setValues} active={selected === s.name} setActive={setSelected}/>
               ))
             }
           </div>
@@ -191,6 +248,7 @@ const Sticker = () => {
           <input required type="file" onChange={(e) => setFile(e.target.files[0])} className="input text-regular" />
         }
       </div>
+      <p className="warning error-message text-small">{error}</p>
       <PrimaryButton text={processing ? "processing..." : "Add to cart"}/>
     </form>
   )
