@@ -67,6 +67,11 @@ const handleClick = (e) => {
 
 //  Firebase Upload
 if (file) {
+    if (values.Quantity < 10 || !values.StickerType || !values.StickerSize || !values.ImprintColors) {
+        setProcessing(false);
+        alert("Please select all values.");
+        return
+    }
     const filename = new Date().getTime() + file.name;
     const storage = getStorage(app);
     const storageRef = ref(storage, filename);
@@ -96,11 +101,17 @@ if (file) {
             dispatch(addProduct({
                 serial: Math.random() * 10000 + 20000,...product, ...values, ArtworkFile: downloadURL, price: Number((values.Quantity * product.startPrice).toFixed(2))
             }));
+            setProcessing(false);
             navigate('/cart');
         });
     }
 );
 } else {
+    if (values.Quantity < 10 || !values.StickerType || !values.StickerSize || !values.ImprintColors || !values.ArtworkInstruction) {
+        setProcessing(false)
+        alert("Please select all the values 2.");
+        return
+    }
     dispatch(addProduct({
         serial: Math.random() * 10000 + 20000,...product, ...values, price: Number((values.Quantity * product.startPrice).toFixed(2))
     }));
