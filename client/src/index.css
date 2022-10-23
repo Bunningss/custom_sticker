@@ -5,6 +5,7 @@
     --blueish: #F4F5FF;
     --font-primary: #2F1C6A;
     --color-accent: #fd6239;
+    --color-accent_secondary: #004a42;
     --color-secondary: #00af9e;
     --color-dark: #212121;
 }
@@ -110,7 +111,6 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--font-primary);
     opacity: 0;
     transition: all .4s ease-in-out;
 }

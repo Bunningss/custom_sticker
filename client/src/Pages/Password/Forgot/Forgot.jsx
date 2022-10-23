@@ -8,6 +8,7 @@ import FormInput from '../../../Components/FormInput/FormInput';
 
 const Forgot = () => {
   const [ message, setMessage ] = useState('');
+  const [ processing, setProcessing ] = useState(false);
 
   const input = {
     name: 'email',
@@ -20,12 +21,15 @@ const Forgot = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setProcessing(true);
     const data = new FormData(e.target);
     const email = Object.fromEntries(data.entries());
     try {
       const res = await publicReq.post('/auth/forgot', email);
+      setProcessing(false);
       setMessage(res.data.msg);
     } catch (err) {
+      setProcessing(false);
       setMessage(err.response.data.msg);
     }
   };
@@ -45,7 +49,7 @@ const Forgot = () => {
           <form action="" onSubmit={handleSubmit} className='form'>
             <FormInput {...input}/>
             <p className="warning error-message text-small">{message}</p>
-            <SecondaryButton text={"continue"}/>
+            <SecondaryButton text={processing ? "processing..." : "continue"}/>
           </form>
         </div>
     </div>

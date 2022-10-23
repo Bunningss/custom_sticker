@@ -22,6 +22,10 @@ const Cart = () => {
     navigate('/')
   };
 
+  const handleNavigation = () => {
+    navigate('/login')
+  };
+
   // Handle Checkout
   const handleCheckout = async (e) => {
     e.preventDefault();
@@ -50,7 +54,7 @@ const Cart = () => {
                 <form action="" onSubmit={handleCheckout}>
                     <PrimaryButton text={"Checkout"}/> 
                 </form> :
-                <SecondaryButton text={'login to proceed to checkout'}/>
+                <SecondaryButton text={'login to proceed to checkout'} handleClick={handleNavigation}/>
             }
         </div>
       }

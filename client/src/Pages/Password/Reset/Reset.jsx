@@ -13,6 +13,7 @@ const Reset = () => {
     password: '',
     confirmPassword: ''
   });
+  const [ processing, setProcessing ] = useState(false);
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value })
@@ -22,12 +23,15 @@ const Reset = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setProcessing(false);
 
     try {
-      const res = await publicReq.post('/auth/reset', { resetLink: resetLink, password: values.password })
-      setMessage(res.data.msg)
+      const res = await publicReq.post('/auth/reset', { resetLink: resetLink, password: values.password });
+      setProcessing(false);
+      setMessage(res.data.msg);
     } catch (err) {
-      setMessage(err.response.data.msg)
+      setProcessing(false);
+      setMessage(err.response.data.msg);
     }
   };
 
@@ -49,7 +53,7 @@ const Reset = () => {
           <label htmlFor="password" className='inputLabel'>Confirm Password</label>
           <input type="password" name='confirmPassword' required placeholder='Enter new password' className='input text-regular' pattern={values.password} onChange={handleChange} onInvalid={(e) => e.target.setCustomValidity("Passwords Do Not Match.")} onInput={(e) => e.target.setCustomValidity("")}/>
           <p className="error-message text-small warning">{message}</p>
-          <SecondaryButton text={"Continue"}/>
+          <SecondaryButton text={processing ? "processing" : "Continue"}/>
         </form>
       </div>
     </div>

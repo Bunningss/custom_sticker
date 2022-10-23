@@ -2,3 +2,7 @@
     background-color: var(--color-secondary);
     color: var(--white);
 }
+
+.btn-primary::after {
+    background-color: var(--color-accent_secondary);
+}

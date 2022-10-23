@@ -9,6 +9,7 @@ import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton';
 
 const Register = () => {
 const navigate = useNavigate();
+const [ processing, setProcessing ] = useState(false);
 
 const [ error, setError ] = useState('');
 
@@ -57,17 +58,21 @@ const inputs = [
 Scroller();
 
 const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    setProcessing(true);
     const data = new FormData(e.target);
     const formData = Object.fromEntries(data.entries());
     if (formData.password !== formData.confirmPassword) {
+        setProcessing(false);
         return setError("Passwords do not match");
     } else {
         try {
-            await publicReq.post("/auth/register", formData)
-            navigate('/login')
+            await publicReq.post("/auth/register", formData);
+            setProcessing(false);
+            navigate('/login');
         } catch (err) {
-            setError(err.response.data.msg)
+            setProcessing(false);
+            setError(err.response.data.msg);
         }
     }
 }
@@ -89,7 +94,7 @@ Scroller()
                     error && 
                     <span className='warning error-message text-small'>{error}</span>
                 }
-                <PrimaryButton text={"Continue"}/>
+                <PrimaryButton text={processing ? "processing..." : "Continue"}/>
             </form>
             <div className="account-additional">
                 <Link to='/login'>Already have an account? Login Instead</Link>

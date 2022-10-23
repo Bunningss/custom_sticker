@@ -12,6 +12,7 @@ import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton';
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [ processing, setProcessing ] = useState(false);
   
   const [ error, setError ] = useState('');
 
@@ -41,14 +42,17 @@ const Login = () => {
   // Login Logic
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setProcessing(true);
     const data = new FormData(e.target); // Get data from form
     const formData = Object.fromEntries(data.entries()); // Get data from form
     dispatch(loginStart());
     try {
       const res = await publicReq.post('/auth/login', formData);
       dispatch(loginSuccess(res.data));
+      setProcessing(false);
       navigate('/')
     } catch (err) {
+      setProcessing(false);
       dispatch(loginFailure());
       setError(err.response.data.msg);
     }
@@ -71,7 +75,7 @@ const Login = () => {
             error && 
             <span className='warning error-message text-small'>{error}</span>
           }
-          <PrimaryButton text={"Sign In"} onClick={handleSubmit}/>
+          <PrimaryButton text={processing ? "processing..." : "Sign In"} onClick={handleSubmit}/>
         </form>
         <div className="account-additional">
           <Link to='/forgot'>
