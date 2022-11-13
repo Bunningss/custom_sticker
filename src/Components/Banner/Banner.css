@@ -1,0 +1,10 @@
+.banner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-container .banner {
+  width: 100%;
+}
