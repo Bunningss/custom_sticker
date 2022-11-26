@@ -1,27 +1,27 @@
 .edit-prod {
-    display: flex;
+  display: flex;
 }
 
 .edit-prod .row:nth-child(1) {
-    flex: 1;
+  flex: 1;
 }
 .edit-prod .row:nth-child(2) {
-    flex: 6;
+  flex: 6;
 }
 
 .edit-prod .row .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .edit-prod .row .wrapper .form {
-    padding: 10px;
+  padding: 10px;
 }
 
 .success-message {
-    text-align: center;
-    margin: 10px 0;
-    font-size: 16px;
-    color: green;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 16px;
+  color: green;
 }
