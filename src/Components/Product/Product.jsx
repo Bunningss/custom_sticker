@@ -29,7 +29,7 @@ const Product = ({ prod }) => {
           <div className="product-details">
             <div className="col">
               <p className="text-small">Price</p>
-              <h6 className="title color-accent">${prod.twoQ_10}+</h6>
+              <h6 className="title color-accent">${prod.twoQ_10000}+</h6>
             </div>
             <div className="col">
               <PrimaryButton text={"details"} />

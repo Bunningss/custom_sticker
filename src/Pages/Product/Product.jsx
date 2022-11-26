@@ -33,6 +33,7 @@ const Product = () => {
     ArtworkType: "",
     ArtworkInstruction: "",
   });
+  const [price, setPrice] = useState("");
   const [file, setFile] = useState(null);
 
   const headers = {
@@ -169,6 +170,10 @@ const Product = () => {
     }
   };
 
+  useEffect(() => {
+    setPrice(calculatePrice());
+  }, [values.Quantity, values.StickerSize]);
+
   // Add to cart
   const handleClick = (e) => {
     e.preventDefault();
@@ -220,7 +225,7 @@ const Product = () => {
                 ...product,
                 ...values,
                 ArtworkFile: downloadURL,
-                price: calculatePrice(),
+                price: Number(price).toFixed(2),
               })
             );
             setProcessing(false);
@@ -245,7 +250,7 @@ const Product = () => {
           serial: Math.random() * 10000 + 20000,
           ...product,
           ...values,
-          price: calculatePrice(),
+          price: Number(price).toFixed(2),
         })
       );
       navigate("/cart");
@@ -270,7 +275,7 @@ const Product = () => {
           <div className="product-si-info">
             <h2 className="header">{product.title}</h2>
             <h4 className="header-medium">
-              Price Per Sticker - {product.twoQ_10} +
+              Price Per Sticker - {product.twoQ_10000}+
             </h4>
             <Slideshow
               modalImg={modalImg}
