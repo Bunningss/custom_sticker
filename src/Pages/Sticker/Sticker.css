@@ -1,40 +1,42 @@
 .sticker {
-    overflow: hidden;
+  overflow: hidden;
 }
 
-.sticker .content {}
+.sticker .content {
+}
 
 .sticker .content .section-step {
-    margin: 40px 0;
+  margin: 40px 0;
 }
 
 .sticker .content .section-step .section-header {
-    background-color: var(--white);
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 5px;
+  background-color: var(--white);
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
 }
 
-.sticker .content .section-step .section-header .header {}
+.sticker .content .section-step .section-header .header {
+}
 
 .sticker .content .section-step .section-content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
 }
 
 @media screen and (max-width: 820px) {
-    .sticker .content .section-step .section-content {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .sticker .content .section-step .section-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .sticker .content .section-step {
-        margin: 20px 0;
-    }
+  .sticker .content .section-step {
+    margin: 20px 0;
+  }
 
-    .sticker .content .section-step .section-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .sticker .content .section-step .section-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

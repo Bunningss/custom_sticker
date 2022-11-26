@@ -1,24 +1,24 @@
-import './Login.css';
-import { Link, useNavigate } from 'react-router-dom';
-import { publicReq } from '../../Utilities/requestMethods';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { loginFailure, loginStart, loginSuccess } from '../../Redux/userRedux';
-import { Scroller } from '../../static';
-import FormInput from '../../Components/FormInput/FormInput';
-import HeaderPrimary from '../../Components/HeaderPrimary/HeaderPrimary';
-import PrimaryButton from '../../Components/PrimaryButton/PrimaryButton';
+import "./Login.css";
+import { Link, useNavigate } from "react-router-dom";
+import { publicReq } from "../../Utilities/requestMethods";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { loginFailure, loginStart, loginSuccess } from "../../Redux/userRedux";
+import { Scroller } from "../../static";
+import FormInput from "../../Components/FormInput/FormInput";
+import HeaderPrimary from "../../Components/HeaderPrimary/HeaderPrimary";
+import PrimaryButton from "../../Components/PrimaryButton/PrimaryButton";
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [ processing, setProcessing ] = useState(false);
-  
-  const [ error, setError ] = useState('');
+  const [processing, setProcessing] = useState(false);
+
+  const [error, setError] = useState("");
 
   const headers = {
-    small: 'login',
-    large: 'sign into your account'
+    small: "login",
+    large: "sign into your account",
   };
 
   const inputs = [
@@ -27,7 +27,7 @@ const Login = () => {
       type: "email",
       placeholder: "Email address",
       required: true,
-      errorMsg: "Enter a valid email address"
+      errorMsg: "Enter a valid email address",
     },
     {
       name: "password",
@@ -35,7 +35,7 @@ const Login = () => {
       placeholder: "Password",
       required: true,
       minLength: 8,
-      errorMsg: "Minimum 8 characters"
+      errorMsg: "Minimum 8 characters",
     },
   ];
 
@@ -47,10 +47,10 @@ const Login = () => {
     const formData = Object.fromEntries(data.entries()); // Get data from form
     dispatch(loginStart());
     try {
-      const res = await publicReq.post('/auth/login', formData);
+      const res = await publicReq.post("/auth/login", formData);
       dispatch(loginSuccess(res.data));
       setProcessing(false);
-      navigate('/');
+      navigate("/");
       window.location.reload();
     } catch (err) {
       setProcessing(false);
@@ -63,30 +63,28 @@ const Login = () => {
   Scroller();
 
   return (
-    <div className='login account default'>
+    <div className="login account default">
       <div className="wrapper">
-        <HeaderPrimary headers={headers}/>
-        <form action="#" onSubmit={handleSubmit} className='form'>
-          {
-            inputs.map((input, indx) => (
-              <FormInput {...input} key={indx}/>
-            ))
-          }
-          {
-            error && 
-            <span className='warning error-message text-small'>{error}</span>
-          }
-          <PrimaryButton text={processing ? "processing..." : "Sign In"} onClick={handleSubmit}/>
+        <HeaderPrimary headers={headers} />
+        <form action="#" onSubmit={handleSubmit} className="form">
+          {inputs.map((input, indx) => (
+            <FormInput {...input} key={indx} />
+          ))}
+          {error && (
+            <span className="warning error-message text-small">{error}</span>
+          )}
+          <PrimaryButton
+            text={processing ? "processing..." : "Sign In"}
+            onClick={handleSubmit}
+          />
         </form>
         <div className="account-additional">
-          <Link to='/forgot'>
-            forgot password?
-          </Link>
-          <Link to='/register'>create an account</Link>
+          <Link to="/forgot">forgot password?</Link>
+          <Link to="/register">create an account</Link>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

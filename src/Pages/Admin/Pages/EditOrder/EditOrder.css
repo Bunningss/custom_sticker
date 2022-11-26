@@ -1,41 +1,41 @@
 .edit-order {
-    display: flex;
+  display: flex;
 }
 
 .edit-order .row:nth-child(1) {
-    flex: 1;
+  flex: 1;
 }
 
 .edit-order .row:nth-child(2) {
-    flex: 6;
-    padding: 10px;
+  flex: 6;
+  padding: 10px;
 }
 
 .edit-order .row .order-status {
-    width: 300px;
-    min-height: 200px;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 300px;
+  min-height: 200px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .edit-order .row .order-status .title {
-    color: #6439ff;
-    text-align: center;
-    font-weight: 900;
-    margin: 15px 0 0 0;
+  color: #6439ff;
+  text-align: center;
+  font-weight: 900;
+  margin: 15px 0 0 0;
 }
 
 .edit-order .row .order-status .text-medium {
-    margin: 15px 0 5px 0;
+  margin: 15px 0 5px 0;
 }
 
 .edit-order .row .order-status .text-medium span {
-    color: #6439ff;
-    font-weight: 900;
+  color: #6439ff;
+  font-weight: 900;
 }

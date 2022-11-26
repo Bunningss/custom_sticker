@@ -1,37 +1,37 @@
 .inputLabel {
-    display: inline-block;
-    margin: 20px 0 5px 0;
+  display: inline-block;
+  margin: 20px 0 5px 0;
 }
 
 .input {
-    color: var(--font-primary);
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid var(--font-primary);
-    outline: none;
-    border-radius: 5px;
-    background-color: #fff;
-    font-weight: 500;
-    margin: 5px 0 2px 0;
+  color: var(--font-primary);
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--font-primary);
+  outline: none;
+  border-radius: 5px;
+  background-color: #fff;
+  font-weight: 500;
+  margin: 5px 0 2px 0;
 }
 
 .input:invalid[focused="true"] + .warning {
-    display: block;
+  display: block;
 }
 
 .input:invalid[focused="true"] {
-    border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-accent);
 }
 
 .warning {
-    width: 100%;
-    font-weight: 500;
-    color: var(--color-accent);
-    margin: 5px 0 5px 0;
-    text-align: center;
-    display: none;
+  width: 100%;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin: 5px 0 5px 0;
+  text-align: center;
+  display: none;
 }
 
 .warning.error-message {
-    display: block;
+  display: block;
 }

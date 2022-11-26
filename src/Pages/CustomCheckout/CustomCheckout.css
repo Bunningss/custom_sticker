@@ -1,23 +1,23 @@
 .custom-checkout {
-    min-height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
 }
 
 .custom-checkout .form {
-    max-width: 500px;
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: var(--white);
-    display: flex;
-    flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
 }
 
 .custom-checkout .form .input:nth-child(5) {
-    width: 150px;
-    align-self: flex-end;
+  width: 150px;
+  align-self: flex-end;
 }

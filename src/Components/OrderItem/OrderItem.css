@@ -1,50 +1,50 @@
 .order-item {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .order-item .wrapper {
-    border: 1px solid var(--color-secondary);
-    padding: 10px;
+  border: 1px solid var(--color-secondary);
+  padding: 10px;
 }
 
 .order-item .wrapper .order-info {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .order-item .wrapper .order-info .text-medium {
-    line-height: 1.4;
+  line-height: 1.4;
 }
 .order-item .wrapper .order-info .text-medium.order-status {
-    font-weight: 800;
-    font-size: 18px;
-    text-decoration: underline;
+  font-weight: 800;
+  font-size: 18px;
+  text-decoration: underline;
 }
 
 .order-item .wrapper .order-info .text-medium.order-status .Delivered {
-    color: green;
+  color: green;
 }
 
 .order-item .wrapper .order-info .text-medium.order-status .Pending {
-    color: goldenrod;
+  color: goldenrod;
 }
 
 .order-item .wrapper .order-info .text-medium.order-status .Production {
-    color: yellowgreen;
+  color: yellowgreen;
 }
 
 .order-item .wrapper .order-details {
-    margin: 15px 0;
+  margin: 15px 0;
 }
 
 .order-item .wrapper .order-details .order-title {
-    text-transform: uppercase;
-    text-decoration: underline;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 
 .order-item .wrapper .order-details .text-medium {
-    line-height: 1.5;
+  line-height: 1.5;
 }

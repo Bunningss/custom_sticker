@@ -1,42 +1,42 @@
 .float {
-    position: fixed;
-    top: 120px;
-    right: 30px;
-    min-width: 230px;
-    background-color: var(--white);
-    border: 1px solid var(--font-primary);
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 12;
+  position: fixed;
+  top: 120px;
+  right: 30px;
+  min-width: 230px;
+  background-color: var(--white);
+  border: 1px solid var(--font-primary);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 12;
 }
 
 .float .float-text {
-    font-size: 12px;
-    text-transform: capitalize;
+  font-size: 12px;
+  text-transform: capitalize;
 }
 
 .float .float-text span {
-    font-size: 16px;
-    color: var(--color-secondary);
+  font-size: 16px;
+  color: var(--color-secondary);
 }
 
 @media screen and (max-width: 500px) {
-    .float {
-        top: 90px;
-        right: 5px;
-    }
+  .float {
+    top: 90px;
+    right: 5px;
+  }
 
-    .float .float-text span {
-        font-size: 14px;
-    }
+  .float .float-text span {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 350px) {
-    .float .float-text {
-        font-size: 10px;
-    }
+  .float .float-text {
+    font-size: 10px;
+  }
 
-    .float .float-text span {
-        font-size: 12px;
-    }
+  .float .float-text span {
+    font-size: 12px;
+  }
 }

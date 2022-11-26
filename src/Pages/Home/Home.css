@@ -1,15 +1,15 @@
 .home .main-wrapper .customize {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .home .main-wrapper .customize .wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
 
 @media screen and (max-width: 1024px) {
-    .home .main-wrapper .customize .wrapper {
-        grid-template-columns: 1fr;
-    }
+  .home .main-wrapper .customize .wrapper {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,12 +1,12 @@
 .list {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .list .row:nth-child(1) {
-    flex: 1;
+  flex: 1;
 }
 
 .list .row:nth-child(2) {
-    flex: 6;
+  flex: 6;
 }

@@ -1,12 +1,12 @@
 .btn-secondary {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--font-primary);
-    background-color: transparent;
-    border: 1px solid var(--font-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--font-primary);
+  background-color: transparent;
+  border: 1px solid var(--font-primary);
 }
 
 .btn-secondary::after {
-    background-color: var(--color-dark);
+  background-color: var(--color-dark);
 }

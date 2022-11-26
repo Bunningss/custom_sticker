@@ -1,11 +1,11 @@
 .order {
-    display: flex;
+  display: flex;
 }
 
 .order .row:nth-child(1) {
-    flex: 1;
+  flex: 1;
 }
 
 .order .row:nth-child(2) {
-    flex: 6;
+  flex: 6;
 }

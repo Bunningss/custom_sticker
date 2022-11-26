@@ -1,17 +1,17 @@
 .select-wrapper {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .select-wrapper .select {
-    padding: 12px 15px;
-    width: 100%;
-    
-    border: 1px solid var(--font-primary);
-    outline: none;
-    border-radius: 5px;
+  padding: 12px 15px;
+  width: 100%;
 
-    margin-top: 5px;
+  border: 1px solid var(--font-primary);
+  outline: none;
+  border-radius: 5px;
 
-    color: var(--font-primary);
-    cursor: pointer;
+  margin-top: 5px;
+
+  color: var(--font-primary);
+  cursor: pointer;
 }

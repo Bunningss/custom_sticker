@@ -1,10 +1,10 @@
 .login .wrapper .account-additional {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin: 15px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
 }
 
 .login .wrapper .account-additional a {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }

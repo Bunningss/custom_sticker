@@ -8,7 +8,7 @@ const firebaseConfig = {
   storageBucket: "custom-sticker-a9385.appspot.com",
   messagingSenderId: "585926828225",
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: "G-3H1EX3VM11"
+  measurementId: "G-3H1EX3VM11",
 };
 
 // Initialize Firebase

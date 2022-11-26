@@ -1,34 +1,35 @@
-.table {}
+.table {
+}
 
 .table .cellWrapper {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .table .cellWrapper .image {
-    width: 32px;    
-    height: 32px;
-    border-radius: 50%;
-    margin-right: 10px;
-    object-fit: cover;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
 }
 
 .status {
-    padding: 5px;
-    border-radius: 5px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .status.Delivered {
-    color: green;
-    background-color: rgba(0, 128,0,.151);
+  color: green;
+  background-color: rgba(0, 128, 0, 0.151);
 }
 
 .status.Production {
-    color: white;
-    background-color: yellowgreen;
+  color: white;
+  background-color: yellowgreen;
 }
 
 .status.Pending {
-    color: goldenrod;
-    background-color: rgba(189, 189, 3, 0.103);
+  color: goldenrod;
+  background-color: rgba(189, 189, 3, 0.103);
 }

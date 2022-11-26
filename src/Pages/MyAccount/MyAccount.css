@@ -1,25 +1,24 @@
-
 .my-account .wrapper .greeting {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .my-account .wrapper .greeting .header {
-    text-align: left;
-    padding: 15px 0;
+  text-align: left;
+  padding: 15px 0;
 }
 
 .my-account .wrapper .greeting .header a {
-    text-decoration: underline var(--font-primary);
+  text-decoration: underline var(--font-primary);
 }
 
 .my-account .wrapper .greeting .logout-wrapper {
-    min-width: 200px;
+  min-width: 200px;
 }
 
 @media screen and (max-width: 820px) {
-    .my-account .wrapper .greeting .logout-wrapper {
-        display: none;
-    }
+  .my-account .wrapper .greeting .logout-wrapper {
+    display: none;
+  }
 }

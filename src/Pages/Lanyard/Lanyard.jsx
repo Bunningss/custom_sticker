@@ -1,9 +1,7 @@
-import './Lanyard.css';
+import "./Lanyard.css";
 
 const Lanyard = () => {
-  return (
-    <div className='lanyard'>Lanyard</div>
-  )
-}
+  return <div className="lanyard">Lanyard</div>;
+};
 
-export default Lanyard
+export default Lanyard;

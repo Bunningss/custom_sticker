@@ -1,270 +1,270 @@
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
-    --white: #f5fbfd;
-    --blueish: #F4F5FF;
-    --font-primary: #2F1C6A;
-    --color-accent: #fd6239;
-    --color-accent_secondary: #004a42;
-    --color-secondary: #00af9e;
-    --color-dark: #212121;
+  --white: #f5fbfd;
+  --blueish: #f4f5ff;
+  --font-primary: #2f1c6a;
+  --color-accent: #fd6239;
+  --color-accent_secondary: #004a42;
+  --color-secondary: #00af9e;
+  --color-dark: #212121;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Balsamiq Sans', cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Balsamiq Sans", cursive;
 }
 
 body {
-    background-color: var(--blueish);
-    color: var(--font-primary);
+  background-color: var(--blueish);
+  color: var(--font-primary);
 }
 
 ::selection {
-    background: var(--color-secondary);
-    color: var(--white);
+  background: var(--color-secondary);
+  color: var(--white);
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
-.disabled { /* Temporary solution to incomplete admin panel  */
-    text-decoration: line-through;
+.disabled {
+  /* Temporary solution to incomplete admin panel  */
+  text-decoration: line-through;
 }
 
 .default {
-    animation: fadeIn 1s linear;
+  animation: fadeIn 1s linear;
 }
 
 .main-wrapper {
-    padding-left: 15%;
-    padding-right: 15%;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .header {
-    font-size: 40px;
-    color: var(--color-secondary);
-    text-transform: capitalize;
-    text-align: center;
+  font-size: 40px;
+  color: var(--color-secondary);
+  text-transform: capitalize;
+  text-align: center;
 }
 
 .header-medium {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .header-small {
-    font-size: 18px;
-    text-transform: capitalize;
-    text-align: center;
+  font-size: 18px;
+  text-transform: capitalize;
+  text-align: center;
 }
 
 .title {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .title.color-accent {
-    color: var(--color-secondary);
+  color: var(--color-secondary);
 }
 
 .text-regular {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .text-medium {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .text-small {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .button {
-    font-size: 18px;
-    text-transform: capitalize;
-    width: 100%;
-    padding: 12px 15px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    margin: 10px 0;
-    position: relative;
-    cursor: pointer;
-    user-select: none;
+  font-size: 18px;
+  text-transform: capitalize;
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin: 10px 0;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
 }
 
 .button::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: all .4s ease-in-out;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
 }
 
 .button:hover::after {
-    opacity: 1;
-    width: 10%;
-    border-radius: 32% 52% 51% 32% / 0% 46% 52% 0% ;
-    z-index: 1;
+  opacity: 1;
+  width: 10%;
+  border-radius: 32% 52% 51% 32% / 0% 46% 52% 0%;
+  z-index: 1;
 }
 
 .account {
-    height: calc(100vh - 80px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .account .wrapper {
-    width: 550px;
-    background-color: #fff;
-    border-radius: 20px;
-    height: 80vh;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 550px;
+  background-color: #fff;
+  border-radius: 20px;
+  height: 80vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .account .wrapper .form {
-    width: 100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 1440px) {
-    .main-wrapper {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
+  .main-wrapper {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    .main-wrapper {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+  .main-wrapper {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 
-    .header {
-        font-size: 35px;
-    }
+  .header {
+    font-size: 35px;
+  }
 }
 
 @media screen and (max-width: 820px) {
-    .main-wrapper {
-        padding-left: 2%;
-        padding-right: 2%;
-    }
+  .main-wrapper {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    .main-wrapper {
-        padding: 0 5px;
-    }
+  .main-wrapper {
+    padding: 0 5px;
+  }
 
-    .button {
-        font-size: 14px;
-    }
+  .button {
+    font-size: 14px;
+  }
 
-    /* Font Sizes */
-    .title {
-        font-size: 18px;
-    }
+  /* Font Sizes */
+  .title {
+    font-size: 18px;
+  }
 
-    .header {
-        font-size: 30px;
-    }
+  .header {
+    font-size: 30px;
+  }
 
-    .header-medium {
-        font-size: 20px;
-    }
+  .header-medium {
+    font-size: 20px;
+  }
 
-    .header-small {
-        font-size: 16px;
-    }
+  .header-small {
+    font-size: 16px;
+  }
 
-    .text-medium {
-        font-size: 12px;
-    }
+  .text-medium {
+    font-size: 12px;
+  }
 
-    .text-regular {
-        font-size: 14px;
-    }
+  .text-regular {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 350px) {
+  .button {
+    font-size: 12px;
+  }
 
-    .button {
-        font-size: 12px;
-    }
+  /* Fonts */
+  .header {
+    font-size: 25px;
+  }
 
-    /* Fonts */
-    .header {
-        font-size: 25px;
-    }
+  .title {
+    font-size: 16px;
+  }
 
-    .title {
-        font-size: 16px;
-    }
-
-    .text-small {
-        font-size: 10px;
-    }
+  .text-small {
+    font-size: 10px;
+  }
 }
 
 /* Animations */
 @keyframes slideIn {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes focus-in {
   0% {
     -webkit-filter: blur(12px);
-            filter: blur(12px);
+    filter: blur(12px);
     opacity: 0;
   }
   100% {
     -webkit-filter: blur(0px);
-            filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }
 @keyframes focus-in {
   0% {
     -webkit-filter: blur(12px);
-            filter: blur(12px);
+    filter: blur(12px);
     opacity: 0;
   }
   100% {
     -webkit-filter: blur(0px);
-            filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }

@@ -4,7 +4,8 @@
   min-height: calc(100vh - 80px);
 }
 
-.dashboard .col {}
+.dashboard .col {
+}
 
 .dashboard .col.col-1 {
   height: 50px;
@@ -20,36 +21,37 @@
 }
 
 .dashboard .col.col-2 {
-    padding-left: 10px;
-    margin: 15px 0;
+  padding-left: 10px;
+  margin: 15px 0;
 }
 
-.dashboard .col.col-2 ul {}
+.dashboard .col.col-2 ul {
+}
 
 .dashboard .col.col-2 ul .text-medium {
-    margin: 10px 0 0 0;
+  margin: 10px 0 0 0;
 }
 
 .dashboard .col.col-2 ul li a {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 5px 0;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 0;
+  cursor: pointer;
 }
 
 .dashboard .col.col-2 ul li:hover {
-    background-color: #ece8ff;
+  background-color: #ece8ff;
 }
 
 .dashboard .col.col-2 ul li .icon {
-    width: 18px;
+  width: 18px;
 }
 
 .dashboard .col.col-2 ul li span {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 .dashboard .col.col-3 {
-    padding: 0 10px;
+  padding: 0 10px;
 }

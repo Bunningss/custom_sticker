@@ -1,20 +1,20 @@
-import './List.css';
-import Sidebar from '../../Components/Sidebar/Sidebar';
-import Datatable from '../../Components/Datatable/Datatable';
+import "./List.css";
+import Sidebar from "../../Components/Sidebar/Sidebar";
+import Datatable from "../../Components/Datatable/Datatable";
 
 const List = () => {
   return (
-    <div className='list default'>
+    <div className="list default">
       <div className="row">
-        <Sidebar/>
+        <Sidebar />
       </div>
       <div className="row">
         <div className="wrapper">
-          <Datatable/>
+          <Datatable />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default List
+export default List;
