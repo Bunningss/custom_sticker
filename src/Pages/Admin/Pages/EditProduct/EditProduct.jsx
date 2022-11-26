@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { publicReq, userReq } from "../../../../Utilities/requestMethods";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import PrimaryButton from "../../../../Components/PrimaryButton/PrimaryButton";
+import { priceList } from "../../../../priceChart";
 
 const EditProduct = () => {
   const [product, setProduct] = useState({});
@@ -25,16 +26,13 @@ const EditProduct = () => {
     e.preventDefault();
     const data = new FormData(e.target);
     const formData = Object.fromEntries(data.entries());
-    console.log(formData);
     try {
-      await userReq.put(`/products/${id}`, {
-        title: formData.title === "" || null ? product.title : formData.title,
-        startPrice:
-          formData.startPrice === "" || null
-            ? product.startPrice
-            : formData.startPrice,
-        desc: formData.desc === "" || null ? product.desc : formData.desc,
+      Object.keys(formData).forEach((key) => {
+        if (formData[key] === "") {
+          delete formData[key];
+        }
       });
+      await userReq.put(`/products/${id}`, formData);
       window.location.reload();
     } catch (err) {
       console.log(err.message);
@@ -61,23 +59,16 @@ const EditProduct = () => {
                     placeholder={product.title}
                     name="title"
                   />
-                  <input
-                    type="number"
-                    min="0.01"
-                    step="0.01"
-                    className="input"
-                    placeholder="Enter new display price"
-                    name="startPrice"
-                  />
-                  <input
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    className="input"
-                    placeholder="Enter new maximum price"
-                    name="maxPrice"
-                  />
-                  {/* <input type="file" className="input" name='file' /> */}
+                  {priceList.map((item, indx) => (
+                    <input
+                      type="number"
+                      step="0.01"
+                      className="input"
+                      placeholder={item.placeholder}
+                      name={item.name}
+                      key={indx}
+                    />
+                  ))}
                 </div>
                 <div className="col">
                   <textarea

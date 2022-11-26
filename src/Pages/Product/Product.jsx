@@ -40,7 +40,7 @@ const Product = () => {
     small: "details",
     large: "product information",
   };
-
+  console.log(product);
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
