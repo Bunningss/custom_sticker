@@ -3,7 +3,7 @@ import "./Slideshow.css";
 const Slideshow = ({ setModalImg, images }) => {
   return (
     <div className="slideshow">
-      {/* {images &&
+      {images &&
         images.map((img, indx) => (
           <img
             className="slideshow-img"
@@ -13,16 +13,7 @@ const Slideshow = ({ setModalImg, images }) => {
             onClick={() => setModalImg(img)}
             loading="lazy"
           />
-        ))} */}
-      {
-        <img
-          className="slideshow-img"
-          src={images}
-          alt=""
-          onClick={() => setModalImg(images)}
-          loading="lazy"
-        />
-      }
+        ))}
     </div>
   );
 };

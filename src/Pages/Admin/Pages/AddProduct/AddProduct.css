@@ -19,6 +19,11 @@
   padding: 10px;
 }
 
+.edit-prod .row .wrapper .form .group {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
 .success-message {
   text-align: center;
   margin: 10px 0;

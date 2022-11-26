@@ -265,7 +265,7 @@ const Product = () => {
       <div className="wrapper">
         <div className="col">
           <img
-            src={product.img}
+            src={product.video ? product.video : product.img}
             alt=""
             className="product-si-img"
             loading="lazy"

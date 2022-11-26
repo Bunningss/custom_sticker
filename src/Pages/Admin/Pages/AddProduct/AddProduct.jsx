@@ -15,14 +15,25 @@ import { priceList } from "../../../../priceChart";
 
 const AddProduct = () => {
   const [message, setMessage] = useState("");
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState([]);
+  const [video, setVideo] = useState(null);
+  const [videoUrl, setVideoUrl] = useState("");
+  const [urls, setUrls] = useState([]);
+  const [processing, setProcessing] = useState(false);
+  const handleChange = (e) => {
+    for (let i = 0; i < e.target.files.length; i++) {
+      const newImage = e.target.files[i];
+      newImage["id"] = Math.random();
+      setFile((prevState) => [...prevState, newImage]);
+    }
+  };
 
   // Actual Product Creation
   const createProduct = async (data) => {
     try {
       const res = await userReq.post("/products", data);
       setMessage(res.data.msg);
-      res.data.msg && window.location.reload();
+      console.log(message);
     } catch (err) {
       setMessage("An error occured.");
     }
@@ -30,41 +41,85 @@ const AddProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const filename = new Date().getTime() + file.name;
+    setProcessing(true);
+    if (video) {
+      const filename = new Date().getTime() + video.name;
 
-    //  Firebase Upload
-    const storage = getStorage(app);
-    const storageRef = ref(storage, filename);
+      //  Firebase Upload
+      const storage = getStorage(app);
+      const storageRef = ref(storage, filename);
 
-    const uploadTask = uploadBytesResumable(storageRef, file);
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log("Upload is " + progress + "% done");
-        switch (snapshot.state) {
-          case "paused":
-            console.log("Upload is paused");
-            break;
-          case "running":
-            console.log("Upload is running");
-            break;
-          default:
+      const uploadTask = uploadBytesResumable(storageRef, video);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+          switch (snapshot.state) {
+            case "paused":
+              console.log("Upload is paused");
+              break;
+            case "running":
+              console.log("Upload is running");
+              break;
+            default:
+          }
+        },
+        (error) => {
+          // Handle unsuccessful uploads
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            setVideoUrl(downloadURL);
+          });
         }
-      },
-      (error) => {
-        // Handle unsuccessful uploads
-      },
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          const info = new FormData(e.target);
-          const formData = Object.fromEntries(info.entries());
-          const product = { ...formData, img: downloadURL };
-          createProduct(product);
-        });
-      }
-    );
+      );
+    }
+    file.map((fi) => {
+      // const filename = new Date().getTime() + file.name;
+
+      //  Firebase Upload
+      const storage = getStorage(app);
+      const storageRef = ref(storage, fi.name);
+
+      const uploadTask = uploadBytesResumable(storageRef, fi);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+          switch (snapshot.state) {
+            case "paused":
+              console.log("Upload is paused");
+              break;
+            case "running":
+              console.log("Upload is running");
+              break;
+            default:
+          }
+        },
+        (error) => {
+          // Handle unsuccessful uploads
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref)
+            .then((downloadURL) => {
+              urls.push(downloadURL);
+            })
+            .then(() => {
+              if (file.length === urls.length) {
+                const info = new FormData(e.target);
+                const data = Object.fromEntries(info.entries());
+                const product = { ...data, img: urls, video: videoUrl };
+                createProduct(product);
+                setProcessing(false);
+              }
+            });
+        }
+      );
+    });
   };
 
   // Load on top
@@ -105,14 +160,32 @@ const AddProduct = () => {
               placeholder="Product Details"
               required
             />
-            <input
-              type="file"
-              className="input"
-              onChange={(e) => setFile(e.target.files[0])}
-              required
-            />
+            <div className="group">
+              <label htmlFor="image" className="input-label">
+                Select Multiple Images
+              </label>
+              <input
+                type="file"
+                name="image"
+                className="input"
+                onChange={handleChange}
+                multiple
+                required
+              />
+            </div>
+            <div className="group">
+              <label htmlFor="video" className="input-label">
+                Select Video
+              </label>
+              <input
+                type="file"
+                name="video"
+                className="input"
+                onChange={(e) => setVideo(e.target.files[0])}
+              />
+            </div>
             {message && <p className="success-message">{message}</p>}
-            <PrimaryButton text={"Add product"} />
+            <PrimaryButton text={processing ? "Processing" : "Add product"} />
           </form>
         </div>
       </div>
