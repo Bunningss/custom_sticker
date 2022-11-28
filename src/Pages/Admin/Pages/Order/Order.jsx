@@ -13,9 +13,9 @@ const Order = () => {
   const columns = [
     { field: "_id", headerName: "Order ID", width: 200 },
     {
-      field: "customer",
+      field: "email",
       headerName: "Customer",
-      sortable: false,
+      sortable: true,
       width: 250,
     },
     { field: "createdAt", headerName: "Order Date", type: String, width: 200 },
@@ -70,6 +70,11 @@ const Order = () => {
       </div>
       <div className="row">
         <DataGrid
+          sx={{
+            "& .MuiDataGrid-row: nth-child(odd)": {
+              backgroundColor: "#b2e7e1",
+            },
+          }}
           rowHeight={60}
           rows={rows}
           getRowId={(row) => row._id}

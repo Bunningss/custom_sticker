@@ -40,7 +40,7 @@ const Product = () => {
     small: "details",
     large: "product information",
   };
-  console.log(product);
+
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
@@ -145,27 +145,27 @@ const Product = () => {
       }
     } else if (values.StickerSize === "5inx5in") {
       if (values.Quantity > 0 && values.Quantity <= 10) {
-        return Number(values.Quantity * product.five_10).toFixed(2);
+        return Number(values.Quantity * product.fiveQ_10).toFixed(2);
       } else if (values.Quantity > 10 && values.Quantity <= 50) {
-        return Number(values.Quantity * product.five_50).toFixed(2);
+        return Number(values.Quantity * product.fiveQ_50).toFixed(2);
       } else if (values.Quantity > 50 && values.Quantity <= 100) {
-        return Number(values.Quantity * product.five_100).toFixed(2);
+        return Number(values.Quantity * product.fiveQ_100).toFixed(2);
       } else if (values.Quantity > 100 && values.Quantity <= 200) {
-        return Number(values.Quantity * product.five_200).toFixed(2);
+        return Number(values.Quantity * product.fiveQ_200).toFixed(2);
       } else if (values.Quantity > 200 && values.Quantity <= 300) {
-        return Number(values.Quantity * product.five_300).toFixed(2);
+        return Number(values.Quantity * product.fiveQ_300).toFixed(2);
       } else if (values.Quantity > 300 && values.Quantity <= 500) {
-        return Number(values.Quantity * product.five_500).toFixed(2);
+        return Number(values.Quantity * product.fiveQ_500).toFixed(2);
       } else if (values.Quantity > 500 && values.Quantity <= 1000) {
-        return Number(values.Quantity * product.five_1000).toFixed(2);
+        return Number(values.Quantity * product.fiveQ_1000).toFixed(2);
       } else if (values.Quantity > 1000 && values.Quantity <= 2000) {
-        return Number(values.Quantity * product.five_2000).toFixed(2);
+        return Number(values.Quantity * product.fiveQ_2000).toFixed(2);
       } else if (values.Quantity > 2000 && values.Quantity <= 3000) {
-        return Number(values.Quantity * product.five_3000).toFixed(2);
+        return Number(values.Quantity * product.fiveQ_3000).toFixed(2);
       } else if (values.Quantity > 3000 && values.Quantity <= 5000) {
-        return Number(values.Quantity * product.five_5000).toFixed(2);
+        return Number(values.Quantity * product.fiveQ_5000).toFixed(2);
       } else if (values.Quantity > 5000 && values.Quantity <= 10000) {
-        return Number(values.Quantity * product.five_10000).toFixed(2);
+        return Number(values.Quantity * product.fiveQ_10000).toFixed(2);
       }
     }
   };

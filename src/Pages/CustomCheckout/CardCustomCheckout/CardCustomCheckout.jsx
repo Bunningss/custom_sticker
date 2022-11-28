@@ -6,7 +6,7 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-import { publicReq, userReq } from "../../../Utilities/requestMethods";
+import { userReq } from "../../../Utilities/requestMethods";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -47,6 +47,7 @@ const CardCustomCheckout = ({ shipping }) => {
 
       const CustomCheckout = async () => {
         const res = await userReq.post("/pay/create-payment-intent", body);
+
         if (res.data.clientSecret) {
           setClientSecret(res.data.clientSecret);
         } else {

@@ -2,9 +2,9 @@ import "./EditProduct.css";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { publicReq, userReq } from "../../../../Utilities/requestMethods";
+import { priceList } from "../../../../priceChart";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import PrimaryButton from "../../../../Components/PrimaryButton/PrimaryButton";
-import { priceList } from "../../../../priceChart";
 
 const EditProduct = () => {
   const [product, setProduct] = useState({});
