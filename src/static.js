@@ -102,9 +102,9 @@ export const customs = [
     ],
   },
   {
-    title: "Coming Soon",
+    title: "---",
     startPrice: "***",
-    img: lanyard,
+    img: "",
     // steps: [
     //   "select Printing Method",
     //   "select Lanyard Size",

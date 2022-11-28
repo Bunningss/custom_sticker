@@ -1,6 +1,7 @@
 import "./UserInfo.css";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { userReq } from "../../Utilities/requestMethods";
 import HeaderPrimary from "../../Components/HeaderPrimary/HeaderPrimary";
 import SecondaryButton from "../../Components/SecondaryButton/SecondaryButton";
 
@@ -9,6 +10,7 @@ const User_Info = () => {
     name: "",
     email: "",
   });
+  const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -21,8 +23,24 @@ const User_Info = () => {
     large: "Update your personal information",
   };
 
-  const handleSubmit = (e) => {
+  // Extract ID
+  const info = user.currentUser?.others;
+  const id = info && info._id;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     // Logic
+    try {
+      Object.keys(values).forEach((key) => {
+        if (values[key] === "") {
+          delete values[key];
+        }
+      });
+      await userReq.put(`/user/updateuser/${id}`, values);
+      // window.location.reload();
+    } catch (err) {
+      setMessage("Invalid Request");
+    }
   };
 
   return (
@@ -36,7 +54,7 @@ const User_Info = () => {
           <input
             name="name"
             onChange={handleChange}
-            placeholder={user.currentUser.others.name}
+            placeholder={user.currentUser?.others?.name}
             type="text"
             className="input text-regular"
           />
@@ -45,22 +63,24 @@ const User_Info = () => {
           </label>
           <input
             name="email"
-            placeholder={user.currentUser.others.email}
+            placeholder={user.currentUser?.others?.email}
             type="email"
             className="input text-regular"
-            disabled
-            style={{ cursor: "not-allowed" }}
+            onChange={handleChange}
           />
-          <label htmlFor="password" className="inputLabel">
+          {/* <label htmlFor="password" className="inputLabel">
             Password
-          </label>
-          <input
+          </label> */}
+          {/* <input
             name="password"
             onChange={handleChange}
             placeholder={"********"}
             type="password"
             className="input text-regular"
-          />
+          /> */}
+          {message && (
+            <p className="warning error-message text-small">{message}</p>
+          )}
           <SecondaryButton text={"Update"} />
         </form>
       </div>

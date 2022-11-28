@@ -14,7 +14,7 @@ const My_Account = () => {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.user);
-  const userInfo = user.currentUser?.others._id;
+  const id = user.currentUser?.others?._id;
 
   // Logout
   const handleClick = () => {
@@ -28,11 +28,11 @@ const My_Account = () => {
 
   useEffect(() => {
     const getOrders = async () => {
-      const res = await userReq.get(`orders/user/${userInfo}`);
+      const res = await userReq.get(`orders/user/${id}`);
       setOrders(res.data);
     };
     getOrders();
-  }, [userInfo]);
+  }, [id]);
 
   // load on top
   Scroller();
@@ -42,7 +42,7 @@ const My_Account = () => {
       <div className="wrapper main-wrapper">
         <div className="greeting">
           <h2 className="header">
-            Hello, <Link to="/update">{user.currentUser.others.name}</Link>{" "}
+            Hello, <Link to="/update">{user.currentUser?.others?.name}</Link>{" "}
           </h2>
           <div className="logout-wrapper">
             {user.currentUser && (
