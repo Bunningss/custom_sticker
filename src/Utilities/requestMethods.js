@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const base_url = "https://csticker.herokuapp.com/";
-const base_url = "http://localhost:5000";
+const base_url = "https://csticker.herokuapp.com/";
+// const base_url = "http://localhost:5000";
 
 // Fetch Access Token
 const user = JSON.parse(localStorage.getItem("persist:root"))?.user;
