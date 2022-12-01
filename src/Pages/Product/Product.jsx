@@ -17,6 +17,7 @@ import Slideshow from "../../Components/Slideshow/Slideshow";
 import Modal from "../../Components/Modal/Modal";
 import SelectMenu from "../../Components/SelectMenu/SelectMenu";
 import HeaderPrimary from "../../Components/HeaderPrimary/HeaderPrimary";
+import DatePicker from "../../Components/DatePicker/DatePicker";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -291,13 +292,13 @@ const Product = () => {
                 type="number"
                 className="input text-regular"
                 name="Quantity"
-                min="10"
+                min="50"
                 max="10000"
-                placeholder="Select Quantity (Min 10)"
+                placeholder="Select Quantity (Min 50)"
                 required
                 onInvalid={(e) =>
                   e.target.setCustomValidity(
-                    "Quantity Must Be Greater Than 10 And Less Than 10000"
+                    "Quantity Must Be Greater Than 50 And Less Than 10000"
                   )
                 }
                 onInput={(e) => e.target.setCustomValidity("")}
@@ -340,6 +341,7 @@ const Product = () => {
                   onInput={(e) => e.target.setCustomValidity("")}
                 />
               )}
+              <DatePicker />
               <PrimaryButton
                 text={processing ? "processing..." : "add to cart"}
               />

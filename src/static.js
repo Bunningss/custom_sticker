@@ -11,7 +11,7 @@ import metal from "./assets/stickers/metal.png";
 import holo from "./assets/stickers/holo-stc.png";
 import roll from "./assets/stickers/roll-stc.png";
 import sheet from "./assets/stickers/sheet-stc.png";
-import lanyard from "./assets/stickers/lanyard.png";
+import comingSoon from "./assets/Coming_Soon.png";
 
 // Universal Functions
 export const Scroller = () => {
@@ -104,7 +104,7 @@ export const customs = [
   {
     title: "---",
     startPrice: "***",
-    img: "",
+    img: comingSoon,
     // steps: [
     //   "select Printing Method",
     //   "select Lanyard Size",
@@ -139,96 +139,96 @@ export const navLinks = [
 ];
 
 export const footerData = [
-  {
-    title: "products",
-    links: [
-      {
-        title: "Circle",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "square",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "rectangle",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "custom shape",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "bumper stickers",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "clear stickers",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "static clings",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "roll labels",
-        icon: "",
-        href: "",
-      },
-    ],
-  },
-  {
-    title: "products",
-    links: [
-      {
-        title: "transfer sticker",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "die cut stickers",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "kiss cut stickers",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "rounded corner stickers",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "sticker sheets",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "hologram stickers",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "front adhesive stickers",
-        icon: "",
-        href: "",
-      },
-      {
-        title: "metallic stickers",
-        icon: "",
-        href: "",
-      },
-    ],
-  },
+  // {
+  //   title: "products",
+  //   links: [
+  //     {
+  //       title: "Circle",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "square",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "rectangle",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "custom shape",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "bumper stickers",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "clear stickers",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "static clings",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "roll labels",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "products",
+  //   links: [
+  //     {
+  //       title: "transfer sticker",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "die cut stickers",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "kiss cut stickers",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "rounded corner stickers",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "sticker sheets",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "hologram stickers",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "front adhesive stickers",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //     {
+  //       title: "metallic stickers",
+  //       icon: "",
+  //       href: "",
+  //     },
+  //   ],
+  // },
   {
     title: "information",
     links: [

@@ -77,13 +77,13 @@ const AddProduct = () => {
       );
     }
     file.map((fi) => {
-      // const filename = new Date().getTime() + file.name;
+      const filename = new Date().getTime() + fi.name;
 
       //  Firebase Upload
       const storage = getStorage(app);
       const storageRef = ref(storage, fi.name);
 
-      const uploadTask = uploadBytesResumable(storageRef, fi);
+      const uploadTask = uploadBytesResumable(storageRef, filename);
       uploadTask.on(
         "state_changed",
         (snapshot) => {

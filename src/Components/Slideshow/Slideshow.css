@@ -15,7 +15,7 @@
 }
 
 .slideshow::-webkit-scrollbar-thumb {
-  background-color: var(--font-primary);
+  background-color: var(--color-secondary);
   border-radius: 10px;
 }
 

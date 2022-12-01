@@ -1,0 +1,41 @@
+.date-picker .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.date-picker .wrapper .date {
+  height: 100px;
+  width: 200px;
+  background-color: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--white);
+  transition: all 0.5s ease;
+}
+
+.date-picker .wrapper .date.selected {
+  border: 3px solid var(--color-accent);
+  background-color: var(--blueish);
+  color: var(--font-primary);
+}
+
+.date-picker .wrapper .date .row {
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 820px) {
+  .date-picker .wrapper .date {
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .date-picker .wrapper .date {
+    width: 180px;
+  }
+}
