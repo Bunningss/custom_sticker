@@ -33,9 +33,14 @@ const Product = () => {
     ImprintColors: "",
     ArtworkType: "",
     ArtworkInstruction: "",
+    DeliveryDate: deliveryDate,
   });
+
   const [price, setPrice] = useState("");
   const [file, setFile] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [deliveryDate, setDeliveryDate] = useState("");
+  const [freight, setFreight] = useState(null);
 
   const headers = {
     small: "details",
@@ -66,6 +71,32 @@ const Product = () => {
     };
     getProduct();
   }, [id]);
+
+  // Date
+  let intwentyTwo = new Date(
+    Date.now() + 21 * 24 * 60 * 60 * 1000
+  ).toDateString();
+  let inSix = new Date(Date.now() + 6 * 24 * 60 * 60 * 1000).toDateString();
+
+  // Buss
+  const getBusinessDays = (startDate, endDate) => {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const current = new Date(startDate);
+    const dates = [];
+
+    while (current <= end) {
+      if (current.getDay() !== 6 && current.getDay() !== 0) {
+        dates.push(new Date(current).toDateString());
+      }
+
+      current.setDate(current.getDate() + 1);
+    }
+
+    return dates;
+  };
+
+  const businessDays = getBusinessDays(inSix, intwentyTwo);
 
   // Price calculator
   const calculatePrice = () => {
@@ -179,6 +210,7 @@ const Product = () => {
   const handleClick = (e) => {
     e.preventDefault();
     setProcessing(true);
+    if (freight === null) return;
 
     //  Firebase Upload
     if (file) {
@@ -226,7 +258,9 @@ const Product = () => {
                 ...product,
                 ...values,
                 ArtworkFile: downloadURL,
-                price: Number(price).toFixed(2),
+                price: Number(price * 1 + freight * 1).toFixed(2),
+                freight: freight,
+                deliveryDate: deliveryDate,
               })
             );
             setProcessing(false);
@@ -251,7 +285,9 @@ const Product = () => {
           serial: Math.random() * 10000 + 20000,
           ...product,
           ...values,
-          price: Number(price).toFixed(2),
+          price: Number(price * 1 + freight * 1).toFixed(2),
+          freight: freight,
+          deliveryDate: deliveryDate,
         })
       );
       navigate("/cart");
@@ -341,7 +377,21 @@ const Product = () => {
                   onInput={(e) => e.target.setCustomValidity("")}
                 />
               )}
-              <DatePicker />
+              <div className="date-picker">
+                <div className="wrapper">
+                  {businessDays.map((date, indx) => (
+                    <DatePicker
+                      date={date}
+                      indx={indx}
+                      key={indx}
+                      selectedDate={selectedDate === date}
+                      setSelectedDate={setSelectedDate}
+                      setFreight={setFreight}
+                      setDeliveryDate={setDeliveryDate}
+                    />
+                  ))}
+                </div>
+              </div>
               <PrimaryButton
                 text={processing ? "processing..." : "add to cart"}
               />

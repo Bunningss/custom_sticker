@@ -7,21 +7,25 @@
 .date-picker .wrapper .date {
   height: 100px;
   width: 200px;
-  background-color: var(--color-secondary);
+  /* background-color: var(--color-secondary); */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
   cursor: pointer;
-  color: var(--white);
+  /* color: var(--white); */
   transition: all 0.5s ease;
+
+  border: 3px solid var(--color-secondary);
+  background-color: var(--blueish);
+  color: var(--font-primary);
 }
 
 .date-picker .wrapper .date.selected {
-  border: 3px solid var(--color-accent);
-  background-color: var(--blueish);
-  color: var(--font-primary);
+  background-color: var(--color-secondary);
+  color: var(--white);
+  border: none;
 }
 
 .date-picker .wrapper .date .row {

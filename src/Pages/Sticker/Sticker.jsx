@@ -23,13 +23,16 @@ import app from "../../firebase";
 import CustomCard from "../../Components/CustomCard/CustomCard";
 import PrimaryButton from "../../Components/PrimaryButton/PrimaryButton";
 import Float from "../../Components/Float/Float";
+import DatePicker from "../../Components/DatePicker/DatePicker";
 
 const Sticker = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [error, setError] = useState("");
   const [processing, setProcessing] = useState(false);
-
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [freight, setFreight] = useState(null);
+  const [deliveryDate, setDeliveryDate] = useState("");
   const [sizeData, setSizeData] = useState([]);
 
   const [values, setValues] = useState({
@@ -43,12 +46,33 @@ const Sticker = () => {
     artworkInstuction: "",
     artworkType: "",
     startPrice: 0.24,
+    deliveryDate: deliveryDate,
     custom: true,
     _id: Math.random() * 10000 + 20000,
   });
   const [selected, setSelected] = useState("");
-
   const [file, setFile] = useState(null);
+
+  // Date
+  let intwentyTwo = new Date(
+    Date.now() + 21 * 24 * 60 * 60 * 1000
+  ).toDateString();
+  let inSix = new Date(Date.now() + 6 * 24 * 60 * 60 * 1000).toDateString();
+  // Buss
+  const getBusinessDays = (startDate, endDate) => {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const current = new Date(startDate);
+    const dates = [];
+    while (current <= end) {
+      if (current.getDay() !== 6 && current.getDay() !== 0) {
+        dates.push(new Date(current).toDateString());
+      }
+      current.setDate(current.getDate() + 1);
+    }
+    return dates;
+  };
+  const businessDays = getBusinessDays(inSix, intwentyTwo);
 
   // Update Size Selection Card
   useEffect(() => {
@@ -80,6 +104,8 @@ const Sticker = () => {
   const handleClick = (e) => {
     e.preventDefault();
     setProcessing(true);
+
+    if (deliveryDate === null) return;
 
     // If artwork upload
     if (file) {
@@ -139,8 +165,13 @@ const Sticker = () => {
                       ...values,
                       artworkFile: downloadURL,
                       price: Number(
-                        (values.Quantity * values.startPrice).toFixed(2)
+                        (
+                          values.Quantity * values.startPrice * 1 +
+                          freight * 1
+                        ).toFixed(2)
                       ),
+                      freight: freight,
+                      deliveryDate: deliveryDate,
                     })
                   );
                   setProcessing(false);
@@ -184,8 +215,13 @@ const Sticker = () => {
                     ...values,
                     artworkFile: downloadURL,
                     price: Number(
-                      (values.Quantity * values.startPrice).toFixed(2)
+                      (
+                        values.Quantity * values.startPrice * 1 +
+                        freight * 1
+                      ).toFixed(2)
                     ),
+                    freight: freight,
+                    deliveryDate: deliveryDate,
                   })
                 );
                 setProcessing(false);
@@ -223,7 +259,14 @@ const Sticker = () => {
               addProduct({
                 serial: Math.random() * 10000 + 20000,
                 ...values,
-                price: Number((values.Quantity * values.startPrice).toFixed(2)),
+                price: Number(
+                  (
+                    values.Quantity * values.startPrice * 1 +
+                    freight * 1
+                  ).toFixed(2)
+                ),
+                freight: freight,
+                deliveryDate: deliveryDate,
               })
             );
             setProcessing(false);
@@ -235,7 +278,13 @@ const Sticker = () => {
             addProduct({
               serial: Math.random() * 10000 + 20000,
               ...values,
-              price: Number((values.Quantity * values.startPrice).toFixed(2)),
+              price: Number(
+                (values.Quantity * values.startPrice * 1 + freight * 1).toFixed(
+                  2
+                )
+              ),
+              freight: freight,
+              deliveryDate: deliveryDate,
             })
           );
           setProcessing(false);
@@ -361,6 +410,21 @@ const Sticker = () => {
             className="input text-regular"
           />
         )}
+      </div>
+      <div className="date-picker">
+        <div className="wrapper">
+          {businessDays.map((date, indx) => (
+            <DatePicker
+              key={indx}
+              date={date}
+              indx={indx}
+              selectedDate={selectedDate === date}
+              setSelectedDate={setSelectedDate}
+              setFreight={setFreight}
+              setDeliveryDate={setDeliveryDate}
+            />
+          ))}
+        </div>
       </div>
       <p className="warning error-message text-small">{error}</p>
       <PrimaryButton text={processing ? "processing..." : "Add to cart"} />

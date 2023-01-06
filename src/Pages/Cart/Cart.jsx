@@ -44,7 +44,9 @@ const Cart = () => {
             {cart.products.map((item, indx) => (
               <CartItem key={indx} item={item} />
             ))}
-            <h4 className="title cart-total">Total Amount - {cart.total}$</h4>
+            <h4 className="title cart-total">
+              Total Amount - {Number(cart.total).toFixed(2)}$
+            </h4>
           </div>
           {user ? (
             <form action="" onSubmit={handleCheckout}>

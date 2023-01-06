@@ -12,8 +12,8 @@
   display: flex;
   justify-content: space-between;
   /* align-items: center; */
-  max-height: 800px;
-  overflow: scroll;
+  /* max-height: 800px;
+  overflow: scroll; */
   position: relative;
 }
 

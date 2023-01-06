@@ -4,7 +4,7 @@ import { removeProduct } from "../../Redux/cartRedux";
 
 const Cart_Item = ({ item }) => {
   const dispatch = useDispatch();
-
+  console.log(item);
   // Remove from cart
   const handleClick = () => {
     dispatch(removeProduct({ serial: item.serial, price: item.price }));
@@ -36,7 +36,7 @@ const Cart_Item = ({ item }) => {
           {item.ArtworkType || "Custom Design"}
         </li>
         <li className="text-medium cart-item-text">
-          delivery: 15days from order
+          delivery: {item.deliveryDate}
         </li>
       </div>
       {/* Quantity */}
@@ -45,11 +45,11 @@ const Cart_Item = ({ item }) => {
         <span className="title"> — {item.Quantity || item.quantity}</span>
       </div>
       <div className="row flex-row">
-        Unit Price:
-        <span className="title"> — {item.startPrice}$</span>
+        Delivery Charge:
+        <span className="title"> — {item.freight}$</span>
       </div>
       <div className="row flex-row">
-        Total:
+        Total (Including delivery charge):
         <span className="title"> — {item.price}$</span>
       </div>
       <button className="button btn-warning" onClick={handleClick}>

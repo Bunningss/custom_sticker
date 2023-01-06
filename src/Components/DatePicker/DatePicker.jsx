@@ -1,41 +1,62 @@
 import "./DatePicker.css";
 
-const DatePicker = () => {
-  let intwentyTwo = new Date(
-    Date.now() + 21 * 24 * 60 * 60 * 1000
-  ).toDateString();
-  let inSix = new Date(Date.now() + 6 * 24 * 60 * 60 * 1000).toDateString();
-
-  // Buss
-  const getBusinessDays = (startDate, endDate) => {
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    const current = new Date(startDate);
-    const dates = [];
-
-    while (current <= end) {
-      if (current.getDay() !== 6 && current.getDay() !== 0) {
-        dates.push(new Date(current).toDateString());
-      }
-
-      current.setDate(current.getDate() + 1);
-    }
-
-    return dates;
+const DatePicker = ({
+  date,
+  indx,
+  selectedDate,
+  setSelectedDate,
+  setFreight,
+  setDeliveryDate,
+}) => {
+  const handleSelection = () => {
+    setSelectedDate(date);
+    setDeliveryDate(date);
+    setFreight(
+      indx === 0
+        ? 50
+        : indx === 1
+        ? 40
+        : indx === 2
+        ? 32
+        : indx === 3
+        ? 25
+        : indx === 4
+        ? 20
+        : indx === 5
+        ? 17
+        : indx === 6
+        ? 14
+        : indx === 7
+        ? 11
+        : 0
+    );
   };
 
-  const businessDays = getBusinessDays(inSix, intwentyTwo);
-
-  console.log(businessDays);
   return (
-    <div className="date-picker">
-      <div className="wrapper">
-        {businessDays.map((date, indx) => (
-          <div className="date">
-            <div className="row">{date}</div>
-            <div className="row">{indx === 0 ? 32 : 44}$</div>
-          </div>
-        ))}
+    <div
+      className={selectedDate ? "date selected" : "date"}
+      onClick={handleSelection}
+    >
+      <div className="row">{date}</div>
+      <div className="row">
+        $
+        {indx === 0
+          ? 50
+          : indx === 1
+          ? 40
+          : indx === 2
+          ? 32
+          : indx === 3
+          ? 25
+          : indx === 4
+          ? 20
+          : indx === 5
+          ? 17
+          : indx === 6
+          ? 14
+          : indx === 7
+          ? 11
+          : 0}
       </div>
     </div>
   );
