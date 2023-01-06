@@ -23,6 +23,11 @@ const Product = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [price, setPrice] = useState("");
+  const [file, setFile] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [deliveryDate, setDeliveryDate] = useState("");
+  const [freight, setFreight] = useState(null);
   const [processing, setProcessing] = useState(false);
   const [product, setProduct] = useState({});
   const [modalImg, setModalImg] = useState(null);
@@ -35,12 +40,6 @@ const Product = () => {
     ArtworkInstruction: "",
     DeliveryDate: deliveryDate,
   });
-
-  const [price, setPrice] = useState("");
-  const [file, setFile] = useState(null);
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [deliveryDate, setDeliveryDate] = useState("");
-  const [freight, setFreight] = useState(null);
 
   const headers = {
     small: "details",
