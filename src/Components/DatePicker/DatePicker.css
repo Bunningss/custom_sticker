@@ -40,6 +40,6 @@
 
 @media screen and (max-width: 500px) {
   .date-picker .wrapper .date {
-    width: 180px;
+    width: 100%;
   }
 }
